@@ -145,7 +145,7 @@ function GradientCard({
 
 function Nav() {
   const links = [
-    { href: "#approach", label: "Approach" },
+    { href: "#approach", label: "About Us" },
     { href: "#sx-tech", label: "SX Tech" },
     { href: "#sx-human", label: "SX Human" },
     { href: "#ventures", label: "Ventures" },
@@ -160,7 +160,7 @@ function Nav() {
             className="h-8 w-8 object-contain drop-shadow-[0_0_12px_color-mix(in_oklab,var(--brand-indigo)_60%,transparent)]"
           />
           <span className="text-sm font-semibold tracking-wide">
-            SX Transformation
+            SX TRANS
           </span>
         </a>
         <nav className="hidden items-center gap-8 md:flex">
