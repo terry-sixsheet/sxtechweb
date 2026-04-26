@@ -9,8 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as BusinessVenturesRouteImport } from './routes/business-ventures'
 import { Route as IndexRouteImport } from './routes/index'
 
+const BusinessVenturesRoute = BusinessVenturesRouteImport.update({
+  id: '/business-ventures',
+  path: '/business-ventures',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +25,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/business-ventures': typeof BusinessVenturesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/business-ventures': typeof BusinessVenturesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/business-ventures': typeof BusinessVenturesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/business-ventures'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/business-ventures'
+  id: '__root__' | '/' | '/business-ventures'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BusinessVenturesRoute: typeof BusinessVenturesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/business-ventures': {
+      id: '/business-ventures'
+      path: '/business-ventures'
+      fullPath: '/business-ventures'
+      preLoaderRoute: typeof BusinessVenturesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BusinessVenturesRoute: BusinessVenturesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
