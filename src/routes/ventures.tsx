@@ -62,28 +62,6 @@ function PageHero() {
           Transformation Ecosystem.
         </p>
       </div>
-
-      <div className="relative mx-auto mt-14 max-w-5xl">
-        <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-primary opacity-25 blur-3xl" />
-        <div
-          className="rounded-[2rem] p-px"
-          style={{
-            backgroundImage:
-              "linear-gradient(140deg, color-mix(in oklab, var(--brand-indigo) 60%, transparent), color-mix(in oklab, var(--brand-cyan) 40%, transparent) 50%, transparent 90%)",
-          }}
-        >
-          <div className="overflow-hidden rounded-[1.95rem] border border-border bg-card/40 backdrop-blur">
-            <img
-              src={venturesHero}
-              alt="A venture launching upward through luminous particle trails"
-              loading="lazy"
-              width={1600}
-              height={900}
-              className="h-auto w-full opacity-95"
-            />
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
@@ -157,7 +135,18 @@ function Ventures() {
 function CTA() {
   return (
     <Section>
-      <div className="mx-auto max-w-3xl text-center">
+      <div className="relative mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-border bg-card/40 px-8 py-20 text-center backdrop-blur md:px-16 md:py-24">
+        <img
+          src={venturesHero}
+          alt=""
+          aria-hidden
+          loading="lazy"
+          className="absolute inset-0 -z-20 h-full w-full object-cover opacity-30"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/80 to-background/40"
+        />
         <h2 className="text-balance text-3xl font-bold tracking-tight md:text-4xl">
           Have a venture in mind? Let’s build it together.
         </h2>
