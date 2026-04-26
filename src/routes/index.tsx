@@ -10,19 +10,21 @@ import {
   Building2,
   Rocket,
   Network,
-  Gauge,
   ShieldCheck,
-  Zap,
-  LineChart,
-  Workflow,
   Compass,
-  Activity,
   CheckCircle2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import sxLogo from "@/assets/sx-logo.png";
+import {
+  BackgroundFX,
+  Footer,
+  GradientCard,
+  Nav,
+  Section,
+} from "@/components/site/Shell";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -40,8 +42,6 @@ function Index() {
         <WhatWeDo />
         <WhoWeServe />
         <Approach />
-        <SXTech />
-        <SXHuman />
         <Ventures />
         <FinalMessage />
         <FinalCTA />
