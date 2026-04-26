@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as HumanTransformRouteImport } from './routes/human-transform'
 import { Route as BusinessVenturesRouteImport } from './routes/business-ventures'
 import { Route as IndexRouteImport } from './routes/index'
 
+const HumanTransformRoute = HumanTransformRouteImport.update({
+  id: '/human-transform',
+  path: '/human-transform',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BusinessVenturesRoute = BusinessVenturesRouteImport.update({
   id: '/business-ventures',
   path: '/business-ventures',
@@ -26,31 +32,42 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/business-ventures': typeof BusinessVenturesRoute
+  '/human-transform': typeof HumanTransformRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/business-ventures': typeof BusinessVenturesRoute
+  '/human-transform': typeof HumanTransformRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/business-ventures': typeof BusinessVenturesRoute
+  '/human-transform': typeof HumanTransformRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/business-ventures'
+  fullPaths: '/' | '/business-ventures' | '/human-transform'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/business-ventures'
-  id: '__root__' | '/' | '/business-ventures'
+  to: '/' | '/business-ventures' | '/human-transform'
+  id: '__root__' | '/' | '/business-ventures' | '/human-transform'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BusinessVenturesRoute: typeof BusinessVenturesRoute
+  HumanTransformRoute: typeof HumanTransformRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/human-transform': {
+      id: '/human-transform'
+      path: '/human-transform'
+      fullPath: '/human-transform'
+      preLoaderRoute: typeof HumanTransformRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/business-ventures': {
       id: '/business-ventures'
       path: '/business-ventures'
@@ -71,6 +88,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BusinessVenturesRoute: BusinessVenturesRoute,
+  HumanTransformRoute: HumanTransformRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
