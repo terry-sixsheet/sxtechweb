@@ -30,7 +30,7 @@ export function Nav() {
     { to: "/", hash: "approach", label: "About Us" },
     { to: "/business-ventures", label: "Business & Ventures" },
     { to: "/human-transform", label: "Human Transform" },
-    { to: "/", hash: "ventures", label: "Ventures" },
+    { to: "/ventures", label: "Ventures" },
   ];
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
