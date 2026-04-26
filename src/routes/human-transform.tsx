@@ -16,6 +16,10 @@ import {
   Nav,
   Section,
 } from "@/components/site/Shell";
+import heroHuman from "@/assets/hero-human.jpg";
+import humanMind from "@/assets/human-mind.jpg";
+import humanCoaching from "@/assets/human-coaching.jpg";
+import humanFocus from "@/assets/human-focus.jpg";
 
 export const Route = createFileRoute("/human-transform")({
   head: () => ({
@@ -45,6 +49,7 @@ function HumanTransformPage() {
       <main className="relative">
         <PageHero />
         <SXHuman />
+        <ImageBand />
         <CTA />
       </main>
       <Footer />
@@ -68,7 +73,64 @@ function PageHero() {
           leader does not. We upgrade the operator behind the system.
         </p>
       </div>
+
+      <div className="relative mx-auto mt-14 max-w-5xl">
+        <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-primary opacity-20 blur-3xl" />
+        <div
+          className="rounded-[2rem] p-px"
+          style={{
+            backgroundImage:
+              "linear-gradient(140deg, color-mix(in oklab, var(--brand-indigo) 60%, transparent), color-mix(in oklab, var(--brand-cyan) 40%, transparent) 50%, transparent 90%)",
+          }}
+        >
+          <div className="overflow-hidden rounded-[1.95rem] border border-border bg-card/40 backdrop-blur">
+            <img
+              src={heroHuman}
+              alt="Profile portrait of a contemplative leader"
+              loading="lazy"
+              width={1600}
+              height={900}
+              className="h-auto w-full opacity-95"
+            />
+          </div>
+        </div>
+      </div>
     </section>
+  );
+}
+
+function ImageBand() {
+  const items = [
+    { src: humanCoaching, alt: "Two leaders in coaching dialogue", label: "1:1 Coaching" },
+    { src: humanMind, alt: "Glowing neural brain visualization", label: "Cognitive System" },
+    { src: humanFocus, alt: "Calm flowing energy waves", label: "Focus & Clarity" },
+  ];
+  return (
+    <Section>
+      <div className="grid gap-6 md:grid-cols-3">
+        {items.map((it) => (
+          <div
+            key={it.label}
+            className="group relative overflow-hidden rounded-3xl border border-border bg-card/40 backdrop-blur"
+          >
+            <img
+              src={it.src}
+              alt={it.alt}
+              loading="lazy"
+              width={1400}
+              height={900}
+              className="h-64 w-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-[1.04]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-cyan)]">
+                {it.label}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Section>
   );
 }
 

@@ -22,6 +22,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import sxLogo from "@/assets/sx-logo.png";
+import heroEcosystem from "@/assets/home-ecosystem.jpg";
+import bvPlatform from "@/assets/bv-platform.jpg";
+import humanCoaching from "@/assets/human-coaching.jpg";
+import humanFocus from "@/assets/human-focus.jpg";
 import {
   BackgroundFX,
   Footer,
@@ -126,6 +130,29 @@ function Hero() {
             <div className="mt-1 text-lg font-semibold">{s.v}</div>
           </div>
         ))}
+      </div>
+
+      {/* Hero showcase image */}
+      <div className="relative mx-auto mt-16 max-w-5xl">
+        <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-primary opacity-20 blur-3xl" />
+        <div
+          className="rounded-[2rem] p-px"
+          style={{
+            backgroundImage:
+              "linear-gradient(140deg, color-mix(in oklab, var(--brand-indigo) 60%, transparent), color-mix(in oklab, var(--brand-cyan) 40%, transparent) 50%, transparent 90%)",
+          }}
+        >
+          <div className="overflow-hidden rounded-[1.95rem] border border-border bg-card/40 backdrop-blur">
+            <img
+              src={heroEcosystem}
+              alt="The SX Transformation Ecosystem visualized as a global network"
+              loading="lazy"
+              width={1920}
+              height={1080}
+              className="h-auto w-full opacity-90 mix-blend-screen"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -250,6 +277,8 @@ function WhatWeDo() {
           icon={Cpu}
           href="/business-ventures"
           ctaLabel="Business & Ventures Transform"
+          image={bvPlatform}
+          imageAlt="Glowing layered tech platform"
         />
         <PillarCard
           tag="SX HUMAN"
@@ -264,6 +293,8 @@ function WhatWeDo() {
           icon={Brain}
           href="/human-transform"
           ctaLabel="Human Transform"
+          image={humanCoaching}
+          imageAlt="Two leaders in coaching dialogue"
         />
       </div>
     </Section>
@@ -279,6 +310,8 @@ function PillarCard({
   icon: Icon,
   href,
   ctaLabel,
+  image,
+  imageAlt,
 }: {
   tag: string;
   subtitle: string;
@@ -288,9 +321,21 @@ function PillarCard({
   icon: React.ComponentType<{ className?: string }>;
   href: "/business-ventures" | "/human-transform";
   ctaLabel: string;
+  image: string;
+  imageAlt: string;
 }) {
   return (
     <GradientCard>
+      <div className="-mx-8 -mt-8 mb-8 overflow-hidden rounded-t-3xl border-b border-border/60">
+        <img
+          src={image}
+          alt={imageAlt}
+          loading="lazy"
+          width={1024}
+          height={1024}
+          className="h-44 w-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-[1.04]"
+        />
+      </div>
       <div className="flex items-center gap-3">
         <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
           <Icon className="h-5 w-5" />
