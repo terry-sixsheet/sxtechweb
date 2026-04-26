@@ -54,6 +54,7 @@ function BusinessVenturesPage() {
       <main className="relative">
         <PageHero />
         <SXTech />
+        <ImageBand />
         <CTA />
       </main>
       <Footer />
