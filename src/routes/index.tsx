@@ -477,17 +477,17 @@ function FinalMessage() {
           alt=""
           aria-hidden
           loading="lazy"
-          className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-40"
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-50"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-background/95 via-background/70 to-background/50"
+          className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-background/95 via-background/70 to-background/40"
         />
-        <h2 className="relative mx-auto max-w-3xl text-balance text-4xl font-bold leading-tight tracking-tight md:text-6xl">
+        <h2 className="relative z-20 mx-auto max-w-3xl text-balance text-4xl font-bold leading-tight tracking-tight md:text-6xl">
           The business can scale because{" "}
           <span className="text-gradient">the leader can handle it.</span>
         </h2>
-        <p className="relative mx-auto mt-6 max-w-xl text-pretty text-lg text-muted-foreground">
+        <p className="relative z-20 mx-auto mt-6 max-w-xl text-pretty text-lg text-muted-foreground">
           We transform the entire system — together.
         </p>
       </div>

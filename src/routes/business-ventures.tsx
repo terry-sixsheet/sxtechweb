@@ -301,16 +301,16 @@ function CTA() {
           alt=""
           aria-hidden
           loading="lazy"
-          className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-40"
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-50"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-background/95 via-background/70 to-background/50"
+          className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-background/95 via-background/70 to-background/40"
         />
-        <h2 className="relative text-balance text-3xl font-bold tracking-tight md:text-4xl">
+        <h2 className="relative z-20 text-balance text-3xl font-bold tracking-tight md:text-4xl">
           Ready to build the next venture — together?
         </h2>
-        <div className="relative mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="relative z-20 mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
             asChild
             size="lg"
