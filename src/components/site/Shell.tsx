@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Facebook, Instagram, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import sxLogo from "@/assets/sx-logo.png";
@@ -27,7 +27,7 @@ export function BackgroundFX() {
 
 export function Nav() {
   const links: Array<{ to: string; label: string; hash?: string }> = [
-    { to: "/", hash: "approach", label: "About Us" },
+    { to: "/", hash: "approach", label: "SX TRANS" },
     { to: "/business-ventures", label: "Business & Ventures" },
     { to: "/human-transform", label: "Human Transform" },
     { to: "/ventures", label: "Ventures Studio" },
@@ -41,7 +41,6 @@ export function Nav() {
             alt="SX Transformation"
             className="h-8 w-8 object-contain drop-shadow-[0_0_12px_color-mix(in_oklab,var(--brand-indigo)_60%,transparent)]"
           />
-          <span className="text-sm font-semibold tracking-wide">SX TRANS</span>
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
@@ -72,12 +71,32 @@ export function Nav() {
 }
 
 export function Footer() {
+  const socials = [
+    { href: "https://facebook.com", label: "Facebook", icon: Facebook },
+    { href: "https://instagram.com", label: "Instagram", icon: Instagram },
+    { href: "mailto:hello@sxtrans.com", label: "Email", icon: Mail },
+    { href: "tel:+66000000000", label: "Phone", icon: Phone },
+  ];
   return (
     <footer className="border-t border-border/60">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-muted-foreground md:flex-row">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-10 text-sm text-muted-foreground md:flex-row">
         <div className="flex items-center gap-2.5">
           <img src={sxLogo} alt="SX Transformation" className="h-7 w-7 object-contain" />
           <span className="font-medium text-foreground">SX Transformation</span>
+        </div>
+        <div className="flex items-center gap-3">
+          {socials.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              aria-label={s.label}
+              target={s.href.startsWith("http") ? "_blank" : undefined}
+              rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="grid h-9 w-9 place-items-center rounded-full border border-border bg-card/60 text-muted-foreground transition-colors hover:border-[color:var(--brand-indigo)] hover:text-foreground"
+            >
+              <s.icon className="h-4 w-4" />
+            </a>
+          ))}
         </div>
         <div className="text-xs">
           © {new Date().getFullYear()} SX Transformation. Strategic

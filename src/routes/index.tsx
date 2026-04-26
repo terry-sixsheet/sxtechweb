@@ -13,6 +13,10 @@ import {
   ShieldCheck,
   Compass,
   CheckCircle2,
+  Facebook,
+  Instagram,
+  Mail,
+  Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -482,10 +486,13 @@ function FinalCTA() {
         </h2>
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
+            asChild
             size="lg"
             className="h-12 rounded-full bg-gradient-primary px-7 text-base font-semibold text-white shadow-glow hover:opacity-95"
           >
-            Talk to Us <ArrowRight className="ml-2 h-4 w-4" />
+            <a href="mailto:hello@sxtrans.com">
+              Talk to Us <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
           </Button>
           <Button
             size="lg"
@@ -501,6 +508,64 @@ function FinalCTA() {
           >
             Partner With Us
           </Button>
+        </div>
+
+        <div className="mx-auto mt-14 grid max-w-3xl gap-4 sm:grid-cols-2">
+          <a
+            href="mailto:hello@sxtrans.com"
+            className="group flex items-center gap-4 rounded-2xl border border-border bg-card/50 p-5 text-left backdrop-blur transition-all hover:-translate-y-0.5 hover:border-[color:var(--brand-indigo)]"
+          >
+            <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+              <Mail className="h-5 w-5" />
+            </div>
+            <div>
+              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                Email
+              </div>
+              <div className="mt-0.5 text-sm font-medium text-foreground">
+                hello@sxtrans.com
+              </div>
+            </div>
+          </a>
+          <a
+            href="tel:+66000000000"
+            className="group flex items-center gap-4 rounded-2xl border border-border bg-card/50 p-5 text-left backdrop-blur transition-all hover:-translate-y-0.5 hover:border-[color:var(--brand-indigo)]"
+          >
+            <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+              <Phone className="h-5 w-5" />
+            </div>
+            <div>
+              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                Phone
+              </div>
+              <div className="mt-0.5 text-sm font-medium text-foreground">
+                +66 00 000 0000
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div className="mt-10">
+          <div className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            Follow Us
+          </div>
+          <div className="flex items-center justify-center gap-3">
+            {[
+              { href: "https://facebook.com", label: "Facebook", icon: Facebook },
+              { href: "https://instagram.com", label: "Instagram", icon: Instagram },
+            ].map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card/60 text-muted-foreground transition-colors hover:border-[color:var(--brand-indigo)] hover:text-foreground"
+              >
+                <s.icon className="h-5 w-5" />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </Section>
