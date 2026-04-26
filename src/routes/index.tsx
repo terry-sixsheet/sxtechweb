@@ -471,31 +471,23 @@ function Approach() {
 function FinalMessage() {
   return (
     <Section>
-      <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card/40 px-8 py-20 text-center backdrop-blur md:px-16 md:py-28">
+      <div className="relative isolate overflow-hidden rounded-[2rem] border border-border bg-card/40 px-8 py-20 text-center backdrop-blur md:px-16 md:py-28">
         <img
           src={heroEcosystem}
           alt=""
           aria-hidden
           loading="lazy"
-          className="absolute inset-0 -z-20 h-full w-full object-cover opacity-30"
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-40"
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/80 to-background/40"
+          className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-background/95 via-background/70 to-background/50"
         />
-        <div
-          aria-hidden
-          className="absolute inset-0 -z-10 opacity-30"
-          style={{
-            backgroundImage:
-              "radial-gradient(60% 50% at 50% 0%, color-mix(in oklab, var(--brand-indigo) 50%, transparent), transparent 70%)",
-          }}
-        />
-        <h2 className="mx-auto max-w-3xl text-balance text-4xl font-bold leading-tight tracking-tight md:text-6xl">
+        <h2 className="relative mx-auto max-w-3xl text-balance text-4xl font-bold leading-tight tracking-tight md:text-6xl">
           The business can scale because{" "}
           <span className="text-gradient">the leader can handle it.</span>
         </h2>
-        <p className="mx-auto mt-6 max-w-xl text-pretty text-lg text-muted-foreground">
+        <p className="relative mx-auto mt-6 max-w-xl text-pretty text-lg text-muted-foreground">
           We transform the entire system — together.
         </p>
       </div>
