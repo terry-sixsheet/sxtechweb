@@ -42,7 +42,6 @@ function Index() {
         <WhatWeDo />
         <WhoWeServe />
         <Approach />
-        <Ventures />
         <FinalMessage />
         <FinalCTA />
       </main>
@@ -439,79 +438,6 @@ function Approach() {
   );
 }
 
-
-/* ------------------------------ Ventures ---------------------------------- */
-
-function Ventures() {
-  const cases = [
-    {
-      name: "SX Snap",
-      type: "SaaS Photobooth Platform",
-      problem:
-        "Event organizers needed scalable, branded photo experiences without heavy production overhead.",
-      system:
-        "Built a multi-tenant SaaS platform with white-label branding, real-time AI capture, and event analytics.",
-      result:
-        "Recurring revenue model with rapid market expansion across event operators.",
-    },
-    {
-      name: "KengSob",
-      type: "Education Platform",
-      problem:
-        "Learners lacked an outcomes-driven, high-trust prep ecosystem with monetizable instructor networks.",
-      system:
-        "Designed and built a vertical education platform with content engine, performance tracking, and creator economy layer.",
-      result:
-        "Scaled an active community and unlocked multi-channel revenue across instructors and partners.",
-    },
-  ];
-  return (
-    <Section
-      id="ventures"
-      eyebrow="Ventures / Proof"
-      title="We don’t just launch — we co-create and scale ventures together."
-      subtitle="Selected ventures designed, built, and activated through the SX Transformation Ecosystem."
-    >
-      <div className="grid gap-6 lg:grid-cols-2">
-        {cases.map((c) => (
-          <GradientCard key={c.name}>
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <h3 className="text-2xl font-bold">{c.name}</h3>
-                <div className="mt-1 text-sm text-[color:var(--brand-cyan)]">
-                  {c.type}
-                </div>
-              </div>
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
-                <Rocket className="h-5 w-5" />
-              </div>
-            </div>
-            <div className="mt-6 space-y-4 text-sm">
-              <div>
-                <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                  Problem
-                </div>
-                <p className="mt-1 text-foreground/90">{c.problem}</p>
-              </div>
-              <div>
-                <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                  System Built
-                </div>
-                <p className="mt-1 text-foreground/90">{c.system}</p>
-              </div>
-              <div>
-                <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                  Result
-                </div>
-                <p className="mt-1 text-foreground/90">{c.result}</p>
-              </div>
-            </div>
-          </GradientCard>
-        ))}
-      </div>
-    </Section>
-  );
-}
 
 /* ----------------------------- Final Message ------------------------------ */
 
