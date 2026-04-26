@@ -8,7 +8,10 @@ import {
   Nav,
   Section,
 } from "@/components/site/Shell";
-import venturesHero from "@/assets/ventures-hero.jpg";
+import venturesHeroSrc from "@/assets/ventures-hero.jpg";
+
+const CACHE_BUST = `v=${Date.now()}`;
+const venturesHero = `${venturesHeroSrc}?${CACHE_BUST}`;
 
 export const Route = createFileRoute("/ventures")({
   head: () => ({

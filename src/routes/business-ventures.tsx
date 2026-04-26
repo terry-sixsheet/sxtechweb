@@ -19,9 +19,14 @@ import {
   Nav,
   Section,
 } from "@/components/site/Shell";
-import heroTech from "@/assets/hero-tech.jpg";
-import bvVenture from "@/assets/bv-venture.jpg";
-import bvGrowth from "@/assets/bv-growth.jpg";
+import heroTechSrc from "@/assets/hero-tech.jpg";
+import bvVentureSrc from "@/assets/bv-venture.jpg";
+import bvGrowthSrc from "@/assets/bv-growth.jpg";
+
+const CACHE_BUST = `v=${Date.now()}`;
+const heroTech = `${heroTechSrc}?${CACHE_BUST}`;
+const bvVenture = `${bvVentureSrc}?${CACHE_BUST}`;
+const bvGrowth = `${bvGrowthSrc}?${CACHE_BUST}`;
 
 export const Route = createFileRoute("/business-ventures")({
   head: () => ({
