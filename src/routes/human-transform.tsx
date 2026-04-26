@@ -16,6 +16,10 @@ import {
   Nav,
   Section,
 } from "@/components/site/Shell";
+import heroHuman from "@/assets/hero-human.jpg";
+import humanMind from "@/assets/human-mind.jpg";
+import humanCoaching from "@/assets/human-coaching.jpg";
+import humanFocus from "@/assets/human-focus.jpg";
 
 export const Route = createFileRoute("/human-transform")({
   head: () => ({
@@ -45,6 +49,7 @@ function HumanTransformPage() {
       <main className="relative">
         <PageHero />
         <SXHuman />
+        <ImageBand />
         <CTA />
       </main>
       <Footer />
