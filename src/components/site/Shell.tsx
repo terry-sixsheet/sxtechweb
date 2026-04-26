@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Facebook, Instagram, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import sxLogo from "@/assets/sx-logo.png";
@@ -27,7 +27,7 @@ export function BackgroundFX() {
 
 export function Nav() {
   const links: Array<{ to: string; label: string; hash?: string }> = [
-    { to: "/", hash: "approach", label: "About Us" },
+    { to: "/", hash: "approach", label: "SX TRANS" },
     { to: "/business-ventures", label: "Business & Ventures" },
     { to: "/human-transform", label: "Human Transform" },
     { to: "/ventures", label: "Ventures Studio" },
@@ -41,7 +41,6 @@ export function Nav() {
             alt="SX Transformation"
             className="h-8 w-8 object-contain drop-shadow-[0_0_12px_color-mix(in_oklab,var(--brand-indigo)_60%,transparent)]"
           />
-          <span className="text-sm font-semibold tracking-wide">SX TRANS</span>
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
