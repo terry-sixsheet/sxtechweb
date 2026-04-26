@@ -277,6 +277,8 @@ function WhatWeDo() {
           icon={Cpu}
           href="/business-ventures"
           ctaLabel="Business & Ventures Transform"
+          image={bvPlatform}
+          imageAlt="Glowing layered tech platform"
         />
         <PillarCard
           tag="SX HUMAN"
@@ -291,6 +293,8 @@ function WhatWeDo() {
           icon={Brain}
           href="/human-transform"
           ctaLabel="Human Transform"
+          image={humanCoaching}
+          imageAlt="Two leaders in coaching dialogue"
         />
       </div>
     </Section>
@@ -306,6 +310,8 @@ function PillarCard({
   icon: Icon,
   href,
   ctaLabel,
+  image,
+  imageAlt,
 }: {
   tag: string;
   subtitle: string;
@@ -315,9 +321,21 @@ function PillarCard({
   icon: React.ComponentType<{ className?: string }>;
   href: "/business-ventures" | "/human-transform";
   ctaLabel: string;
+  image: string;
+  imageAlt: string;
 }) {
   return (
     <GradientCard>
+      <div className="-mx-8 -mt-8 mb-8 overflow-hidden rounded-t-3xl border-b border-border/60">
+        <img
+          src={image}
+          alt={imageAlt}
+          loading="lazy"
+          width={1024}
+          height={1024}
+          className="h-44 w-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-[1.04]"
+        />
+      </div>
       <div className="flex items-center gap-3">
         <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
           <Icon className="h-5 w-5" />
