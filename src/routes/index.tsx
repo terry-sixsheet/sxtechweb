@@ -22,6 +22,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import sxLogo from "@/assets/sx-logo.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -153,9 +154,11 @@ function Nav() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <a href="#top" className="flex items-center gap-2.5">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-primary text-sm font-bold text-white shadow-glow">
-            SX
-          </span>
+          <img
+            src={sxLogo}
+            alt="SX Transformation"
+            className="h-8 w-8 object-contain drop-shadow-[0_0_12px_color-mix(in_oklab,var(--brand-indigo)_60%,transparent)]"
+          />
           <span className="text-sm font-semibold tracking-wide">
             SX Transformation
           </span>
@@ -190,6 +193,16 @@ function Nav() {
 function Hero() {
   return (
     <section id="top" className="relative mx-auto max-w-7xl px-6 pt-24 pb-32 md:pt-36 md:pb-40">
+      {/* Background logo watermark + ambient glows */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle_at_center,color-mix(in_oklab,var(--brand-indigo)_35%,transparent),transparent_70%)] blur-2xl" />
+        <img
+          src={sxLogo}
+          alt=""
+          aria-hidden
+          className="absolute left-1/2 top-1/2 w-[min(80vw,720px)] -translate-x-1/2 -translate-y-1/2 opacity-[0.07] blur-[1px] select-none"
+        />
+      </div>
       <div className="mx-auto max-w-4xl text-center">
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur">
           <Sparkles className="h-3.5 w-3.5 text-[color:var(--brand-cyan)]" />
@@ -1061,9 +1074,7 @@ function Footer() {
     <footer className="border-t border-border/60">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-muted-foreground md:flex-row">
         <div className="flex items-center gap-2.5">
-          <span className="grid h-7 w-7 place-items-center rounded-md bg-gradient-primary text-xs font-bold text-white">
-            SX
-          </span>
+          <img src={sxLogo} alt="SX Transformation" className="h-7 w-7 object-contain" />
           <span className="font-medium text-foreground">SX Transformation</span>
         </div>
         <div className="text-xs">
