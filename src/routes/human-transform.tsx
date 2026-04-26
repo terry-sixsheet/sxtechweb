@@ -16,10 +16,16 @@ import {
   Nav,
   Section,
 } from "@/components/site/Shell";
-import heroHuman from "@/assets/hero-human.jpg";
-import humanMind from "@/assets/human-mind.jpg";
-import humanCoaching from "@/assets/human-coaching.jpg";
-import humanFocus from "@/assets/human-focus.jpg";
+import heroHumanSrc from "@/assets/hero-human.jpg";
+import humanMindSrc from "@/assets/human-mind.jpg";
+import humanCoachingSrc from "@/assets/human-coaching.jpg";
+import humanFocusSrc from "@/assets/human-focus.jpg";
+
+const CACHE_BUST = `v=${Date.now()}`;
+const heroHuman = `${heroHumanSrc}?${CACHE_BUST}`;
+const humanMind = `${humanMindSrc}?${CACHE_BUST}`;
+const humanCoaching = `${humanCoachingSrc}?${CACHE_BUST}`;
+const humanFocus = `${humanFocusSrc}?${CACHE_BUST}`;
 
 export const Route = createFileRoute("/human-transform")({
   head: () => ({

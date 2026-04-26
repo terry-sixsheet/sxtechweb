@@ -22,10 +22,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import sxLogo from "@/assets/sx-logo.png";
-import heroEcosystem from "@/assets/home-ecosystem.jpg";
-import bvPlatform from "@/assets/bv-platform.jpg";
-import humanCoaching from "@/assets/human-coaching.jpg";
-import humanFocus from "@/assets/human-focus.jpg";
+import heroEcosystemSrc from "@/assets/home-ecosystem.jpg";
+import bvPlatformSrc from "@/assets/bv-platform.jpg";
+import humanCoachingSrc from "@/assets/human-coaching.jpg";
+import humanFocusSrc from "@/assets/human-focus.jpg";
+
+const CACHE_BUST = `v=${Date.now()}`;
+const heroEcosystem = `${heroEcosystemSrc}?${CACHE_BUST}`;
+const bvPlatform = `${bvPlatformSrc}?${CACHE_BUST}`;
+const humanCoaching = `${humanCoachingSrc}?${CACHE_BUST}`;
+const humanFocus = `${humanFocusSrc}?${CACHE_BUST}`;
 import {
   BackgroundFX,
   Footer,
