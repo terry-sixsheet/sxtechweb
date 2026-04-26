@@ -69,18 +69,23 @@ function Index() {
 
 function Hero() {
   return (
-    <section id="top" className="relative mx-auto max-w-7xl px-6 pt-24 pb-32 md:pt-36 md:pb-40">
-      {/* Background logo watermark + ambient glows */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle_at_center,color-mix(in_oklab,var(--brand-indigo)_35%,transparent),transparent_70%)] blur-2xl" />
+    <section id="top" className="relative isolate mx-auto mt-0 max-w-7xl overflow-hidden rounded-b-[2rem] px-6 pt-24 pb-32 md:pt-36 md:pb-40">
+      <img
+        src={heroEcosystem}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-65"
+      />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-background via-background/75 to-background/35" />
+      <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden">
         <img
           src={sxLogo}
           alt=""
           aria-hidden
-          className="absolute left-1/2 top-1/2 w-[min(80vw,720px)] -translate-x-1/2 -translate-y-1/2 opacity-[0.07] blur-[1px] select-none"
+          className="absolute left-1/2 top-1/2 w-[min(70vw,620px)] -translate-x-1/2 -translate-y-1/2 opacity-[0.06] blur-[1px] select-none"
         />
       </div>
-      <div className="mx-auto max-w-4xl text-center">
+      <div className="relative z-20 mx-auto max-w-4xl text-center">
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur">
           <Sparkles className="h-3.5 w-3.5 text-[color:var(--brand-cyan)]" />
           The Transformation Company
@@ -119,7 +124,7 @@ function Hero() {
       </div>
 
       {/* Hero stat band */}
-      <div className="mx-auto mt-20 grid max-w-5xl grid-cols-2 gap-px overflow-hidden rounded-3xl border border-border bg-border/60 md:grid-cols-4">
+      <div className="relative z-20 mx-auto mt-20 grid max-w-5xl grid-cols-2 gap-px overflow-hidden rounded-3xl border border-border bg-border/60 md:grid-cols-4">
         {[
           { k: "Strategic", v: "Intelligence" },
           { k: "Human", v: "Depth" },
