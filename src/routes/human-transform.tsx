@@ -288,22 +288,22 @@ function SXHuman() {
 function CTA() {
   return (
     <Section>
-      <div className="relative mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-border bg-card/40 px-8 py-20 text-center backdrop-blur md:px-16 md:py-24">
+      <div className="relative isolate mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-border bg-card/40 px-8 py-20 text-center backdrop-blur md:px-16 md:py-24">
         <img
           src={heroHuman}
           alt=""
           aria-hidden
           loading="lazy"
-          className="absolute inset-0 -z-20 h-full w-full object-cover opacity-30"
+          className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-40"
         />
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-gradient-to-t from-background via-background/80 to-background/40"
+          className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-t from-background/95 via-background/70 to-background/50"
         />
-        <h2 className="text-balance text-3xl font-bold tracking-tight md:text-4xl">
+        <h2 className="relative text-balance text-3xl font-bold tracking-tight md:text-4xl">
           Evolve the leader. Unlock the system.
         </h2>
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="relative mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
             asChild
             size="lg"
