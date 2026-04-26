@@ -19,6 +19,9 @@ import {
   Nav,
   Section,
 } from "@/components/site/Shell";
+import heroTech from "@/assets/hero-tech.jpg";
+import bvVenture from "@/assets/bv-venture.jpg";
+import bvGrowth from "@/assets/bv-growth.jpg";
 
 export const Route = createFileRoute("/business-ventures")({
   head: () => ({
@@ -74,7 +77,63 @@ function PageHero() {
           transforming companies into compounding revenue engines.
         </p>
       </div>
+
+      <div className="relative mx-auto mt-14 max-w-5xl">
+        <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-primary opacity-25 blur-3xl" />
+        <div
+          className="rounded-[2rem] p-px"
+          style={{
+            backgroundImage:
+              "linear-gradient(140deg, color-mix(in oklab, var(--brand-indigo) 60%, transparent), color-mix(in oklab, var(--brand-cyan) 40%, transparent) 50%, transparent 90%)",
+          }}
+        >
+          <div className="overflow-hidden rounded-[1.95rem] border border-border bg-card/40 backdrop-blur">
+            <img
+              src={heroTech}
+              alt="Neural network visualizing strategic intelligence and platforms"
+              loading="lazy"
+              width={1600}
+              height={900}
+              className="h-auto w-full opacity-95"
+            />
+          </div>
+        </div>
+      </div>
     </section>
+  );
+}
+
+function ImageBand() {
+  const items = [
+    { src: bvVenture, alt: "Founder reading live venture dashboards", label: "Venture Studio" },
+    { src: bvGrowth, alt: "Compounding growth visualization", label: "Compounding Growth" },
+  ];
+  return (
+    <Section>
+      <div className="grid gap-6 md:grid-cols-2">
+        {items.map((it) => (
+          <div
+            key={it.label}
+            className="group relative overflow-hidden rounded-3xl border border-border bg-card/40 backdrop-blur"
+          >
+            <img
+              src={it.src}
+              alt={it.alt}
+              loading="lazy"
+              width={1400}
+              height={900}
+              className="h-72 w-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-[1.04]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-cyan)]">
+                {it.label}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Section>
   );
 }
 
