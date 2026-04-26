@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   Brain,
@@ -245,6 +245,8 @@ function WhatWeDo() {
             "Domain expertise",
           ]}
           icon={Cpu}
+          href="/business-ventures"
+          ctaLabel="Business & Ventures Transform"
         />
         <PillarCard
           tag="SX HUMAN"
@@ -257,6 +259,8 @@ function WhatWeDo() {
             "Sustained performance",
           ]}
           icon={Brain}
+          href="/human-transform"
+          ctaLabel="Human Transform"
         />
       </div>
     </Section>
@@ -270,6 +274,8 @@ function PillarCard({
   note,
   outputs,
   icon: Icon,
+  href,
+  ctaLabel,
 }: {
   tag: string;
   subtitle: string;
@@ -277,6 +283,8 @@ function PillarCard({
   note: string;
   outputs: string[];
   icon: React.ComponentType<{ className?: string }>;
+  href: "/business-ventures" | "/human-transform";
+  ctaLabel: string;
 }) {
   return (
     <GradientCard>
@@ -310,6 +318,12 @@ function PillarCard({
           </li>
         ))}
       </ul>
+      <Link
+        to={href}
+        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand-cyan)] transition-colors hover:text-foreground"
+      >
+        {ctaLabel} <ArrowRight className="h-4 w-4" />
+      </Link>
     </GradientCard>
   );
 }
