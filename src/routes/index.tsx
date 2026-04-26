@@ -22,6 +22,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import sxLogo from "@/assets/sx-logo.png";
+import heroEcosystem from "@/assets/home-ecosystem.jpg";
+import bvPlatform from "@/assets/bv-platform.jpg";
+import humanCoaching from "@/assets/human-coaching.jpg";
+import humanFocus from "@/assets/human-focus.jpg";
 import {
   BackgroundFX,
   Footer,
@@ -126,6 +130,29 @@ function Hero() {
             <div className="mt-1 text-lg font-semibold">{s.v}</div>
           </div>
         ))}
+      </div>
+
+      {/* Hero showcase image */}
+      <div className="relative mx-auto mt-16 max-w-5xl">
+        <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-primary opacity-20 blur-3xl" />
+        <div
+          className="rounded-[2rem] p-px"
+          style={{
+            backgroundImage:
+              "linear-gradient(140deg, color-mix(in oklab, var(--brand-indigo) 60%, transparent), color-mix(in oklab, var(--brand-cyan) 40%, transparent) 50%, transparent 90%)",
+          }}
+        >
+          <div className="overflow-hidden rounded-[1.95rem] border border-border bg-card/40 backdrop-blur">
+            <img
+              src={heroEcosystem}
+              alt="The SX Transformation Ecosystem visualized as a global network"
+              loading="lazy"
+              width={1920}
+              height={1080}
+              className="h-auto w-full opacity-90 mix-blend-screen"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
