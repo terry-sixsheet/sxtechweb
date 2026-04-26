@@ -65,8 +65,15 @@ function HumanTransformPage() {
 
 function PageHero() {
   return (
-    <section className="relative mx-auto max-w-7xl px-6 pt-20 pb-8 md:pt-28 md:pb-12">
-      <div className="mx-auto max-w-3xl text-center">
+    <section className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-6 py-24 md:mt-8 md:py-32">
+      <img
+        src={heroHuman}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-65"
+      />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-background via-background/75 to-background/35" />
+      <div className="relative z-20 mx-auto max-w-3xl text-center">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
           <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
           Human Transform

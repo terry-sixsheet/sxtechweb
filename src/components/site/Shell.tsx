@@ -28,7 +28,7 @@ export function BackgroundFX() {
 export function Nav() {
   const links: Array<{ to: string; label: string; hash?: string }> = [
     { to: "/", hash: "approach", label: "SX TRANS" },
-    { to: "/business-ventures", label: "Business & Ventures" },
+    { to: "/business-ventures", label: "Business Transform" },
     { to: "/human-transform", label: "Human Transform" },
     { to: "/ventures", label: "Ventures Studio" },
   ];
