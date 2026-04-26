@@ -1074,4 +1074,3 @@ function Footer() {
     </footer>
   );
 }
-}
