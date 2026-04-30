@@ -5,10 +5,14 @@ import {
   Workflow,
   Activity,
   Gauge,
-  CheckCircle2,
+  Zap,
+  AlertTriangle,
+  Layers3,
+  RefreshCw,
+  Anchor,
+  Flame,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   BackgroundFX,
   Footer,
@@ -17,30 +21,24 @@ import {
   Section,
 } from "@/components/site/Shell";
 import heroHumanSrc from "@/assets/hero-human.jpg";
-import humanMindSrc from "@/assets/human-mind.jpg";
-import humanCoachingSrc from "@/assets/human-coaching.jpg";
-import humanFocusSrc from "@/assets/human-focus.jpg";
 
 const CACHE_BUST = `v=${Date.now()}`;
 const heroHuman = `${heroHumanSrc}?${CACHE_BUST}`;
-const humanMind = `${humanMindSrc}?${CACHE_BUST}`;
-const humanCoaching = `${humanCoachingSrc}?${CACHE_BUST}`;
-const humanFocus = `${humanFocusSrc}?${CACHE_BUST}`;
 
 export const Route = createFileRoute("/human-transform")({
   head: () => ({
     meta: [
-      { title: "Human Transform — SX Transformation" },
+      { title: "HUMAN™ — Operator Upgrade | SX Transformation" },
       {
         name: "description",
         content:
-          "SX Human: Mind Longevity for Leaders. A Human Operating System for high-performance leaders — clarity, decision power, and sustained performance.",
+          "Your business is not the bottleneck. You are. Upgrade how you think, decide, and perform under pressure.",
       },
-      { property: "og:title", content: "Human Transform — SX Transformation" },
+      { property: "og:title", content: "HUMAN™ — Operator Upgrade | SX Transformation" },
       {
         property: "og:description",
         content:
-          "We upgrade the operator behind the system. Better decisions, complexity handled, performance sustained.",
+          "Not coaching. Not wellness. A cognitive system designed inside real business pressure.",
       },
     ],
   }),
@@ -54,8 +52,12 @@ function HumanTransformPage() {
       <Nav />
       <main className="relative">
         <PageHero />
-        <SXHuman />
-        <ImageBand />
+        <Problem />
+        <BreakCategory />
+        <WhatWeDo />
+        <Framework />
+        <SystemFlow />
+        <Reality />
         <CTA />
       </main>
       <Footer />
@@ -65,59 +67,60 @@ function HumanTransformPage() {
 
 function PageHero() {
   return (
-    <section className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-6 py-24 md:mt-8 md:py-32">
+    <section className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-6 py-32 md:mt-8 md:py-44">
       <img
         src={heroHuman}
         alt=""
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-65"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-55"
       />
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-background via-background/75 to-background/35" />
-      <div className="relative z-20 mx-auto max-w-3xl text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
-          <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
-          Human Transform
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-background via-background/85 to-background/40" />
+      <div className="relative z-20 mx-auto max-w-4xl text-center">
+        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-emerald-300 backdrop-blur">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          HUMAN™ — Operator Upgrade
         </div>
-        <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight md:text-6xl">
-          Mind Longevity for <span className="text-gradient">Leaders</span>
+        <h1 className="text-balance text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl">
+          Your business is not the bottleneck.
+          <br />
+          <span className="text-emerald-400">You are.</span>
         </h1>
-        <p className="mx-auto mt-5 max-w-2xl text-pretty text-base text-muted-foreground md:text-lg">
-          Most transformations fail because the business changes, but the
-          leader does not. We upgrade the operator behind the system.
+        <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg text-muted-foreground md:text-xl">
+          Upgrade how you think, decide, and perform under pressure.
         </p>
       </div>
     </section>
   );
 }
 
-function ImageBand() {
+function Problem() {
   const items = [
-    { src: humanCoaching, alt: "Two leaders in coaching dialogue", label: "1:1 Coaching" },
-    { src: humanMind, alt: "Glowing neural brain visualization", label: "Cognitive System" },
-    { src: humanFocus, alt: "Calm flowing energy waves", label: "Focus & Clarity" },
+    { icon: Layers3, label: "More complexity" },
+    { icon: AlertTriangle, label: "More decisions" },
+    { icon: Flame, label: "Less clarity" },
   ];
   return (
-    <Section>
-      <div className="grid gap-6 md:grid-cols-3">
+    <Section
+      eyebrow="The real bottleneck"
+      title={
+        <>
+          The business evolves.
+          <br />
+          The leader does not.
+        </>
+      }
+      subtitle="Most transformations fail not because of strategy — but because the operator behind it stays the same."
+    >
+      <div className="grid gap-5 md:grid-cols-3">
         {items.map((it) => (
           <div
             key={it.label}
-            className="group relative overflow-hidden rounded-3xl border border-border bg-card/40 backdrop-blur"
+            className="rounded-3xl border border-border bg-card/50 p-8 text-center backdrop-blur"
           >
-            <img
-              src={it.src}
-              alt={it.alt}
-              loading="lazy"
-              width={1400}
-              height={900}
-              className="h-64 w-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-[1.04]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-cyan)]">
-                {it.label}
-              </div>
+            <div className="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-emerald-500/15 text-emerald-300">
+              <it.icon className="h-5 w-5" />
             </div>
+            <div className="mt-5 text-xl font-bold">{it.label}</div>
           </div>
         ))}
       </div>
@@ -125,174 +128,149 @@ function ImageBand() {
   );
 }
 
-function SXHuman() {
+function BreakCategory() {
+  const traditional = ["Awareness", "Retreat", "Theory"];
+  const us = ["Cognitive system design", "Real business pressure", "Decision optimization"];
+  return (
+    <Section
+      eyebrow="Category break"
+      title={<>This is not coaching. Not wellness.</>}
+    >
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="rounded-3xl border border-dashed border-border bg-transparent p-8">
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            Traditional
+          </div>
+          <ul className="mt-6 space-y-3">
+            {traditional.map((t) => (
+              <li key={t} className="text-lg text-muted-foreground line-through">
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="rounded-3xl border border-emerald-500/40 bg-emerald-500/5 p-8 backdrop-blur">
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">
+            HUMAN™
+          </div>
+          <ul className="mt-6 space-y-3">
+            {us.map((t) => (
+              <li key={t} className="flex items-center gap-3 text-lg font-semibold">
+                <Zap className="h-5 w-5 text-emerald-400" />
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function WhatWeDo() {
+  const outputs = ["Faster decisions", "Clear thinking", "High performance"];
+  return (
+    <Section
+      eyebrow="What we do"
+      title={<>We redesign how leaders operate.</>}
+    >
+      <div className="grid gap-5 md:grid-cols-3">
+        {outputs.map((o) => (
+          <GradientCard key={o}>
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">
+              Output
+            </div>
+            <div className="mt-4 text-3xl font-bold leading-tight">{o}</div>
+          </GradientCard>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function Framework() {
   const framework = [
-    { k: "Think", v: "Cognitive input · Pattern recognition", icon: Brain },
-    { k: "Decide", v: "Decision system mapping", icon: Workflow },
-    { k: "Perform", v: "Execution · Energy management", icon: Activity },
-    { k: "Sustain", v: "Anti-burnout · Continuous optimization", icon: Gauge },
-  ];
-  const layers = [
-    {
-      title: "Align",
-      points: [
-        "Cognitive pattern analysis",
-        "Decision-making system mapping",
-        "Energy & performance diagnostics",
-      ],
-      output: "Personal Operating System Blueprint",
-    },
-    {
-      title: "Reset",
-      points: [
-        "Energy management system (sleep / stress / rhythm)",
-        "Focus & clarity architecture",
-        "Anti-burnout protocol",
-      ],
-      output: "Daily / weekly execution system",
-    },
-    {
-      title: "Integrate",
-      points: [
-        "Deep transformation experience (1–3 day reset)",
-        "Cognitive & emotional recalibration",
-      ],
-      output: "State shift and clarity reset",
-    },
-    {
-      title: "Sustain",
-      points: [
-        "Ongoing advisory",
-        "Performance tracking system",
-        "Feedback loops",
-      ],
-      output: "Long-term performance upgrade",
-    },
+    { k: "Think", icon: Brain },
+    { k: "Decide", icon: Workflow },
+    { k: "Perform", icon: Activity },
+    { k: "Sustain", icon: Gauge },
   ];
   return (
     <Section
-      eyebrow="SX Human"
-      title={<>The Human Operating System</>}
-      subtitle="A system for clarity, decision-making, and sustained performance — built for the operators of complex growth."
+      eyebrow="Framework"
+      title={<>Think · Decide · Perform · Sustain.</>}
     >
-      <div className="mb-14 grid gap-6 md:grid-cols-2">
-        <Card className="rounded-3xl border-border/80 bg-card/50 backdrop-blur">
-          <CardContent className="p-8">
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              Leaders Upgrade
-            </div>
-            <ul className="mt-4 space-y-2 text-foreground/90">
-              <li>· Technology</li>
-              <li>· Strategy</li>
-              <li>· Teams</li>
-            </ul>
-          </CardContent>
-        </Card>
-        <GradientCard>
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-cyan)]">
-            But Do Not Upgrade
-          </div>
-          <ul className="mt-4 space-y-2 font-medium">
-            <li>· Cognitive system</li>
-            <li>· Decision-making architecture</li>
-          </ul>
-          <p className="mt-5 rounded-xl border border-border bg-background/40 p-4 text-sm italic text-foreground/90">
-            → Result: bottleneck in scaling.
-          </p>
-        </GradientCard>
-      </div>
-
-      <div className="mb-14 grid gap-6 md:grid-cols-2">
-        <Card className="rounded-3xl border-dashed border-border bg-transparent">
-          <CardContent className="p-8">
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              What This Is Not
-            </div>
-            <p className="mt-3 text-lg text-muted-foreground line-through">
-              Wellness · Traditional coaching
-            </p>
-          </CardContent>
-        </Card>
-        <GradientCard>
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-cyan)]">
-            What This Is
-          </div>
-          <p className="mt-3 text-xl font-semibold leading-snug">
-            A Human Operating System for high-performance leaders.
-          </p>
-        </GradientCard>
-      </div>
-
-      <div className="mb-14">
-        <div className="mb-6 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          Framework
-        </div>
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {framework.map((f) => (
-            <Card
-              key={f.k}
-              className="rounded-3xl border-border/80 bg-card/50 backdrop-blur"
-            >
-              <CardContent className="p-6">
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
-                  <f.icon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-5 text-xl font-bold">{f.k}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{f.v}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-
-      <div className="mb-14">
-        <div className="mb-6 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          System Layers
-        </div>
-        <div className="grid gap-5 md:grid-cols-2">
-          {layers.map((l, i) => (
-            <GradientCard key={l.title}>
-              <div className="flex items-center gap-3">
-                <div className="grid h-10 w-10 place-items-center rounded-xl bg-background/40 text-sm font-bold text-[color:var(--brand-cyan)]">
-                  0{i + 1}
-                </div>
-                <h3 className="text-xl font-semibold">{l.title}</h3>
-              </div>
-              <ul className="mt-5 space-y-2.5">
-                {l.points.map((p) => (
-                  <li
-                    key={p}
-                    className="flex items-start gap-2.5 text-sm text-muted-foreground"
-                  >
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--brand-cyan)]" />
-                    <span>{p}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-6 rounded-xl border border-border bg-background/40 p-4 text-sm">
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                  Output ·
-                </span>{" "}
-                <span className="font-medium">{l.output}</span>
-              </div>
-            </GradientCard>
-          ))}
-        </div>
-      </div>
-
-      <div className="grid gap-4 md:grid-cols-3">
-        {[
-          "Better decisions",
-          "Handle complexity",
-          "Sustain high performance without burnout",
-        ].map((o) => (
+      <div className="grid gap-5 md:grid-cols-4">
+        {framework.map((f) => (
           <div
-            key={o}
-            className="rounded-2xl border border-border bg-card/50 p-6 text-center backdrop-blur"
+            key={f.k}
+            className="rounded-3xl border border-border bg-card/50 p-8 text-center backdrop-blur"
           >
-            <div className="text-base font-semibold">{o}</div>
+            <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-emerald-500/15 text-emerald-300">
+              <f.icon className="h-6 w-6" />
+            </div>
+            <div className="mt-6 text-2xl font-bold">{f.k}</div>
           </div>
         ))}
+      </div>
+    </Section>
+  );
+}
+
+function SystemFlow() {
+  const steps = [
+    { k: "Align", v: "Map cognition. Diagnose bottlenecks.", icon: Anchor },
+    { k: "Reset", v: "Recalibrate energy and clarity.", icon: RefreshCw },
+    { k: "Integrate", v: "Install new operating patterns.", icon: Workflow },
+    { k: "Sustain", v: "Lock in performance over time.", icon: Gauge },
+  ];
+  return (
+    <Section
+      eyebrow="System"
+      title={<>Built like a system. Not a session.</>}
+    >
+      <div className="grid gap-5 md:grid-cols-4">
+        {steps.map((s, i) => (
+          <div
+            key={s.k}
+            className="relative rounded-3xl border border-border bg-card/50 p-7 backdrop-blur"
+          >
+            <div className="text-xs font-semibold tracking-[0.2em] text-emerald-300">
+              0{i + 1}
+            </div>
+            <div className="mt-3 grid h-11 w-11 place-items-center rounded-xl bg-emerald-500/15 text-emerald-300">
+              <s.icon className="h-5 w-5" />
+            </div>
+            <div className="mt-5 text-2xl font-bold">{s.k}</div>
+            <div className="mt-2 text-sm text-muted-foreground">{s.v}</div>
+            {i < steps.length - 1 && (
+              <ArrowRight className="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-emerald-400 md:block" />
+            )}
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function Reality() {
+  const items = ["Not a retreat", "Not theory", "Real execution environment"];
+  return (
+    <Section eyebrow="Reality">
+      <div className="mx-auto max-w-4xl rounded-[2rem] border border-emerald-500/30 bg-emerald-500/5 p-10 text-center backdrop-blur md:p-16">
+        <h2 className="text-balance text-3xl font-bold leading-tight tracking-tight md:text-5xl">
+          This runs inside <span className="text-emerald-400">real business pressure.</span>
+        </h2>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {items.map((i) => (
+            <div
+              key={i}
+              className="rounded-2xl border border-border bg-background/40 p-5 text-base font-semibold"
+            >
+              {i}
+            </div>
+          ))}
+        </div>
       </div>
     </Section>
   );
@@ -301,38 +279,30 @@ function SXHuman() {
 function CTA() {
   return (
     <Section>
-      <div className="relative isolate mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-border bg-card/40 px-8 py-20 text-center backdrop-blur md:px-16 md:py-24">
+      <div className="relative isolate mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-border bg-card/40 px-8 py-24 text-center backdrop-blur md:px-16 md:py-28">
         <img
           src={heroHuman}
           alt=""
           aria-hidden
           loading="lazy"
-          className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-50"
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-45"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-background/95 via-background/70 to-background/40"
+          className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-background/95 via-background/75 to-background/40"
         />
-        <h2 className="relative z-20 text-balance text-3xl font-bold tracking-tight md:text-4xl">
-          Evolve the leader. Unlock the system.
+        <h2 className="relative z-20 text-balance text-4xl font-bold tracking-tight md:text-5xl">
+          Upgrade your <span className="text-emerald-400">operating system.</span>
         </h2>
-        <div className="relative z-20 mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="relative z-20 mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
             asChild
             size="lg"
-            className="h-12 rounded-full bg-gradient-primary px-7 text-base font-semibold text-white shadow-glow hover:opacity-95"
+            className="h-12 rounded-full bg-emerald-500 px-8 text-base font-semibold text-emerald-950 shadow-[0_0_40px_-10px_theme(colors.emerald.400)] hover:bg-emerald-400"
           >
             <Link to="/contact">
-              Start a Project <ArrowRight className="ml-2 h-4 w-4" />
+              Apply for Program <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="h-12 rounded-full border-border bg-card/40 px-7 text-base font-semibold backdrop-blur hover:bg-card"
-          >
-            <Link to="/business-ventures">Explore Business &amp; Ventures</Link>
           </Button>
         </div>
       </div>
