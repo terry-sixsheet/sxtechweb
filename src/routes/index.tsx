@@ -573,17 +573,9 @@ function FinalCTA() {
                 size="lg"
                 className="h-13 rounded-full bg-gradient-primary px-8 py-6 text-base font-semibold text-white shadow-glow transition-transform hover:scale-[1.02] hover:opacity-95"
               >
-                <a href="mailto:hello@sxtrans.com">
+                <Link to="/contact">
                   Start a Project <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="h-13 rounded-full border-border bg-card/40 px-8 py-6 text-base font-semibold backdrop-blur hover:bg-card"
-              >
-                <a href="mailto:hello@sxtrans.com">Talk to Us</a>
+                </Link>
               </Button>
             </div>
           </div>
