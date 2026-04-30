@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VenturesRouteImport } from './routes/ventures'
 import { Route as HumanTransformRouteImport } from './routes/human-transform'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BusinessVenturesRouteImport } from './routes/business-ventures'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,6 +23,11 @@ const VenturesRoute = VenturesRouteImport.update({
 const HumanTransformRoute = HumanTransformRouteImport.update({
   id: '/human-transform',
   path: '/human-transform',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BusinessVenturesRoute = BusinessVenturesRouteImport.update({
@@ -38,12 +44,14 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/business-ventures': typeof BusinessVenturesRoute
+  '/contact': typeof ContactRoute
   '/human-transform': typeof HumanTransformRoute
   '/ventures': typeof VenturesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/business-ventures': typeof BusinessVenturesRoute
+  '/contact': typeof ContactRoute
   '/human-transform': typeof HumanTransformRoute
   '/ventures': typeof VenturesRoute
 }
@@ -51,20 +59,33 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/business-ventures': typeof BusinessVenturesRoute
+  '/contact': typeof ContactRoute
   '/human-transform': typeof HumanTransformRoute
   '/ventures': typeof VenturesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/business-ventures' | '/human-transform' | '/ventures'
+  fullPaths:
+    | '/'
+    | '/business-ventures'
+    | '/contact'
+    | '/human-transform'
+    | '/ventures'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/business-ventures' | '/human-transform' | '/ventures'
-  id: '__root__' | '/' | '/business-ventures' | '/human-transform' | '/ventures'
+  to: '/' | '/business-ventures' | '/contact' | '/human-transform' | '/ventures'
+  id:
+    | '__root__'
+    | '/'
+    | '/business-ventures'
+    | '/contact'
+    | '/human-transform'
+    | '/ventures'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BusinessVenturesRoute: typeof BusinessVenturesRoute
+  ContactRoute: typeof ContactRoute
   HumanTransformRoute: typeof HumanTransformRoute
   VenturesRoute: typeof VenturesRoute
 }
@@ -83,6 +104,13 @@ declare module '@tanstack/react-router' {
       path: '/human-transform'
       fullPath: '/human-transform'
       preLoaderRoute: typeof HumanTransformRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/business-ventures': {
@@ -105,6 +133,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BusinessVenturesRoute: BusinessVenturesRoute,
+  ContactRoute: ContactRoute,
   HumanTransformRoute: HumanTransformRoute,
   VenturesRoute: VenturesRoute,
 }

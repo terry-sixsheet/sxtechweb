@@ -1,0 +1,253 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import {
+  ArrowRight,
+  Mail,
+  Phone,
+  Facebook,
+  Instagram,
+  MapPin,
+  Building2,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  BackgroundFX,
+  Footer,
+  GradientCard,
+  Nav,
+  Section,
+} from "@/components/site/Shell";
+
+export const Route = createFileRoute("/contact")({
+  head: () => ({
+    meta: [
+      { title: "Contact Us — SX Transformation" },
+      {
+        name: "description",
+        content:
+          "Talk to the SX Transformation team. Email, phone, social, and our founders — let’s build your next growth system.",
+      },
+      { property: "og:title", content: "Contact Us — SX Transformation" },
+      {
+        property: "og:description",
+        content: "Let’s build your next growth system — together.",
+      },
+    ],
+  }),
+  component: ContactPage,
+});
+
+function ContactPage() {
+  return (
+    <div className="min-h-screen bg-background text-foreground antialiased">
+      <BackgroundFX />
+      <Nav />
+      <main className="relative">
+        <Hero />
+        <ContactGrid />
+        <Founders />
+        <CompanyMap />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="relative mx-auto max-w-7xl px-6 pt-20 pb-12 md:pt-28 md:pb-16">
+      <div className="mx-auto max-w-3xl text-center">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
+          <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
+          Contact Us
+        </div>
+        <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight md:text-6xl">
+          Let’s build your{" "}
+          <span className="text-gradient">next growth system.</span>
+        </h1>
+        <p className="mx-auto mt-5 max-w-2xl text-pretty text-base text-muted-foreground md:text-lg">
+          Tell us about your venture, your system, or your leadership challenge.
+          We’ll reply within one business day.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function ContactGrid() {
+  const items = [
+    {
+      icon: Mail,
+      label: "Email",
+      value: "hello@sxtrans.com",
+      href: "mailto:hello@sxtrans.com",
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: "+66 (0)2 000 0000",
+      href: "tel:+6620000000",
+    },
+    {
+      icon: Facebook,
+      label: "Facebook",
+      value: "facebook.com/sxtransformation",
+      href: "https://facebook.com/sxtransformation",
+    },
+    {
+      icon: Instagram,
+      label: "Instagram",
+      value: "@sxtransformation",
+      href: "https://instagram.com/sxtransformation",
+    },
+    {
+      icon: MapPin,
+      label: "Office",
+      value: "Bangkok, Thailand",
+      href: "https://maps.google.com/?q=Bangkok+Thailand",
+    },
+    {
+      icon: Building2,
+      label: "Company",
+      value: "SX Transformation Co., Ltd.",
+      href: null,
+    },
+  ];
+  return (
+    <Section>
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {items.map((it) => {
+          const inner = (
+            <div className="flex h-full items-start gap-4 rounded-[20px] border border-border bg-card/50 p-7 backdrop-blur transition-colors hover:border-[color:var(--brand-indigo)]">
+              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+                <it.icon className="h-5 w-5" />
+              </div>
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                  {it.label}
+                </div>
+                <div className="mt-1 text-base font-semibold text-foreground">
+                  {it.value}
+                </div>
+              </div>
+            </div>
+          );
+          return it.href ? (
+            <a
+              key={it.label}
+              href={it.href}
+              target={it.href.startsWith("http") ? "_blank" : undefined}
+              rel={it.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="block"
+            >
+              {inner}
+            </a>
+          ) : (
+            <div key={it.label}>{inner}</div>
+          );
+        })}
+      </div>
+    </Section>
+  );
+}
+
+function Founders() {
+  const people = [
+    {
+      name: "Alex Suriyawong",
+      role: "Co-Founder · Systems & Ventures",
+      bio: "Builds platforms and revenue systems. Previously led product at high-growth ventures across Southeast Asia.",
+      initials: "AS",
+    },
+    {
+      name: "Dr. Mira Chen",
+      role: "Co-Founder · Human Performance",
+      bio: "Designs operating systems for leaders. Background in cognitive science and executive coaching.",
+      initials: "MC",
+    },
+    {
+      name: "Ken Phongsak",
+      role: "Co-Founder · Strategy & Growth",
+      bio: "Architects business growth and go-to-market. Operator across fintech, martech, and AI.",
+      initials: "KP",
+    },
+  ];
+  return (
+    <Section
+      eyebrow="Founders"
+      title={<>The people behind <span className="text-gradient">the system.</span></>}
+    >
+      <div className="grid gap-6 md:grid-cols-3">
+        {people.map((p) => (
+          <GradientCard key={p.name}>
+            <div className="flex items-center gap-4">
+              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-primary text-base font-bold text-white shadow-glow">
+                {p.initials}
+              </div>
+              <div>
+                <h3 className="text-lg font-bold leading-tight">{p.name}</h3>
+                <div className="text-sm text-[color:var(--brand-cyan)]">
+                  {p.role}
+                </div>
+              </div>
+            </div>
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+              {p.bio}
+            </p>
+          </GradientCard>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function CompanyMap() {
+  return (
+    <Section>
+      <div className="overflow-hidden rounded-[28px] border border-border bg-card/40 backdrop-blur">
+        <div className="grid gap-0 md:grid-cols-2">
+          <div className="p-8 md:p-12">
+            <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-cyan)]">
+              Company
+            </div>
+            <h3 className="mt-3 text-2xl font-bold tracking-tight md:text-3xl">
+              SX Transformation Co., Ltd.
+            </h3>
+            <p className="mt-4 text-sm text-muted-foreground">
+              A transformation company combining technology and human
+              performance. We build revenue systems and upgrade the leaders
+              behind them.
+            </p>
+            <div className="mt-6 space-y-2 text-sm text-foreground/90">
+              <div>· Tax ID: 0-0000-00000-00-0</div>
+              <div>· Address: Bangkok, Thailand</div>
+              <div>· Hours: Mon–Fri · 09:00–18:00 ICT</div>
+            </div>
+            <Button
+              asChild
+              className="mt-8 h-12 rounded-full bg-gradient-primary px-7 text-base font-semibold text-white shadow-glow hover:opacity-95"
+            >
+              <a href="mailto:hello@sxtrans.com">
+                Start a Project <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+          <div className="relative min-h-[320px] md:min-h-full">
+            <iframe
+              title="SX Transformation Office"
+              src="https://www.google.com/maps?q=Bangkok+Thailand&output=embed"
+              loading="lazy"
+              className="absolute inset-0 h-full w-full border-0 grayscale-[30%]"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="mt-12 text-center text-sm text-muted-foreground">
+        Prefer a different channel?{" "}
+        <Link to="/" className="text-foreground underline-offset-4 hover:underline">
+          Back to home
+        </Link>
+      </div>
+    </Section>
+  );
+}
