@@ -141,9 +141,24 @@ function CoreInsight() {
 /* ---------- 3. PROBLEM ---------- */
 function Problem() {
   const items = [
-    { icon: TrendingDown, label: "Growth is slowing" },
-    { icon: GitBranch, label: "Execution is fragmented" },
-    { icon: AlertTriangle, label: "Leadership is the bottleneck" },
+    {
+      icon: TrendingDown,
+      label: "Growth is slowing",
+      cutout: "GROWTH",
+      tone: "from-[color:var(--brand-cyan)]/40 to-transparent",
+    },
+    {
+      icon: GitBranch,
+      label: "Execution is fragmented",
+      cutout: "EXECUTION",
+      tone: "from-[color:var(--brand-indigo)]/45 to-transparent",
+    },
+    {
+      icon: AlertTriangle,
+      label: "Leadership is the bottleneck",
+      cutout: "LEADERSHIP",
+      tone: "from-[color:var(--brand-cyan)]/35 to-transparent",
+    },
   ];
   return (
     <section className="py-24 md:py-28">
@@ -152,12 +167,24 @@ function Problem() {
           {items.map((p) => (
             <div
               key={p.label}
-              className="flex items-center gap-4 rounded-[20px] border border-border bg-card/40 p-7 backdrop-blur"
+              className="group relative isolate overflow-hidden rounded-[20px] border border-border bg-card/40 p-7 backdrop-blur"
             >
-              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-border bg-background/50">
-                <p.icon className="h-5 w-5 text-[color:var(--brand-cyan)]" />
+              <div
+                aria-hidden
+                className={`pointer-events-none absolute inset-0 z-0 bg-gradient-to-br ${p.tone}`}
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-4 -bottom-6 z-0 select-none text-[6.5rem] font-black uppercase leading-none tracking-tighter text-foreground/[0.04]"
+              >
+                {p.cutout}
               </div>
-              <div className="text-lg font-semibold leading-snug">{p.label}</div>
+              <div className="relative z-10 flex items-center gap-4">
+                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-border bg-background/60">
+                  <p.icon className="h-5 w-5 text-[color:var(--brand-cyan)]" />
+                </div>
+                <div className="text-lg font-semibold leading-snug">{p.label}</div>
+              </div>
             </div>
           ))}
         </div>
@@ -323,7 +350,7 @@ function Proof() {
   const cases = [
     {
       icon: Camera,
-      name: "SX Snap",
+      name: "CAP*TURES Booth",
       desc: "SaaS photobooth platform",
       problem: "Fragmented event tech, no scalable backend.",
       built: "Built scalable system",
@@ -341,7 +368,7 @@ function Proof() {
     },
     {
       icon: Rocket,
-      name: "Future Venture",
+      name: "Your Ventures?",
       desc: "Co-built with founders",
       problem: "New category opportunity.",
       built: "Co-building new ventures",
