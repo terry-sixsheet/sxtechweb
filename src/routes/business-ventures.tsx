@@ -4,14 +4,18 @@ import {
   Cpu,
   Rocket,
   Network,
-  ShieldCheck,
   Zap,
   LineChart,
   Target,
   CheckCircle2,
+  Compass,
+  Hammer,
+  TrendingUp,
+  Sparkles,
+  Layers,
+  Coins,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   BackgroundFX,
   Footer,
@@ -31,20 +35,20 @@ const bvGrowth = `${bvGrowthSrc}?${CACHE_BUST}`;
 export const Route = createFileRoute("/business-ventures")({
   head: () => ({
     meta: [
-      { title: "Business & Ventures Transform — SX Transformation" },
+      { title: "TECH™ — Venture Builder | SX Transformation" },
       {
         name: "description",
         content:
-          "SX Tech: Technology Venture Builder. Build scalable digital platforms, deliver AI-driven transformation, and invest in synergistic technology ventures.",
+          "We build new revenue systems. Not just platforms. Venture building, AI systems, and execution — engineered as one transformation system.",
       },
       {
         property: "og:title",
-        content: "Business & Ventures Transform — SX Transformation",
+        content: "TECH™ — Venture Builder | SX Transformation",
       },
       {
         property: "og:description",
         content:
-          "Strategy + Build + Venture + Market Access + Domain Expertise = Full Loop Execution.",
+          "Design → Build → Activate → Scale. A full transformation system that turns companies into compounding revenue engines.",
       },
     ],
   }),
@@ -58,8 +62,11 @@ function BusinessVenturesPage() {
       <Nav />
       <main className="relative">
         <PageHero />
-        <SXTech />
-        <ImageBand />
+        <WhatWeCreate />
+        <SystemFlow />
+        <Services />
+        <Multiplier />
+        <Proof />
         <CTA />
       </main>
       <Footer />
@@ -69,56 +76,246 @@ function BusinessVenturesPage() {
 
 function PageHero() {
   return (
-    <section className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-6 py-24 md:mt-8 md:py-32">
+    <section className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-6 py-32 md:mt-8 md:py-44">
       <img
         src={heroTech}
         alt=""
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-65"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-60"
       />
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-background via-background/75 to-background/35" />
-      <div className="relative z-20 mx-auto max-w-3xl text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-background via-background/80 to-background/40" />
+      <div className="relative z-20 mx-auto max-w-4xl text-center">
+        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground backdrop-blur">
           <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
-          Business Transform
+          TECH™ — Venture Builder
         </div>
-        <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight md:text-6xl">
-          Technology <span className="text-gradient">Venture Builder</span>
+        <h1 className="text-balance text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl">
+          We build new <span className="text-gradient">revenue systems.</span>
+          <br />
+          Not just platforms.
         </h1>
-        <p className="mx-auto mt-5 max-w-2xl text-pretty text-base text-muted-foreground md:text-lg">
-          We design, build, activate, and connect new business systems —
-          transforming companies into compounding revenue engines.
+        <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg text-muted-foreground md:text-xl">
+          Venture building + AI systems + execution.
         </p>
       </div>
     </section>
   );
 }
 
-function ImageBand() {
+function WhatWeCreate() {
   const items = [
-    { src: bvVenture, alt: "Founder reading live venture dashboards", label: "Venture Studio" },
-    { src: bvGrowth, alt: "Compounding growth visualization", label: "Compounding Growth" },
+    { icon: Coins, title: "New revenue streams", desc: "Monetization engines, not just MVPs." },
+    { icon: Layers, title: "Scalable business systems", desc: "Operating systems built for compounding growth." },
+    { icon: Sparkles, title: "Venture assets", desc: "Equity-grade businesses, owned and operable." },
   ];
   return (
-    <Section>
-      <div className="grid gap-6 md:grid-cols-2">
+    <Section
+      eyebrow="What we create"
+      title={<>Outcomes, not deliverables.</>}
+    >
+      <div className="grid gap-6 md:grid-cols-3">
         {items.map((it) => (
+          <GradientCard key={it.title}>
+            <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+              <it.icon className="h-5 w-5" />
+            </div>
+            <h3 className="mt-6 text-2xl font-bold leading-tight">{it.title}</h3>
+            <p className="mt-3 text-sm text-muted-foreground">{it.desc}</p>
+          </GradientCard>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function SystemFlow() {
+  const steps = [
+    { k: "Design", v: "Revenue blueprint", icon: Compass },
+    { k: "Build", v: "Platform & AI", icon: Hammer },
+    { k: "Activate", v: "Venture & GTM", icon: Rocket },
+    { k: "Scale", v: "Ecosystem growth", icon: TrendingUp },
+  ];
+  return (
+    <Section
+      eyebrow="The System"
+      title={<>A full transformation system.</>}
+      subtitle="One connected flow — from blueprint to compounding growth."
+    >
+      <div className="relative grid gap-5 md:grid-cols-4">
+        {steps.map((s, i) => (
           <div
-            key={it.label}
-            className="group relative overflow-hidden rounded-3xl border border-border bg-card/40 backdrop-blur"
+            key={s.k}
+            className="relative rounded-3xl border border-border bg-card/50 p-7 backdrop-blur"
           >
-            <img
-              src={it.src}
-              alt={it.alt}
-              loading="lazy"
-              width={1400}
-              height={900}
-              className="h-72 w-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-[1.04]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-cyan)]">
-                {it.label}
+            <div className="text-xs font-semibold tracking-[0.2em] text-[color:var(--brand-cyan)]">
+              0{i + 1}
+            </div>
+            <div className="mt-3 grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+              <s.icon className="h-5 w-5" />
+            </div>
+            <div className="mt-5 text-2xl font-bold">{s.k}</div>
+            <div className="mt-1 text-sm text-muted-foreground">{s.v}</div>
+            {i < steps.length - 1 && (
+              <ArrowRight className="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-[color:var(--brand-cyan)] md:block" />
+            )}
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function Services() {
+  const services = [
+    {
+      title: "Venture Studio",
+      icon: Rocket,
+      copy: "We don't launch startups. We co-build and scale revenue engines.",
+    },
+    {
+      title: "Platform Builder",
+      icon: Cpu,
+      copy: "Not just software. Production-ready business systems.",
+    },
+    {
+      title: "Biz Growth Design",
+      icon: LineChart,
+      copy: "Not strategy decks. Executable revenue architecture.",
+    },
+  ];
+  return (
+    <Section
+      eyebrow="Capabilities"
+      title={<>Three layers. One system.</>}
+    >
+      <div className="grid gap-5 md:grid-cols-3">
+        {services.map((s) => (
+          <GradientCard key={s.title}>
+            <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+              <s.icon className="h-5 w-5" />
+            </div>
+            <h3 className="mt-6 text-2xl font-bold">{s.title}</h3>
+            <p className="mt-4 text-base leading-relaxed text-foreground/85">
+              {s.copy}
+            </p>
+          </GradientCard>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function Multiplier() {
+  const domains = ["Fintech", "AI", "Martech", "Blockchain"];
+  return (
+    <Section
+      eyebrow="Unfair advantage"
+      title={<>What gives us unfair advantage.</>}
+    >
+      <div className="grid gap-6 md:grid-cols-2">
+        <GradientCard>
+          <div className="flex items-center gap-3">
+            <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+              <Network className="h-5 w-5" />
+            </div>
+            <h3 className="text-2xl font-bold">Strategic access</h3>
+          </div>
+          <ul className="mt-6 space-y-3 text-base text-foreground/85">
+            <li className="flex gap-3"><Zap className="mt-1 h-4 w-4 shrink-0 text-[color:var(--brand-cyan)]" /> Ecosystem & key-player access</li>
+            <li className="flex gap-3"><Zap className="mt-1 h-4 w-4 shrink-0 text-[color:var(--brand-cyan)]" /> Speed of execution</li>
+            <li className="flex gap-3"><Zap className="mt-1 h-4 w-4 shrink-0 text-[color:var(--brand-cyan)]" /> Active deal flow</li>
+          </ul>
+        </GradientCard>
+        <GradientCard>
+          <div className="flex items-center gap-3">
+            <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+              <Target className="h-5 w-5" />
+            </div>
+            <h3 className="text-2xl font-bold">Domain expertise</h3>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-2.5">
+            {domains.map((d) => (
+              <span
+                key={d}
+                className="rounded-full border border-border bg-background/40 px-4 py-2 text-sm font-medium"
+              >
+                {d}
+              </span>
+            ))}
+          </div>
+          <p className="mt-6 text-sm text-muted-foreground">
+            Domain-driven system building — not generic consulting.
+          </p>
+        </GradientCard>
+      </div>
+    </Section>
+  );
+}
+
+function Proof() {
+  const cases = [
+    {
+      name: "SX Snap",
+      problem: "Events lacked compounding capture.",
+      built: "Live capture & content engine.",
+      result: "10× engagement, instant assets.",
+      img: bvVenture,
+    },
+    {
+      name: "KengSob",
+      problem: "Fragmented exam prep market.",
+      built: "AI learning platform & ecosystem.",
+      result: "Scaled to a national category.",
+      img: bvGrowth,
+    },
+    {
+      name: "Future venture",
+      problem: "Untapped revenue surface.",
+      built: "Co-built venture with us.",
+      result: "Your next compounding asset.",
+      img: heroTech,
+    },
+  ];
+  return (
+    <Section
+      eyebrow="Proof"
+      title={<>Built. Not just designed.</>}
+    >
+      <div className="grid gap-6 md:grid-cols-3">
+        {cases.map((c) => (
+          <div
+            key={c.name}
+            className="group relative overflow-hidden rounded-3xl border border-border bg-card/50 backdrop-blur"
+          >
+            <div className="relative h-44 overflow-hidden">
+              <img
+                src={c.img}
+                alt=""
+                aria-hidden
+                loading="lazy"
+                className="h-full w-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-[1.05]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+            </div>
+            <div className="p-7">
+              <div className="text-xl font-bold">{c.name}</div>
+              <dl className="mt-5 space-y-3 text-sm">
+                <div>
+                  <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Problem</dt>
+                  <dd className="mt-1 text-foreground/90">{c.problem}</dd>
+                </div>
+                <div>
+                  <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">System built</dt>
+                  <dd className="mt-1 text-foreground/90">{c.built}</dd>
+                </div>
+                <div>
+                  <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--brand-cyan)]">Result</dt>
+                  <dd className="mt-1 font-semibold">{c.result}</dd>
+                </div>
+              </dl>
+              <div className="mt-5 flex items-center gap-2 text-sm text-muted-foreground">
+                <CheckCircle2 className="h-4 w-4 text-[color:var(--brand-cyan)]" />
+                Live system
               </div>
             </div>
           </div>
@@ -128,186 +325,10 @@ function ImageBand() {
   );
 }
 
-function SXTech() {
-  const services = [
-    {
-      title: "Venture Studio",
-      icon: Rocket,
-      points: [
-        "Build startup or new business unit",
-        "Co-invest (equity / revenue share)",
-        "Go-to-market strategy",
-        "Venture creation and acceleration",
-      ],
-    },
-    {
-      title: "Platform Builder",
-      icon: Cpu,
-      points: [
-        "Full digital platform development",
-        "System modernization (legacy upgrade)",
-        "AI implementation squad",
-        "Production-ready systems",
-      ],
-    },
-    {
-      title: "Biz Growth Design",
-      icon: LineChart,
-      points: [
-        "Revenue blueprint",
-        "Business operating system design",
-        "Monetization (platform / ecosystem / subscription)",
-        "Transformation control tower",
-      ],
-    },
-    {
-      title: "Power Layer",
-      icon: ShieldCheck,
-      points: [
-        "Technology infrastructure",
-        "Data infrastructure",
-        "Scalable foundation for business",
-      ],
-    },
-  ];
-  const methodology = [
-    { k: "Design", v: "Business architecture" },
-    { k: "Build", v: "Platform creation" },
-    { k: "Activate", v: "Unlock partners & opportunities" },
-    { k: "Connect", v: "Convert system into revenue" },
-    { k: "Specialize", v: "Apply domain expertise" },
-  ];
-  const domains = ["Fintech", "Martech", "Event Tech", "AI Transformation", "Blockchain"];
-
-  return (
-    <Section
-      eyebrow="SX Tech"
-      title={<>Build, Activate, and Compound Growth</>}
-      subtitle="Build scalable digital platforms. Deliver AI-driven transformation. Invest in synergistic technology ventures."
-    >
-      <div className="mb-14">
-        <div className="mb-6 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          Service Framework
-        </div>
-        <div className="grid gap-5 md:grid-cols-2">
-          {services.map((s) => (
-            <GradientCard key={s.title}>
-              <div className="flex items-center gap-3">
-                <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
-                  <s.icon className="h-5 w-5" />
-                </div>
-                <h3 className="text-xl font-semibold">{s.title}</h3>
-              </div>
-              <ul className="mt-5 space-y-2.5">
-                {s.points.map((p) => (
-                  <li
-                    key={p}
-                    className="flex items-start gap-2.5 text-sm text-muted-foreground"
-                  >
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--brand-cyan)]" />
-                    <span>{p}</span>
-                  </li>
-                ))}
-              </ul>
-            </GradientCard>
-          ))}
-        </div>
-      </div>
-
-      <div className="mb-14">
-        <div className="mb-6 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          Core Methodology
-        </div>
-        <div className="grid gap-4 md:grid-cols-5">
-          {methodology.map((m, i) => (
-            <div
-              key={m.k}
-              className="rounded-2xl border border-border bg-card/50 p-5 backdrop-blur"
-            >
-              <div className="text-xs font-semibold tracking-[0.2em] text-[color:var(--brand-cyan)]">
-                STEP 0{i + 1}
-              </div>
-              <div className="mt-2 text-lg font-semibold">{m.k}</div>
-              <div className="mt-1 text-sm text-muted-foreground">{m.v}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="mb-14 grid gap-6 md:grid-cols-2">
-        <GradientCard>
-          <div className="flex items-center gap-3">
-            <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
-              <Network className="h-5 w-5" />
-            </div>
-            <h3 className="text-xl font-semibold">Strategic Access</h3>
-          </div>
-          <ul className="mt-5 space-y-2.5 text-sm text-muted-foreground">
-            <li className="flex gap-2.5"><Zap className="mt-0.5 h-4 w-4 text-[color:var(--brand-cyan)]" /> Ecosystem building</li>
-            <li className="flex gap-2.5"><Zap className="mt-0.5 h-4 w-4 text-[color:var(--brand-cyan)]" /> Access to key players</li>
-            <li className="flex gap-2.5"><Zap className="mt-0.5 h-4 w-4 text-[color:var(--brand-cyan)]" /> Faster deal execution</li>
-          </ul>
-          <p className="mt-5 rounded-xl border border-border bg-background/40 p-4 text-sm italic text-foreground/90">
-            “Execution speed is a competitive advantage.”
-          </p>
-        </GradientCard>
-
-        <GradientCard>
-          <div className="flex items-center gap-3">
-            <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
-              <Target className="h-5 w-5" />
-            </div>
-            <h3 className="text-xl font-semibold">Domain Expertise</h3>
-          </div>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {domains.map((d) => (
-              <span
-                key={d}
-                className="rounded-full border border-border bg-background/40 px-3 py-1.5 text-sm"
-              >
-                {d}
-              </span>
-            ))}
-          </div>
-          <p className="mt-5 rounded-xl border border-border bg-background/40 p-4 text-sm italic text-foreground/90">
-            “Not generic consulting — domain-driven system building.”
-          </p>
-        </GradientCard>
-      </div>
-
-      <div className="grid gap-6 md:grid-cols-2">
-        <Card className="rounded-3xl border-border/80 bg-card/40 backdrop-blur">
-          <CardContent className="p-8">
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              Others
-            </div>
-            <ul className="mt-4 space-y-2 text-muted-foreground">
-              <li>— Strategy only</li>
-              <li>— Development only</li>
-              <li>— No execution ownership</li>
-            </ul>
-          </CardContent>
-        </Card>
-        <GradientCard>
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-cyan)]">
-            SX Tech
-          </div>
-          <p className="mt-4 text-lg font-semibold leading-snug">
-            Strategy + Build + Venture + Market Access + Domain Expertise
-          </p>
-          <p className="mt-3 text-gradient text-2xl font-bold">
-            = Full Loop Execution
-          </p>
-        </GradientCard>
-      </div>
-    </Section>
-  );
-}
-
 function CTA() {
   return (
     <Section>
-      <div className="relative isolate mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-border bg-card/40 px-8 py-20 text-center backdrop-blur md:px-16 md:py-24">
+      <div className="relative isolate mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-border bg-card/40 px-8 py-24 text-center backdrop-blur md:px-16 md:py-28">
         <img
           src={heroTech}
           alt=""
@@ -319,26 +340,18 @@ function CTA() {
           aria-hidden
           className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-background/95 via-background/70 to-background/40"
         />
-        <h2 className="relative z-20 text-balance text-3xl font-bold tracking-tight md:text-4xl">
-          Ready to build the next venture — together?
+        <h2 className="relative z-20 text-balance text-4xl font-bold tracking-tight md:text-5xl">
+          Build your next <span className="text-gradient">revenue system.</span>
         </h2>
-        <div className="relative z-20 mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="relative z-20 mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
             asChild
             size="lg"
-            className="h-12 rounded-full bg-gradient-primary px-7 text-base font-semibold text-white shadow-glow hover:opacity-95"
+            className="h-12 rounded-full bg-gradient-primary px-8 text-base font-semibold text-white shadow-glow hover:opacity-95"
           >
             <Link to="/contact">
-              Start a Project <ArrowRight className="ml-2 h-4 w-4" />
+              Start a Venture <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="h-12 rounded-full border-border bg-card/40 px-7 text-base font-semibold backdrop-blur hover:bg-card"
-          >
-            <Link to="/human-transform">Explore Human Transform</Link>
           </Button>
         </div>
       </div>
