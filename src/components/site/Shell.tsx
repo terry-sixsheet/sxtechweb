@@ -27,9 +27,9 @@ export function BackgroundFX() {
 
 export function Nav() {
   const links: Array<{ to: string; label: string; hash?: string }> = [
-    { to: "/", hash: "approach", label: "SX TRANS" },
-    { to: "/business-ventures", label: "Business Transform" },
-    { to: "/human-transform", label: "Human Transform" },
+    { to: "/", hash: "approach", label: "What we do" },
+    { to: "/business-ventures", label: "BIZ TRANSFORMATION" },
+    { to: "/human-transform", label: "HUMAN™" },
     { to: "/ventures", label: "Ventures Studio" },
   ];
   return (
@@ -61,8 +61,8 @@ export function Nav() {
           size="sm"
           className="rounded-full bg-gradient-primary text-white shadow-glow hover:opacity-90"
         >
-          <Link to="/" hash="contact">
-            Talk to Us <ArrowRight className="ml-1 h-4 w-4" />
+          <Link to="/contact">
+            Contact Us <ArrowRight className="ml-1 h-4 w-4" />
           </Link>
         </Button>
       </div>

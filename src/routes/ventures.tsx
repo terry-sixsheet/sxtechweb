@@ -79,7 +79,7 @@ function PageHero() {
 function Ventures() {
   const cases = [
     {
-      name: "SX Snap",
+      name: "CAP*TURES Booth",
       type: "SaaS Photobooth Platform",
       problem:
         "Event organizers needed scalable, branded photo experiences without heavy production overhead.",
@@ -166,8 +166,8 @@ function CTA() {
             size="lg"
             className="h-12 rounded-full bg-gradient-primary px-7 text-base font-semibold text-white shadow-glow hover:opacity-95"
           >
-            <Link to="/" hash="contact">
-              Talk to Us <ArrowRight className="ml-2 h-4 w-4" />
+            <Link to="/contact">
+              Start a Project <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
           <Button

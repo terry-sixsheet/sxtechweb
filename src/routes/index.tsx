@@ -4,13 +4,15 @@ import {
   Brain,
   Cpu,
   Sparkles,
-  CheckCircle2,
   TrendingDown,
   GitBranch,
   AlertTriangle,
   Camera,
   GraduationCap,
   Rocket,
+  Compass,
+  Hammer,
+  TrendingUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sxLogo from "@/assets/sx-logo.png";
@@ -56,8 +58,6 @@ function Index() {
         <MainSolution />
         <Proof />
         <Approach />
-        <DeepTech />
-        <DeepHuman />
         <FinalMessage />
         <FinalCTA />
       </main>
@@ -112,17 +112,9 @@ function Hero() {
             size="lg"
             className="h-13 rounded-full bg-gradient-primary px-8 py-6 text-base font-semibold text-white shadow-glow transition-transform hover:scale-[1.02] hover:opacity-95"
           >
-            <a href="#contact">
+            <Link to="/contact">
               Start a Project <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="h-13 rounded-full border-border bg-card/40 px-8 py-6 text-base font-semibold backdrop-blur hover:bg-card"
-          >
-            <a href="#contact">Talk to Us</a>
+            </Link>
           </Button>
         </div>
       </Container>
@@ -149,9 +141,24 @@ function CoreInsight() {
 /* ---------- 3. PROBLEM ---------- */
 function Problem() {
   const items = [
-    { icon: TrendingDown, label: "Growth is slowing" },
-    { icon: GitBranch, label: "Execution is fragmented" },
-    { icon: AlertTriangle, label: "Leadership is the bottleneck" },
+    {
+      icon: TrendingDown,
+      label: "Growth is slowing",
+      cutout: "GROWTH",
+      tone: "from-[color:var(--brand-cyan)]/40 to-transparent",
+    },
+    {
+      icon: GitBranch,
+      label: "Execution is fragmented",
+      cutout: "EXECUTION",
+      tone: "from-[color:var(--brand-indigo)]/45 to-transparent",
+    },
+    {
+      icon: AlertTriangle,
+      label: "Leadership is the bottleneck",
+      cutout: "LEADERSHIP",
+      tone: "from-[color:var(--brand-cyan)]/35 to-transparent",
+    },
   ];
   return (
     <section className="py-24 md:py-28">
@@ -160,12 +167,24 @@ function Problem() {
           {items.map((p) => (
             <div
               key={p.label}
-              className="flex items-center gap-4 rounded-[20px] border border-border bg-card/40 p-7 backdrop-blur"
+              className="group relative isolate overflow-hidden rounded-[20px] border border-border bg-card/40 p-7 backdrop-blur"
             >
-              <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-border bg-background/50">
-                <p.icon className="h-5 w-5 text-[color:var(--brand-cyan)]" />
+              <div
+                aria-hidden
+                className={`pointer-events-none absolute inset-0 z-0 bg-gradient-to-br ${p.tone}`}
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-4 -bottom-6 z-0 select-none text-[6.5rem] font-black uppercase leading-none tracking-tighter text-foreground/[0.04]"
+              >
+                {p.cutout}
               </div>
-              <div className="text-lg font-semibold leading-snug">{p.label}</div>
+              <div className="relative z-10 flex items-center gap-4">
+                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-border bg-background/60">
+                  <p.icon className="h-5 w-5 text-[color:var(--brand-cyan)]" />
+                </div>
+                <div className="text-lg font-semibold leading-snug">{p.label}</div>
+              </div>
             </div>
           ))}
         </div>
@@ -331,7 +350,7 @@ function Proof() {
   const cases = [
     {
       icon: Camera,
-      name: "SX Snap",
+      name: "CAP*TURES Booth",
       desc: "SaaS photobooth platform",
       problem: "Fragmented event tech, no scalable backend.",
       built: "Built scalable system",
@@ -349,7 +368,7 @@ function Proof() {
     },
     {
       icon: Rocket,
-      name: "Future Venture",
+      name: "Your Ventures?",
       desc: "Co-built with founders",
       problem: "New category opportunity.",
       built: "Co-building new ventures",
@@ -421,245 +440,91 @@ function Row({ label, value, accent }: { label: string; value: string; accent?: 
 
 /* ---------- 6. APPROACH ---------- */
 function Approach() {
-  const steps = ["Design", "Build", "Scale"];
+  const steps = [
+    {
+      icon: Compass,
+      label: "Design",
+      desc: "We map the system. Diagnose the bottleneck. Architect the path.",
+      points: ["Business architecture", "Decision mapping", "Growth blueprint"],
+    },
+    {
+      icon: Hammer,
+      label: "Build",
+      desc: "We build, not just advise. Platforms, ventures, leaders — shipped.",
+      points: ["Platform development", "Leader operating system", "Go-to-market"],
+    },
+    {
+      icon: TrendingUp,
+      label: "Scale",
+      desc: "We compound the system. Activate partners. Sustain performance.",
+      points: ["Revenue activation", "Continuous optimization", "Long-term advisory"],
+    },
+  ];
   return (
-    <section id="approach" className="py-24 md:py-32">
+    <section id="approach" className="relative isolate overflow-hidden py-28 md:py-36">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 -z-0 h-px bg-gradient-to-r from-transparent via-[color:var(--brand-indigo)]/40 to-transparent"
+      />
       <Container>
-        <div className="mb-16 text-center">
-          <h2 className="text-balance text-4xl font-bold tracking-tight md:text-6xl">
+        <div className="mx-auto mb-20 max-w-3xl text-center">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
             How we work
+          </div>
+          <h2 className="text-balance text-4xl font-bold leading-tight tracking-tight md:text-6xl">
+            Three moves. <span className="text-gradient">One growth system.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-pretty text-base text-muted-foreground md:text-lg">
-            We don't just design strategies. We build and execute systems.
+            We don't just design strategies. We build and scale them — together.
           </p>
         </div>
-        <div className="mx-auto flex max-w-4xl flex-col items-stretch gap-4 md:flex-row md:items-center">
-          {steps.map((s, i) => (
-            <div key={s} className="flex flex-1 items-center gap-4">
-              <div className="flex-1 rounded-[20px] border border-border bg-card/50 p-8 text-center backdrop-blur">
-                <div className="text-xs font-semibold tracking-[0.24em] text-[color:var(--brand-cyan)]">
+
+        <div className="relative">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-border to-transparent md:block"
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {steps.map((s, i) => (
+              <div
+                key={s.label}
+                className="group relative isolate overflow-hidden rounded-[24px] border border-border bg-card/50 p-8 backdrop-blur transition-all hover:-translate-y-1 hover:border-[color:var(--brand-indigo)] hover:shadow-elevated"
+              >
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -right-6 -top-6 z-0 select-none text-[7rem] font-black leading-none tracking-tighter text-foreground/[0.05]"
+                >
                   0{i + 1}
                 </div>
-                <div className="mt-2 text-2xl font-bold tracking-tight">{s}</div>
-              </div>
-              {i < steps.length - 1 && (
-                <ArrowRight className="hidden h-5 w-5 shrink-0 text-muted-foreground md:block" />
-              )}
-            </div>
-          ))}
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-/* ---------- 7. DEEP — SX TECH ---------- */
-function DeepTech() {
-  const services = [
-    {
-      title: "Venture Studio",
-      points: ["Build new business / startup", "Co-invest", "Go-to-market"],
-    },
-    {
-      title: "Platform Builder",
-      points: ["Full system development", "AI integration", "System modernization"],
-    },
-    {
-      title: "Biz Growth Design",
-      points: ["Revenue blueprint", "Business system architecture", "Monetization system"],
-    },
-    {
-      title: "Power Layer",
-      points: ["Infrastructure", "Data systems"],
-    },
-  ];
-  const methodology = ["Design", "Build", "Activate", "Connect", "Specialize"];
-  const domains = ["Fintech", "Martech", "AI", "Blockchain"];
-
-  return (
-    <section className="relative isolate overflow-hidden py-28 md:py-36">
-      <img
-        src={bvPlatform}
-        alt=""
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-15"
-      />
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-background via-background/95 to-background" />
-      <Container className="relative z-20">
-        <div className="mb-16 max-w-3xl">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--brand-cyan)] backdrop-blur">
-            <Cpu className="h-3.5 w-3.5" />
-            SX Tech
-          </div>
-          <h2 className="text-balance text-4xl font-bold tracking-tight md:text-6xl">
-            Technology <span className="text-gradient">Venture Builder</span>
-          </h2>
-          <p className="mt-5 text-lg text-muted-foreground">
-            Build platforms. AI transformation. Venture investment.
-          </p>
-        </div>
-
-        <div className="grid gap-5 md:grid-cols-2">
-          {services.map((s) => (
-            <div
-              key={s.title}
-              className="rounded-[24px] border border-border bg-card/60 p-8 backdrop-blur"
-            >
-              <h3 className="text-xl font-bold tracking-tight">{s.title}</h3>
-              <ul className="mt-5 space-y-2.5">
-                {s.points.map((p) => (
-                  <li key={p} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--brand-cyan)]" />
-                    <span>{p}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12">
-          <div className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-            Methodology
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            {methodology.map((m, i) => (
-              <div key={m} className="flex items-center gap-2">
-                <span className="rounded-full border border-border bg-card/60 px-4 py-2 text-sm font-semibold backdrop-blur">
-                  {m}
-                </span>
-                {i < methodology.length - 1 && (
-                  <ArrowRight className="h-3.5 w-3.5 text-muted-foreground" />
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          <div className="rounded-[24px] border border-border bg-card/50 p-7 backdrop-blur">
-            <div className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-              Multipliers
-            </div>
-            <div className="mt-4 space-y-2 text-sm">
-              <div>· Strategic access — ecosystem, speed</div>
-              <div>· Domain expertise</div>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {domains.map((d) => (
-                  <span
-                    key={d}
-                    className="rounded-full border border-border bg-background/50 px-3 py-1 text-xs"
-                  >
-                    {d}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="rounded-[24px] border border-border bg-gradient-to-br from-[color:var(--brand-indigo)]/20 to-[color:var(--brand-cyan)]/15 p-7 backdrop-blur">
-            <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-cyan)]">
-              Differentiation
-            </div>
-            <p className="mt-4 text-lg font-semibold leading-snug">
-              Full execution loop — not just strategy or development.
-            </p>
-          </div>
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-/* ---------- 8. DEEP — SX HUMAN ---------- */
-function DeepHuman() {
-  const framework = ["THINK", "DECIDE", "PERFORM", "SUSTAIN"];
-  const layers = [
-    { k: "Align", v: ["Cognitive analysis", "Decision mapping"] },
-    { k: "Reset", v: ["Energy system", "Focus system"] },
-    { k: "Integrate", v: ["Deep transformation", "State reset"] },
-    { k: "Sustain", v: ["Continuous optimization", "Performance tracking"] },
-  ];
-  const outputs = ["Better decisions", "Handle complexity", "Sustainable high performance"];
-  return (
-    <section className="relative isolate overflow-hidden py-28 md:py-36">
-      <img
-        src={humanCoaching}
-        alt=""
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-15"
-      />
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-background via-background/95 to-background" />
-      <Container className="relative z-20">
-        <div className="mb-16 max-w-3xl">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--brand-indigo)] backdrop-blur">
-            <Brain className="h-3.5 w-3.5" />
-            SX Human
-          </div>
-          <h2 className="text-balance text-4xl font-bold tracking-tight md:text-6xl">
-            Mind Longevity for <span className="text-gradient">Leaders</span>
-          </h2>
-          <p className="mt-5 text-lg text-muted-foreground">
-            Business grows, leader does not. We change that.
-          </p>
-        </div>
-
-        <div className="mb-12">
-          <div className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-            Framework
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
-            {framework.map((f, i) => (
-              <div
-                key={f}
-                className="rounded-[20px] border border-border bg-card/60 p-6 backdrop-blur"
-              >
-                <div className="text-xs font-semibold tracking-[0.24em] text-[color:var(--brand-cyan)]">
-                  0{i + 1}
-                </div>
-                <div className="mt-2 text-xl font-bold tracking-tight">{f}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mb-12">
-          <div className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-            System
-          </div>
-          <div className="grid gap-5 md:grid-cols-2">
-            {layers.map((l, i) => (
-              <div
-                key={l.k}
-                className="rounded-[24px] border border-border bg-card/60 p-7 backdrop-blur"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-background/40 text-sm font-bold text-[color:var(--brand-cyan)]">
-                    0{i + 1}
+                <div className="relative z-10">
+                  <div className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-primary text-white shadow-glow">
+                    <s.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="text-xl font-semibold">{l.k}</h3>
+                  <div className="mt-6 text-xs font-semibold tracking-[0.24em] text-[color:var(--brand-cyan)]">
+                    STEP 0{i + 1}
+                  </div>
+                  <h3 className="mt-2 text-2xl font-bold tracking-tight md:text-3xl">
+                    {s.label}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {s.desc}
+                  </p>
+                  <div className="mt-6 space-y-2">
+                    {s.points.map((p) => (
+                      <div
+                        key={p}
+                        className="flex items-center gap-2.5 text-sm font-medium text-foreground/90"
+                      >
+                        <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
+                        {p}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <ul className="mt-5 space-y-2">
-                  {l.v.map((p) => (
-                    <li key={p} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--brand-cyan)]" />
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="grid gap-4 md:grid-cols-3">
-          {outputs.map((o) => (
-            <div
-              key={o}
-              className="rounded-[20px] border border-border bg-gradient-to-br from-[color:var(--brand-indigo)]/15 to-transparent p-6 text-center backdrop-blur"
-            >
-              <div className="text-base font-semibold">{o}</div>
-            </div>
-          ))}
         </div>
       </Container>
     </section>
@@ -708,17 +573,9 @@ function FinalCTA() {
                 size="lg"
                 className="h-13 rounded-full bg-gradient-primary px-8 py-6 text-base font-semibold text-white shadow-glow transition-transform hover:scale-[1.02] hover:opacity-95"
               >
-                <a href="mailto:hello@sxtrans.com">
+                <Link to="/contact">
                   Start a Project <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="h-13 rounded-full border-border bg-card/40 px-8 py-6 text-base font-semibold backdrop-blur hover:bg-card"
-              >
-                <a href="mailto:hello@sxtrans.com">Talk to Us</a>
+                </Link>
               </Button>
             </div>
           </div>
