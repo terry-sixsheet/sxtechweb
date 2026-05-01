@@ -10,9 +10,6 @@ import {
   Camera,
   GraduationCap,
   Rocket,
-  Compass,
-  Hammer,
-  TrendingUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sxLogo from "@/assets/sx-logo.png";
@@ -56,7 +53,6 @@ function Index() {
         <CoreInsight />
         <MainSolution />
         <Proof />
-        <FinalMessage />
         <FinalCTA />
       </main>
       <Footer />
@@ -93,16 +89,13 @@ function Hero() {
           <Sparkles className="h-3.5 w-3.5 text-[color:var(--brand-cyan)]" />
           The Transformation Company
         </div>
-        <h1 className="text-balance text-5xl font-bold leading-[1.02] tracking-tight md:text-7xl lg:text-[5.5rem]">
+        <h1 className="text-balance text-5xl font-bold leading-[1.02] tracking-tight md:text-7xl lg:text-[6rem]">
           We build revenue systems.
           <br />
           And <span className="text-gradient">upgrade the leaders</span> behind them.
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg text-muted-foreground md:text-xl">
-          A Transformation Company combining Technology + Human Performance.
-        </p>
-        <p className="mx-auto mt-3 max-w-xl text-pretty text-base text-muted-foreground/80">
-          Transforming business systems. Evolving humans.
+          Building ventures, systems, and leaders for scalable growth.
         </p>
         <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
@@ -114,6 +107,22 @@ function Hero() {
               Start a Project <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="h-13 rounded-full border-border bg-card/40 px-8 py-6 text-base font-semibold backdrop-blur hover:bg-card/70"
+          >
+            <Link to="/business-ventures">Build a Venture</Link>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="ghost"
+            className="h-13 rounded-full px-8 py-6 text-base font-semibold"
+          >
+            <Link to="/contact">Talk to Us</Link>
+          </Button>
         </div>
       </Container>
     </section>
@@ -123,9 +132,9 @@ function Hero() {
 /* ---------- 2. CORE INSIGHT ---------- */
 function CoreInsight() {
   return (
-    <section className="py-28 md:py-36">
+    <section className="py-20 md:py-28">
       <Container>
-        <p className="mx-auto max-w-4xl text-balance text-center text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
+        <p className="mx-auto max-w-4xl text-balance text-center text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
           Most companies upgrade systems.
           <br />
           <span className="text-muted-foreground">Few upgrade the </span>
