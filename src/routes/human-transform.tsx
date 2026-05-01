@@ -5,7 +5,6 @@ import {
   Workflow,
   Activity,
   Gauge,
-  ShieldCheck,
   Target,
   TreePine,
   Cog,
@@ -62,7 +61,6 @@ function HumanTransformPage() {
         <MindLongevity />
         <NotWellness />
         <HowTo />
-        <StepByStep />
         <RitualPartnership />
         <CTA />
       </main>
@@ -112,7 +110,7 @@ function MindLongevity() {
     { icon: Heart, label: "Sustain high performance without burnout." },
   ];
   return (
-    <Section eyebrow="Why HUMAN™">
+    <Section eyebrow="Why HUMAN™" className="!py-14 md:!py-20">
       <div className="grid items-center gap-12 md:grid-cols-2">
         <div>
           <h2 className="text-balance text-4xl font-bold leading-tight tracking-tight md:text-5xl">
@@ -169,6 +167,7 @@ function NotWellness() {
       eyebrow="Category break"
       title={<>Not wellness. Not traditional coaching.</>}
       subtitle="A Human Operating System for high-performance leaders."
+      className="!py-14 md:!py-20"
     >
       <div className="grid gap-6 md:grid-cols-2">
         {/* Traditional */}
@@ -254,6 +253,7 @@ function HowTo() {
       eyebrow="How it works"
       title={<>The loop — under real business pressure.</>}
       subtitle="Four operating modes. One continuous loop. Centered on real-world execution."
+      className="!py-14 md:!py-20"
     >
       <div className="mb-10 flex justify-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-amber-500/10 px-5 py-2 text-sm font-semibold text-amber-300 backdrop-blur">
@@ -297,80 +297,11 @@ function HowTo() {
 }
 
 /* =========================================================
-   5. STEP-BY-STEP — software stack  (image 8)
-   ========================================================= */
-function StepByStep() {
-  const stack = [
-    {
-      k: "Integrate",
-      sub: "(State Shift) — Deep Transformation",
-      tone: "from-fuchsia-400/30 to-purple-500/40",
-    },
-    {
-      k: "Reset",
-      sub: "(Daily Initiation) — Execution",
-      tone: "from-indigo-400/30 to-indigo-600/40",
-    },
-    {
-      k: "Align",
-      sub: "(Blueprint & Baseline) — Strategy / System",
-      tone: "from-slate-700/60 to-slate-900/70",
-    },
-  ];
-  return (
-    <Section
-      eyebrow="Step-by-Step"
-      title={<>A fully integrated framework — built like a software stack.</>}
-    >
-      <div className="grid items-center gap-10 md:grid-cols-[1fr_auto]">
-        {/* Stack */}
-        <div className="space-y-4">
-          {stack.map((s) => (
-            <div
-              key={s.k}
-              className={`group relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br ${s.tone} p-7 backdrop-blur transition-transform hover:-translate-y-0.5`}
-            >
-              <div
-                aria-hidden
-                className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.18),transparent_60%)]"
-              />
-              <div className="relative">
-                <div className="text-2xl font-bold tracking-tight">{s.k}</div>
-                <div className="mt-1 text-sm text-foreground/80">{s.sub}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Sustain pillar */}
-        <div className="hidden md:block">
-          <div className="flex h-72 w-24 flex-col items-center justify-center rounded-3xl bg-gradient-to-b from-amber-300 to-amber-500 text-center text-amber-950 shadow-[0_0_40px_-10px_theme(colors.amber.400)]">
-            <ShieldCheck className="h-6 w-6" />
-            <div className="mt-3 text-lg font-bold tracking-wide">Sustain</div>
-            <div className="mt-1 px-3 text-xs font-medium opacity-80">
-              (Scale) — Retention
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile sustain card */}
-        <div className="rounded-2xl bg-gradient-to-r from-amber-300 to-amber-500 p-6 text-amber-950 md:hidden">
-          <div className="text-lg font-bold">Sustain</div>
-          <div className="mt-1 text-xs font-medium opacity-80">
-            (Scale) — Retention. Wraps the entire stack.
-          </div>
-        </div>
-      </div>
-    </Section>
-  );
-}
-
-/* =========================================================
    6. RITUAL PARTNERSHIP
    ========================================================= */
 function RitualPartnership() {
   return (
-    <Section eyebrow="Partnership">
+    <Section eyebrow="Partnership" className="!py-14 md:!py-20">
       <div className="relative isolate overflow-hidden rounded-[2rem] border border-border bg-card/40 backdrop-blur">
         <div className="grid gap-0 md:grid-cols-2">
           {/* Image */}
@@ -434,7 +365,7 @@ function RitualPartnership() {
    ========================================================= */
 function CTA() {
   return (
-    <Section>
+    <Section className="!py-14 md:!py-20">
       <div className="relative isolate mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-border bg-card/40 px-8 py-24 text-center backdrop-blur md:px-16 md:py-28">
         <img
           src={heroHuman}
