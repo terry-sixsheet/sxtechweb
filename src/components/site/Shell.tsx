@@ -31,6 +31,7 @@ export function Nav() {
     { to: "/business-ventures", label: "TECH™" },
     { to: "/human-transform", label: "HUMAN™" },
     { to: "/ventures", label: "Our Ventures Cases" },
+    { to: "/contact", label: "Contact Us" },
   ];
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
