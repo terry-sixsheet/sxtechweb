@@ -7,26 +7,21 @@ import {
   Database,
   Building2,
   HandCoins,
-  Network,
-  Compass,
-  Hammer,
-  Zap,
-  Plug,
-  Microscope,
   CheckCircle2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   BackgroundFX,
   Footer,
-  GradientCard,
   Nav,
   Section,
 } from "@/components/site/Shell";
 import heroTechSrc from "@/assets/hero-tech.jpg";
+import bvGrowthSrc from "@/assets/bv-growth.jpg";
 
 const CACHE_BUST = `v=${Date.now()}`;
 const heroTech = `${heroTechSrc}?${CACHE_BUST}`;
+const bvGrowth = `${bvGrowthSrc}?${CACHE_BUST}`;
 
 export const Route = createFileRoute("/business-ventures")({
   head: () => ({
@@ -59,8 +54,6 @@ function BusinessVenturesPage() {
       <main className="relative">
         <PageHero />
         <CompanyOverview />
-        <WhySXTech />
-        <CoreMethodology />
         <ServiceFramework />
         <CTA />
       </main>
@@ -122,164 +115,50 @@ function CompanyOverview() {
     },
   ];
   return (
-    <Section
-      eyebrow="Company Overview"
-      title={<>Mission &amp; Vision</>}
-      subtitle="Empower businesses through innovative solutions and strategic partnerships — fostering growth in an ever-evolving digital landscape."
-    >
-      <div className="grid gap-5 md:grid-cols-3">
-        {pillars.map((p) => (
-          <GradientCard key={p.title}>
-            <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
-              <p.icon className="h-5 w-5" />
-            </div>
-            <h3 className="mt-6 text-2xl font-bold leading-tight">{p.title}</h3>
-            <p className="mt-3 text-sm text-muted-foreground">{p.desc}</p>
-          </GradientCard>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-/* =========================================================
-   3. WHY SX TECH  (image 2)
-   ========================================================= */
-function WhySXTech() {
-  const reasons = [
-    {
-      icon: Rocket,
-      title: "Build new ventures",
-      desc: "We co-build Start-ups and new Business Units for corporates, SMEs, partners, and young entrepreneurs.",
-    },
-    {
-      icon: HandCoins,
-      title: "Co-develop · Co-invest · Go-to-market",
-      desc: "We don't just advise. We build, fund, and ship to market alongside you.",
-    },
-    {
-      icon: Network,
-      title: "Partners &amp; Ecosystem",
-      desc: "We unlock partners and assemble the ecosystem your venture needs to grow.",
-    },
-  ];
-  return (
-    <Section
-      eyebrow="Why SX Tech"
-      title={<>Transformation Systems · Strategic Access · Domain Expertise</>}
-    >
-      <div className="grid items-center gap-10 md:grid-cols-[auto_1fr]">
-        {/* Center hub */}
-        <div className="mx-auto">
-          <div
-            className="relative grid h-56 w-56 place-items-center rounded-full text-center text-white shadow-glow md:h-64 md:w-64"
-            style={{
-              backgroundImage:
-                "linear-gradient(140deg, color-mix(in oklab, var(--brand-indigo) 95%, transparent), color-mix(in oklab, var(--brand-cyan) 80%, transparent))",
-            }}
-          >
-            <div
-              aria-hidden
-              className="absolute -inset-2 rounded-full border border-dashed border-[color:var(--brand-cyan)]/40"
-            />
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-[0.25em] opacity-80">
-                Why
-              </div>
-              <div className="mt-1 text-3xl font-bold tracking-tight">
-                SX TECH
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Reasons */}
-        <ul className="space-y-4">
-          {reasons.map((r) => (
-            <li
-              key={r.title}
-              className="flex gap-5 rounded-2xl border border-border bg-card/50 p-6 backdrop-blur"
-            >
-              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
-                <r.icon className="h-5 w-5" />
-              </div>
-              <div>
-                <div className="text-lg font-bold">{r.title}</div>
-                <div
-                  className="mt-1 text-sm text-muted-foreground"
-                  dangerouslySetInnerHTML={{ __html: r.desc }}
-                />
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </Section>
-  );
-}
-
-/* =========================================================
-   4. CORE METHODOLOGY — The Transformation Loop  (image 3)
-   ========================================================= */
-function CoreMethodology() {
-  const steps = [
-    {
-      k: "Design",
-      v: "Architect a new business blueprint.",
-      icon: Compass,
-    },
-    {
-      k: "Build",
-      v: "Develop platforms and systems that actually run.",
-      icon: Hammer,
-    },
-    {
-      k: "Activate",
-      v: "Turn the system into real revenue.",
-      icon: Zap,
-    },
-    {
-      k: "Connect",
-      v: "Unlock partners and business opportunities.",
-      icon: Plug,
-    },
-    {
-      k: "Specialize",
-      v: "Apply deep domain expertise per industry.",
-      icon: Microscope,
-    },
-  ];
-  return (
-    <Section
-      eyebrow="Core Methodology"
-      title={<>The Transformation Loop</>}
-      subtitle="A continuous loop — every venture compounds back into the next."
-    >
-      <div className="relative">
-        {/* connecting line */}
+    <section className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
+      <div className="relative isolate overflow-hidden rounded-[2rem] border border-border px-6 py-20 md:px-12 md:py-28">
+        <img
+          src={bvGrowth}
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-40"
+        />
         <div
           aria-hidden
-          className="pointer-events-none absolute left-0 right-0 top-1/2 hidden h-px -translate-y-1/2 bg-gradient-to-r from-transparent via-[color:var(--brand-cyan)]/40 to-transparent md:block"
+          className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-background/70 via-background/85 to-background/95"
         />
-        <div className="relative grid gap-5 md:grid-cols-5">
-          {steps.map((s, i) => (
-            <div
-              key={s.k}
-              className="relative rounded-3xl border border-border bg-card/60 p-6 backdrop-blur"
-            >
-              <div className="text-xs font-semibold tracking-[0.2em] text-[color:var(--brand-cyan)]">
-                0{i + 1}
-              </div>
-              <div className="mt-3 grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
-                <s.icon className="h-5 w-5" />
-              </div>
-              <div className="mt-5 text-xl font-bold">{s.k}</div>
-              <div className="mt-2 text-sm text-muted-foreground">{s.v}</div>
+        <div className="relative z-20">
+          <div className="mx-auto mb-16 max-w-3xl text-center">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
+              Company Overview
             </div>
-          ))}
+            <h2 className="text-balance text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+              Mission &amp; Vision
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-pretty text-base text-muted-foreground md:text-lg">
+              Empower businesses through innovative solutions and strategic
+              partnerships — fostering growth in an ever-evolving digital
+              landscape.
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {pillars.map((p) => (
+              <div
+                key={p.title}
+                className="rounded-2xl border border-border bg-card/60 p-7 backdrop-blur"
+              >
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+                  <p.icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-6 text-2xl font-bold leading-tight">{p.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground">{p.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }
 
