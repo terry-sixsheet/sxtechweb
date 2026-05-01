@@ -126,10 +126,10 @@ export function Section({
   return (
     <section
       id={id}
-      className={`relative mx-auto max-w-7xl px-6 py-24 md:py-32 ${className}`}
+      className={`relative mx-auto max-w-7xl px-6 py-14 md:py-20 ${className}`}
     >
       {(eyebrow || title || subtitle) && (
-        <div className="mx-auto mb-16 max-w-3xl text-center">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
           {eyebrow && (
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
