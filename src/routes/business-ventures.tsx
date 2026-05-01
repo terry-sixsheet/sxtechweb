@@ -3,7 +3,6 @@ import {
   ArrowRight,
   Cpu,
   Rocket,
-  LineChart,
   Building2,
   HandCoins,
   Compass,
