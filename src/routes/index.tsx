@@ -57,7 +57,6 @@ function Index() {
         <Problem />
         <MainSolution />
         <Proof />
-        <Approach />
         <FinalMessage />
         <FinalCTA />
       </main>
@@ -211,7 +210,7 @@ function MainSolution() {
         <div className="grid gap-6 lg:grid-cols-2">
           <SolutionBlock
             tone="tech"
-            tag="SX TECH"
+            tag="TECH™"
             title="Build Systems. Generate Revenue."
             description="We design, build, and scale business systems that generate real revenue."
             points={[
@@ -220,14 +219,14 @@ function MainSolution() {
               "Venture creation",
             ]}
             outputs={["New revenue streams", "Scalable infrastructure", "Business growth"]}
-            ctaLabel="Explore SX Tech"
+            ctaLabel="Explore TECH™"
             href="/business-ventures"
             icon={Cpu}
             image={bvPlatform}
           />
           <SolutionBlock
             tone="human"
-            tag="SX HUMAN"
+            tag="HUMAN™"
             title="Upgrade Leaders. Sustain Performance."
             description="We design human operating systems for leaders to think, decide, and perform better."
             points={[
@@ -236,7 +235,7 @@ function MainSolution() {
               "High-performance execution",
             ]}
             outputs={["Better decisions", "Clear thinking", "Sustainable performance"]}
-            ctaLabel="Explore SX Human"
+            ctaLabel="Explore HUMAN™"
             href="/human-transform"
             icon={Brain}
             image={humanCoaching}
