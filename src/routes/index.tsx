@@ -445,25 +445,6 @@ function Row({ label, value, accent }: { label: string; value: string; accent?: 
   );
 }
 
-/* ---------- 9. FINAL MESSAGE ---------- */
-function FinalMessage() {
-  return (
-    <section className="py-32 md:py-40">
-      <Container>
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-balance text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">
-            The business can scale because{" "}
-            <span className="text-gradient">the leader can handle it.</span>
-          </h2>
-          <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg text-muted-foreground md:text-xl">
-            We transform the entire system — together.
-          </p>
-        </div>
-      </Container>
-    </section>
-  );
-}
-
 /* ---------- 10. FINAL CTA ---------- */
 function FinalCTA() {
   return (
