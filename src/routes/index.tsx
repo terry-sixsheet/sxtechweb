@@ -54,7 +54,6 @@ function Index() {
       <main className="relative">
         <Hero />
         <CoreInsight />
-        <Problem />
         <MainSolution />
         <Proof />
         <FinalMessage />
@@ -124,7 +123,7 @@ function Hero() {
 /* ---------- 2. CORE INSIGHT ---------- */
 function CoreInsight() {
   return (
-    <section className="py-32 md:py-40">
+    <section className="py-28 md:py-36">
       <Container>
         <p className="mx-auto max-w-4xl text-balance text-center text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
           Most companies upgrade systems.
@@ -132,13 +131,15 @@ function CoreInsight() {
           <span className="text-muted-foreground">Few upgrade the </span>
           <span className="text-gradient">leaders running them.</span>
         </p>
+
+        <ProblemCards />
       </Container>
     </section>
   );
 }
 
-/* ---------- 3. PROBLEM ---------- */
-function Problem() {
+/* ---------- 3. PROBLEM CARDS ---------- */
+function ProblemCards() {
   const items = [
     {
       icon: TrendingDown,
@@ -160,9 +161,8 @@ function Problem() {
     },
   ];
   return (
-    <section className="py-24 md:py-28">
-      <Container>
-        <div className="grid gap-5 md:grid-cols-3">
+    <div className="mt-16 md:mt-20">
+      <div className="grid gap-5 md:grid-cols-3">
           {items.map((p) => (
             <div
               key={p.label}
@@ -186,9 +186,8 @@ function Problem() {
               </div>
             </div>
           ))}
-        </div>
-      </Container>
-    </section>
+      </div>
+    </div>
   );
 }
 
