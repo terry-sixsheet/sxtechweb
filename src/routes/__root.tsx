@@ -29,7 +29,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SX Transformation — Transforming Business. Evolving Humans." },
+      { title: "SX TECH — Transforming Business. Evolving Humans." },
       {
         name: "description",
         content:
@@ -47,6 +47,13 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { property: "og:title", content: "SX TECH — Transforming Business. Evolving Humans." },
+      { name: "twitter:title", content: "SX TECH — Transforming Business. Evolving Humans." },
+      { name: "description", content: "SX TECH — Transforming Business. Evolving Humans." },
+      { property: "og:description", content: "SX TECH — Transforming Business. Evolving Humans." },
+      { name: "twitter:description", content: "SX TECH — Transforming Business. Evolving Humans." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/244b79a1-0ef3-4736-8889-2b5c03c30436" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/244b79a1-0ef3-4736-8889-2b5c03c30436" },
     ],
     links: [
       {
