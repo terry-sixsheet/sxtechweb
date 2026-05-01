@@ -219,14 +219,10 @@ function MainSolution() {
           <SolutionBlock
             tone="tech"
             tag="TECH™"
-            title="Build Systems. Generate Revenue."
-            description="We design, build, and scale business systems that generate real revenue."
-            points={[
-              "Scalable digital platforms",
-              "Revenue system design",
-              "Venture creation",
-            ]}
-            outputs={["New revenue streams", "Scalable infrastructure", "Business growth"]}
+            title="A system to create and scale revenue."
+            description="Design. Build. Activate. Scale."
+            points={["Design", "Build", "Activate", "Scale"]}
+            outputs={["Revenue streams", "Scalable platforms", "New ventures"]}
             ctaLabel="Explore TECH™"
             href="/business-ventures"
             icon={Cpu}
@@ -235,14 +231,10 @@ function MainSolution() {
           <SolutionBlock
             tone="human"
             tag="HUMAN™"
-            title="Upgrade Leaders. Sustain Performance."
-            description="We design human operating systems for leaders to think, decide, and perform better."
-            points={[
-              "Decision systems",
-              "Cognitive clarity",
-              "High-performance execution",
-            ]}
-            outputs={["Better decisions", "Clear thinking", "Sustainable performance"]}
+            title="Your business is not the bottleneck. You are."
+            description="A human operating system for leaders."
+            points={["Think", "Decide", "Perform", "Sustain"]}
+            outputs={["Better decisions", "Clear thinking", "Sustained performance"]}
             ctaLabel="Explore HUMAN™"
             href="/human-transform"
             icon={Brain}
