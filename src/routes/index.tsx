@@ -10,9 +10,6 @@ import {
   Camera,
   GraduationCap,
   Rocket,
-  Compass,
-  Hammer,
-  TrendingUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sxLogo from "@/assets/sx-logo.png";
@@ -56,7 +53,6 @@ function Index() {
         <CoreInsight />
         <MainSolution />
         <Proof />
-        <FinalMessage />
         <FinalCTA />
       </main>
       <Footer />
@@ -93,16 +89,13 @@ function Hero() {
           <Sparkles className="h-3.5 w-3.5 text-[color:var(--brand-cyan)]" />
           The Transformation Company
         </div>
-        <h1 className="text-balance text-5xl font-bold leading-[1.02] tracking-tight md:text-7xl lg:text-[5.5rem]">
+        <h1 className="text-balance text-5xl font-bold leading-[1.02] tracking-tight md:text-7xl lg:text-[6rem]">
           We build revenue systems.
           <br />
           And <span className="text-gradient">upgrade the leaders</span> behind them.
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg text-muted-foreground md:text-xl">
-          A Transformation Company combining Technology + Human Performance.
-        </p>
-        <p className="mx-auto mt-3 max-w-xl text-pretty text-base text-muted-foreground/80">
-          Transforming business systems. Evolving humans.
+          Building ventures, systems, and leaders for scalable growth.
         </p>
         <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
@@ -114,6 +107,22 @@ function Hero() {
               Start a Project <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="h-13 rounded-full border-border bg-card/40 px-8 py-6 text-base font-semibold backdrop-blur hover:bg-card/70"
+          >
+            <Link to="/business-ventures">Build a Venture</Link>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="ghost"
+            className="h-13 rounded-full px-8 py-6 text-base font-semibold"
+          >
+            <Link to="/contact">Talk to Us</Link>
+          </Button>
         </div>
       </Container>
     </section>
@@ -123,9 +132,9 @@ function Hero() {
 /* ---------- 2. CORE INSIGHT ---------- */
 function CoreInsight() {
   return (
-    <section className="py-28 md:py-36">
+    <section className="py-20 md:py-28">
       <Container>
-        <p className="mx-auto max-w-4xl text-balance text-center text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
+        <p className="mx-auto max-w-4xl text-balance text-center text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
           Most companies upgrade systems.
           <br />
           <span className="text-muted-foreground">Few upgrade the </span>
@@ -210,14 +219,10 @@ function MainSolution() {
           <SolutionBlock
             tone="tech"
             tag="TECH™"
-            title="Build Systems. Generate Revenue."
-            description="We design, build, and scale business systems that generate real revenue."
-            points={[
-              "Scalable digital platforms",
-              "Revenue system design",
-              "Venture creation",
-            ]}
-            outputs={["New revenue streams", "Scalable infrastructure", "Business growth"]}
+            title="A system to create and scale revenue."
+            description="Design. Build. Activate. Scale."
+            points={["Design", "Build", "Activate", "Scale"]}
+            outputs={["Revenue streams", "Scalable platforms", "New ventures"]}
             ctaLabel="Explore TECH™"
             href="/business-ventures"
             icon={Cpu}
@@ -226,14 +231,10 @@ function MainSolution() {
           <SolutionBlock
             tone="human"
             tag="HUMAN™"
-            title="Upgrade Leaders. Sustain Performance."
-            description="We design human operating systems for leaders to think, decide, and perform better."
-            points={[
-              "Decision systems",
-              "Cognitive clarity",
-              "High-performance execution",
-            ]}
-            outputs={["Better decisions", "Clear thinking", "Sustainable performance"]}
+            title="Your business is not the bottleneck. You are."
+            description="A human operating system for leaders."
+            points={["Think", "Decide", "Perform", "Sustain"]}
+            outputs={["Better decisions", "Clear thinking", "Sustained performance"]}
             ctaLabel="Explore HUMAN™"
             href="/human-transform"
             icon={Brain}
@@ -433,118 +434,6 @@ function Row({ label, value, accent }: { label: string; value: string; accent?: 
         {value}
       </div>
     </div>
-  );
-}
-
-/* ---------- 6. APPROACH ---------- */
-function Approach() {
-  const steps = [
-    {
-      icon: Compass,
-      label: "Design",
-      desc: "We map the system. Diagnose the bottleneck. Architect the path.",
-      points: ["Business architecture", "Decision mapping", "Growth blueprint"],
-    },
-    {
-      icon: Hammer,
-      label: "Build",
-      desc: "We build, not just advise. Platforms, ventures, leaders — shipped.",
-      points: ["Platform development", "Leader operating system", "Go-to-market"],
-    },
-    {
-      icon: TrendingUp,
-      label: "Scale",
-      desc: "We compound the system. Activate partners. Sustain performance.",
-      points: ["Revenue activation", "Continuous optimization", "Long-term advisory"],
-    },
-  ];
-  return (
-    <section id="approach" className="relative isolate overflow-hidden py-28 md:py-36">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-0 h-px bg-gradient-to-r from-transparent via-[color:var(--brand-indigo)]/40 to-transparent"
-      />
-      <Container>
-        <div className="mx-auto mb-20 max-w-3xl text-center">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
-            How we work
-          </div>
-          <h2 className="text-balance text-4xl font-bold leading-tight tracking-tight md:text-6xl">
-            Three moves. <span className="text-gradient">One growth system.</span>
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-pretty text-base text-muted-foreground md:text-lg">
-            We don't just design strategies. We build and scale them — together.
-          </p>
-        </div>
-
-        <div className="relative">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-border to-transparent md:block"
-          />
-          <div className="grid gap-6 md:grid-cols-3">
-            {steps.map((s, i) => (
-              <div
-                key={s.label}
-                className="group relative isolate overflow-hidden rounded-[24px] border border-border bg-card/50 p-8 backdrop-blur transition-all hover:-translate-y-1 hover:border-[color:var(--brand-indigo)] hover:shadow-elevated"
-              >
-                <div
-                  aria-hidden
-                  className="pointer-events-none absolute -right-6 -top-6 z-0 select-none text-[7rem] font-black leading-none tracking-tighter text-foreground/[0.05]"
-                >
-                  0{i + 1}
-                </div>
-                <div className="relative z-10">
-                  <div className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-primary text-white shadow-glow">
-                    <s.icon className="h-5 w-5" />
-                  </div>
-                  <div className="mt-6 text-xs font-semibold tracking-[0.24em] text-[color:var(--brand-cyan)]">
-                    STEP 0{i + 1}
-                  </div>
-                  <h3 className="mt-2 text-2xl font-bold tracking-tight md:text-3xl">
-                    {s.label}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {s.desc}
-                  </p>
-                  <div className="mt-6 space-y-2">
-                    {s.points.map((p) => (
-                      <div
-                        key={p}
-                        className="flex items-center gap-2.5 text-sm font-medium text-foreground/90"
-                      >
-                        <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
-                        {p}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-/* ---------- 9. FINAL MESSAGE ---------- */
-function FinalMessage() {
-  return (
-    <section className="py-32 md:py-40">
-      <Container>
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-balance text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl">
-            The business can scale because{" "}
-            <span className="text-gradient">the leader can handle it.</span>
-          </h2>
-          <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg text-muted-foreground md:text-xl">
-            We transform the entire system — together.
-          </p>
-        </div>
-      </Container>
-    </section>
   );
 }
 
