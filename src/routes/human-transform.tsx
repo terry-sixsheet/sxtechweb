@@ -5,7 +5,6 @@ import {
   Workflow,
   Activity,
   Gauge,
-  ShieldCheck,
   Target,
   TreePine,
   Cog,
@@ -62,7 +61,6 @@ function HumanTransformPage() {
         <MindLongevity />
         <NotWellness />
         <HowTo />
-        <StepByStep />
         <RitualPartnership />
         <CTA />
       </main>
