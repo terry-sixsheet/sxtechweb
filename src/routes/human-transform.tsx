@@ -110,7 +110,7 @@ function MindLongevity() {
     { icon: Heart, label: "Sustain high performance without burnout." },
   ];
   return (
-    <Section eyebrow="Why HUMAN™">
+    <Section eyebrow="Why HUMAN™" className="!py-14 md:!py-20">
       <div className="grid items-center gap-12 md:grid-cols-2">
         <div>
           <h2 className="text-balance text-4xl font-bold leading-tight tracking-tight md:text-5xl">
@@ -167,6 +167,7 @@ function NotWellness() {
       eyebrow="Category break"
       title={<>Not wellness. Not traditional coaching.</>}
       subtitle="A Human Operating System for high-performance leaders."
+      className="!py-14 md:!py-20"
     >
       <div className="grid gap-6 md:grid-cols-2">
         {/* Traditional */}
@@ -252,6 +253,7 @@ function HowTo() {
       eyebrow="How it works"
       title={<>The loop — under real business pressure.</>}
       subtitle="Four operating modes. One continuous loop. Centered on real-world execution."
+      className="!py-14 md:!py-20"
     >
       <div className="mb-10 flex justify-center">
         <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-amber-500/10 px-5 py-2 text-sm font-semibold text-amber-300 backdrop-blur">
@@ -299,7 +301,7 @@ function HowTo() {
    ========================================================= */
 function RitualPartnership() {
   return (
-    <Section eyebrow="Partnership">
+    <Section eyebrow="Partnership" className="!py-14 md:!py-20">
       <div className="relative isolate overflow-hidden rounded-[2rem] border border-border bg-card/40 backdrop-blur">
         <div className="grid gap-0 md:grid-cols-2">
           {/* Image */}
@@ -363,7 +365,7 @@ function RitualPartnership() {
    ========================================================= */
 function CTA() {
   return (
-    <Section>
+    <Section className="!py-14 md:!py-20">
       <div className="relative isolate mx-auto max-w-4xl overflow-hidden rounded-[2rem] border border-border bg-card/40 px-8 py-24 text-center backdrop-blur md:px-16 md:py-28">
         <img
           src={heroHuman}
