@@ -4,10 +4,11 @@ import {
   Cpu,
   Rocket,
   LineChart,
-  Database,
   Building2,
   HandCoins,
-  CheckCircle2,
+  Compass,
+  Hammer,
+  TrendingUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -30,7 +31,7 @@ export const Route = createFileRoute("/business-ventures")({
       {
         name: "description",
         content:
-          "SX Tech is a technology venture builder. Scalable digital platforms, AI-driven transformation, and synergistic technology ventures.",
+          "A system to create and scale revenue. Design, Build, Activate, Scale — engineered as one.",
       },
       {
         property: "og:title",
@@ -39,7 +40,7 @@ export const Route = createFileRoute("/business-ventures")({
       {
         property: "og:description",
         content:
-          "Transformation Systems · Strategic Access · Domain Expertise. Design → Build → Activate → Connect → Specialize.",
+          "A system to create and scale revenue. Design → Build → Activate → Scale.",
       },
     ],
   }),
@@ -78,16 +79,33 @@ function PageHero() {
       <div className="relative z-20 mx-auto max-w-4xl text-center">
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground backdrop-blur">
           <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
-          TECH™ — Technology Venture Builder
+          TECH™
         </div>
-        <h1 className="text-balance text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl lg:text-8xl">
-          Transformation Systems.
-          <br />
-          <span className="text-gradient">Built to compound.</span>
+        <h1 className="text-balance text-5xl font-bold leading-[1.02] tracking-tight md:text-7xl lg:text-8xl">
+          A system to <span className="text-gradient">create and scale revenue.</span>
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg text-muted-foreground md:text-xl">
-          Strategic access · Domain expertise · Full-loop execution.
+          Design. Build. Activate. Scale.
         </p>
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Button
+            asChild
+            size="lg"
+            className="h-12 rounded-full bg-gradient-primary px-8 text-base font-semibold text-white shadow-glow hover:opacity-95"
+          >
+            <Link to="/contact">
+              Start a Project <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="h-12 rounded-full border-border bg-card/40 px-8 text-base font-semibold backdrop-blur"
+          >
+            <Link to="/contact">Talk to Us</Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
@@ -100,22 +118,22 @@ function CompanyOverview() {
   const pillars = [
     {
       icon: Building2,
-      title: "Technology Venture Builder",
-      desc: "We build scalable digital platforms — not just deliver projects.",
+      title: "Venture Builder",
+      desc: "We build platforms — not deliver projects.",
     },
     {
       icon: Cpu,
-      title: "AI-Driven Transformation",
-      desc: "AI as an operating layer for new revenue and efficiency.",
+      title: "AI as the Operating Layer",
+      desc: "New revenue. Compounding efficiency.",
     },
     {
       icon: HandCoins,
-      title: "Synergistic Investment",
-      desc: "We co-invest in ventures that compound with our system.",
+      title: "We Co-Invest",
+      desc: "Skin in the game. Aligned outcomes.",
     },
   ];
   return (
-    <section className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
+    <section className="relative mx-auto max-w-7xl px-6 py-16 md:py-24">
       <div className="relative isolate overflow-hidden rounded-[2rem] border border-border px-6 py-20 md:px-12 md:py-28">
         <img
           src={bvGrowth}
@@ -131,15 +149,13 @@ function CompanyOverview() {
           <div className="mx-auto mb-16 max-w-3xl text-center">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
-              Company Overview
+              Mission & Vision
             </div>
-            <h2 className="text-balance text-4xl font-bold leading-tight tracking-tight md:text-5xl">
-              Mission &amp; Vision
+            <h2 className="text-balance text-4xl font-bold leading-tight tracking-tight md:text-6xl">
+              We build the <span className="text-gradient">growth engine.</span>
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-pretty text-base text-muted-foreground md:text-lg">
-              Empower businesses through innovative solutions and strategic
-              partnerships — fostering growth in an ever-evolving digital
-              landscape.
+              Platforms, ventures, and revenue systems — designed to compound.
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
@@ -163,82 +179,44 @@ function CompanyOverview() {
 }
 
 /* =========================================================
-   5. SERVICE FRAMEWORK  (image 4)
+   5. THE SYSTEM — Design / Build / Activate / Scale
    ========================================================= */
 function ServiceFramework() {
-  const layers = [
-    {
-      title: "Venture Studio",
-      desc: "Build ventures and create assets.",
-      icon: Rocket,
-    },
-    {
-      title: "Platform Builder",
-      desc: "Build digital platforms and AI systems.",
-      icon: Cpu,
-    },
-    {
-      title: "Biz Growth Design",
-      desc: "Design revenue systems and growth strategy.",
-      icon: LineChart,
-    },
-    {
-      title: "Power Layer",
-      desc: "Technology &amp; data infrastructure foundation.",
-      icon: Database,
-    },
+  const stages = [
+    { k: "Design", desc: "Map the system. Architect the path.", icon: Compass },
+    { k: "Build", desc: "Ship platforms, ventures, infrastructure.", icon: Hammer },
+    { k: "Activate", desc: "Launch revenue. Open access. Convert.", icon: Rocket },
+    { k: "Scale", desc: "Compound the system. Sustain growth.", icon: TrendingUp },
   ];
   return (
     <Section
-      eyebrow="Service Framework"
-      title={<>One connected stack — strategy to revenue.</>}
+      eyebrow="The System"
+      title={<>Four stages. <span className="text-gradient">One revenue engine.</span></>}
     >
-      <div className="grid items-center gap-8 md:grid-cols-[1fr_auto_18rem]">
-        {/* Stacked layers */}
-        <div className="space-y-3">
-          {layers.map((l, i) => (
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {stages.map((s, i) => (
+          <div
+            key={s.k}
+            className="group relative isolate overflow-hidden rounded-3xl border border-border bg-card/60 p-8 backdrop-blur transition-all hover:-translate-y-1 hover:shadow-elevated"
+          >
             <div
-              key={l.title}
-              className="group flex items-center gap-5 rounded-2xl border border-border bg-card/60 p-6 backdrop-blur transition-all hover:shadow-glow"
-              style={{
-                marginLeft: `${i * 12}px`,
-              }}
+              aria-hidden
+              className="pointer-events-none absolute -right-4 -top-4 select-none text-[5rem] font-black leading-none tracking-tighter text-foreground/[0.05]"
             >
-              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
-                <l.icon className="h-5 w-5" />
-              </div>
-              <div>
-                <div className="text-lg font-bold">{l.title}</div>
-                <div
-                  className="mt-1 text-sm text-muted-foreground"
-                  dangerouslySetInnerHTML={{ __html: l.desc }}
-                />
-              </div>
+              0{i + 1}
             </div>
-          ))}
-        </div>
-
-        {/* Brace */}
-        <div
-          aria-hidden
-          className="hidden h-full w-8 rounded-r-full border-y-2 border-r-2 border-[color:var(--brand-cyan)]/50 md:block"
-        />
-
-        {/* Pull quote */}
-        <div className="rounded-3xl border border-border bg-card/60 p-7 backdrop-blur">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-cyan)]">
-            Designed as one
+            <div className="relative z-10">
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+                <s.icon className="h-5 w-5" />
+              </div>
+              <div className="mt-6 text-xs font-semibold tracking-[0.24em] text-[color:var(--brand-cyan)]">
+                STAGE 0{i + 1}
+              </div>
+              <h3 className="mt-2 text-2xl font-bold tracking-tight">{s.k}</h3>
+              <p className="mt-3 text-sm text-muted-foreground">{s.desc}</p>
+            </div>
           </div>
-          <p className="mt-4 text-lg font-semibold leading-snug">
-            Every service is engineered to connect — from planning, to building,
-            to driving real revenue.
-          </p>
-          <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
-            <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-[color:var(--brand-cyan)]" /> Strategy + Build</li>
-            <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-[color:var(--brand-cyan)]" /> Venture + Market access</li>
-            <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 text-[color:var(--brand-cyan)]" /> Domain expertise</li>
-          </ul>
-        </div>
+        ))}
       </div>
     </Section>
   );
@@ -272,8 +250,16 @@ function CTA() {
             className="h-12 rounded-full bg-gradient-primary px-8 text-base font-semibold text-white shadow-glow hover:opacity-95"
           >
             <Link to="/contact">
-              Start a Venture <ArrowRight className="ml-2 h-4 w-4" />
+              Start a Project <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="h-12 rounded-full border-border bg-card/40 px-8 text-base font-semibold backdrop-blur"
+          >
+            <Link to="/contact">Build a Venture</Link>
           </Button>
         </div>
       </div>
