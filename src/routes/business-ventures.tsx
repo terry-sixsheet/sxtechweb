@@ -63,7 +63,6 @@ function BusinessVenturesPage() {
       <main className="relative">
         <PageHero />
         <CompanyOverview />
-        <SystemBuild />
         <Capabilities />
         <FocusDomains />
         <CTA />
