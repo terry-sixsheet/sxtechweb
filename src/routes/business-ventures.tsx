@@ -8,6 +8,8 @@ import {
   Compass,
   Hammer,
   TrendingUp,
+  Layers,
+  Database,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -55,6 +57,7 @@ function BusinessVenturesPage() {
         <PageHero />
         <CompanyOverview />
         <ServiceFramework />
+        <SystemBuild />
         <CTA />
       </main>
       <Footer />
