@@ -137,18 +137,18 @@ function CompanyOverview() {
   const pillars = [
     {
       icon: Building2,
-      title: "Venture Builder",
-      desc: "We build platforms — not deliver projects.",
+      title: "From Zero to Scalable Business",
+      desc: "We guide your business from idea to execution — structured, validated, and built to grow.",
     },
     {
       icon: Cpu,
-      title: "AI as the Operating Layer",
-      desc: "New revenue. Compounding efficiency.",
+      title: "Build & Co-Create with AI",
+      desc: "Work alongside our AI-powered team to design, build, and launch faster with intelligence at the core.",
     },
     {
       icon: HandCoins,
-      title: "We Co-Invest",
-      desc: "Skin in the game. Aligned outcomes.",
+      title: "Co-Invest for Shared Success",
+      desc: "We invest alongside you — aligned incentives, shared risks, and mutual upside.",
     },
   ];
   return (
