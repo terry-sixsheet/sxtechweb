@@ -181,8 +181,15 @@ function Founders() {
         {people.map((p) => (
           <GradientCard key={p.name}>
             <div className="flex items-center gap-4">
-              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-primary text-base font-bold text-white shadow-glow">
-                {p.initials}
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-gradient-primary p-[2px] shadow-glow">
+                <img
+                  src={p.photo}
+                  alt={`Portrait of ${p.name}`}
+                  width={768}
+                  height={768}
+                  loading="lazy"
+                  className="h-full w-full rounded-[14px] object-cover"
+                />
               </div>
               <div>
                 <h3 className="text-lg font-bold leading-tight">{p.name}</h3>
