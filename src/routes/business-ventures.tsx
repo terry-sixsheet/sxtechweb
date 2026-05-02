@@ -456,3 +456,54 @@ function Capabilities() {
     </section>
   );
 }
+
+/* =========================================================
+   9. FOCUS DOMAINS
+   ========================================================= */
+function FocusDomains() {
+  const domains = [
+    {
+      icon: Bitcoin,
+      title: "Fintech & BlockchainTech",
+      desc: "Payments, wallets, RWA, on-chain infra, and compliance-grade data pipelines.",
+    },
+    {
+      icon: CalendarDays,
+      title: "Event Tech",
+      desc: "On-ground experience systems, registration, gamification, sponsor activation.",
+    },
+    {
+      icon: Target,
+      title: "Martech · AI Transformation",
+      desc: "AI-native CRM, lead intelligence, creative automation, and growth loops.",
+    },
+  ];
+  return (
+    <Section
+      eyebrow="Focus Domains"
+      title={<>Deep expertise in <span className="text-gradient">three domains.</span></>}
+      subtitle={
+        <>Years of operator reps — <span className="text-gradient">not pitch-deck fluency.</span></>
+      }
+    >
+      <div className="grid gap-6 md:grid-cols-3">
+        {domains.map((d) => (
+          <div
+            key={d.title}
+            className="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-10 backdrop-blur transition-all hover:-translate-y-1 hover:border-[color:var(--brand-cyan)]/40 hover:shadow-elevated"
+          >
+            <div className="grid h-12 w-12 place-items-center rounded-xl border border-[color:var(--brand-cyan)]/30 bg-[color:var(--brand-cyan)]/10 text-[color:var(--brand-cyan)]">
+              <d.icon className="h-5 w-5" />
+            </div>
+            <h3 className="mt-8 text-2xl font-bold leading-tight tracking-tight">
+              {d.title}
+            </h3>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              {d.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
