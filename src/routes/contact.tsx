@@ -81,14 +81,14 @@ function ContactGrid() {
     {
       icon: Mail,
       label: "Email",
-      value: "hello@sxtrans.com",
-      href: "mailto:hello@sxtrans.com",
+      value: "hello@sxtech.me",
+      href: "mailto:hello@sxtech.me",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+66 (0)2 000 0000",
-      href: "tel:+6620000000",
+      value: "+66 83 946 2656",
+      href: "tel:+66839462656",
     },
     {
       icon: Facebook,
@@ -111,7 +111,7 @@ function ContactGrid() {
     {
       icon: Building2,
       label: "Company",
-      value: "SX Transformation Co., Ltd.",
+      value: "SX TECH Co., Ltd.",
       href: null,
     },
   ];
@@ -227,7 +227,7 @@ function CompanyMap() {
               Company
             </div>
             <h3 className="mt-3 text-2xl font-bold tracking-tight md:text-3xl">
-              SX Transformation Co., Ltd.
+              SX TECH Co., Ltd.
             </h3>
             <p className="mt-4 text-sm text-muted-foreground">
               A transformation company combining technology and human
@@ -243,7 +243,7 @@ function CompanyMap() {
               asChild
               className="mt-8 h-12 rounded-full bg-gradient-primary px-7 text-base font-semibold text-white shadow-glow hover:opacity-95"
             >
-              <a href="mailto:hello@sxtrans.com">
+              <a href="mailto:hello@sxtech.me">
                 Start a Project <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
