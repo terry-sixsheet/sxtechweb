@@ -9,6 +9,11 @@ import {
   Hammer,
   TrendingUp,
   Database,
+  Layers,
+  GitBranch,
+  LayoutDashboard,
+  Briefcase,
+  Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -57,6 +62,7 @@ function BusinessVenturesPage() {
         <CompanyOverview />
         <ServiceFramework />
         <SystemBuild />
+        <Capabilities />
         <CTA />
       </main>
       <Footer />
