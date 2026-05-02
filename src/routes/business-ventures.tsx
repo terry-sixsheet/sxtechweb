@@ -14,6 +14,9 @@ import {
   LayoutDashboard,
   Briefcase,
   Sparkles,
+  Bitcoin,
+  CalendarDays,
+  Target,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -63,6 +66,7 @@ function BusinessVenturesPage() {
         <ServiceFramework />
         <SystemBuild />
         <Capabilities />
+        <FocusDomains />
         <CTA />
       </main>
       <Footer />
