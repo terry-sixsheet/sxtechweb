@@ -9,6 +9,11 @@ import {
   Hammer,
   TrendingUp,
   Database,
+  Layers,
+  GitBranch,
+  LayoutDashboard,
+  Briefcase,
+  Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -57,6 +62,7 @@ function BusinessVenturesPage() {
         <CompanyOverview />
         <ServiceFramework />
         <SystemBuild />
+        <Capabilities />
         <CTA />
       </main>
       <Footer />
@@ -354,5 +360,95 @@ function SystemBuild() {
         ))}
       </div>
     </Section>
+  );
+}
+
+/* =========================================================
+   8. SIX CAPABILITIES
+   ========================================================= */
+function Capabilities() {
+  const items = [
+    {
+      icon: Layers,
+      title: "Digital Platform Development",
+      desc: "Architect and ship production-grade, multi-tenant platforms on modern cloud stacks.",
+    },
+    {
+      icon: GitBranch,
+      title: "PMO / System Integration & Modernization",
+      desc: "Unblock legacy estates with disciplined delivery management and pragmatic integration patterns.",
+    },
+    {
+      icon: Compass,
+      title: "Business Transformation Consulting",
+      desc: "Bridge strategy and execution — from OKR to release pipeline — with senior operators in the room.",
+    },
+    {
+      icon: LayoutDashboard,
+      title: "Business Transformation Design",
+      desc: "Design operating models, process rituals, and product org structures that actually scale.",
+    },
+    {
+      icon: Briefcase,
+      title: "C-Level as a Service",
+      desc: "Fractional CTO, CPO, and CIO coverage to de-risk critical bets without a long executive search.",
+    },
+    {
+      icon: Sparkles,
+      title: "Startup Jumpstart",
+      desc: "Spin up from zero — branding, product, cloud, data, and compliance — with a venture-builder playbook.",
+    },
+  ];
+  return (
+    <section className="relative mx-auto max-w-7xl px-6 py-20 md:py-28">
+      <div
+        className="relative isolate overflow-hidden rounded-[2rem] px-8 py-20 md:px-16 md:py-28"
+        style={{
+          background:
+            "linear-gradient(135deg, oklch(0.97 0.01 250) 0%, oklch(0.96 0.02 240) 50%, oklch(0.94 0.04 230) 100%)",
+        }}
+      >
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-32 top-20 z-0 h-[500px] w-[500px] rounded-full opacity-30 blur-3xl"
+          style={{
+            background:
+              "radial-gradient(circle, color-mix(in oklab, var(--brand-cyan) 50%, transparent), transparent 70%)",
+          }}
+        />
+        <div className="relative z-10 mx-auto max-w-5xl">
+          <h2 className="text-balance text-4xl font-bold leading-tight tracking-tight text-neutral-900 md:text-6xl">
+            Six capabilities. <span className="text-gradient">One integrated team.</span>
+          </h2>
+          <p className="mt-6 max-w-2xl text-pretty text-base text-neutral-600 md:text-lg">
+            Hire us for any of these — or fold the whole set into a single transformation program.
+          </p>
+        </div>
+        <div className="relative z-10 mx-auto mt-14 grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {items.map((it, i) => (
+            <div
+              key={it.title}
+              className="group relative flex flex-col rounded-2xl border border-neutral-200/80 bg-white p-8 shadow-[0_2px_20px_-8px_rgba(15,23,42,0.08)] transition-all hover:-translate-y-1 hover:shadow-[0_12px_40px_-12px_rgba(15,23,42,0.18)]"
+            >
+              <div className="flex items-start justify-between">
+                <div className="grid h-12 w-12 place-items-center rounded-full bg-gradient-primary text-white shadow-glow">
+                  <it.icon className="h-5 w-5" />
+                </div>
+                <span className="text-xs font-medium tracking-wider text-neutral-400">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <h3 className="mt-8 text-2xl font-bold leading-tight tracking-tight text-neutral-900">
+                {it.title}
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-neutral-600">
+                {it.desc}
+              </p>
+              <div className="mt-8 h-px w-12 bg-gradient-primary opacity-60" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
