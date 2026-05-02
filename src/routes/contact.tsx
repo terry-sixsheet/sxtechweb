@@ -17,8 +17,8 @@ import {
   Nav,
   Section,
 } from "@/components/site/Shell";
-import founderThanawin from "@/assets/founder-thanawin.jpg";
-import founderKritchapon from "@/assets/founder-kritchapon.jpg";
+import founderThanawin from "@/assets/founder-thanawin.png";
+import founderKritchapon from "@/assets/founder-kritchapon.png";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
