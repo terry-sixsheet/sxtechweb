@@ -84,28 +84,44 @@ function PageHero() {
         className="pointer-events-none absolute inset-0 z-0"
         style={{
           background:
-            "linear-gradient(135deg, oklch(0.97 0.01 250) 0%, oklch(0.96 0.02 240) 40%, oklch(0.94 0.04 230) 100%)",
+            "linear-gradient(135deg, oklch(0.28 0.05 265) 0%, oklch(0.24 0.06 260) 45%, oklch(0.20 0.07 255) 100%)",
         }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-32 -top-32 z-0 h-[500px] w-[500px] rounded-full opacity-40 blur-3xl"
+        className="pointer-events-none absolute -right-32 -top-32 z-0 h-[500px] w-[500px] rounded-full opacity-50 blur-3xl"
         style={{
           background:
-            "radial-gradient(circle, color-mix(in oklab, var(--brand-cyan) 50%, transparent), transparent 70%)",
+            "radial-gradient(circle, color-mix(in oklab, var(--brand-cyan) 60%, transparent), transparent 70%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-40 -left-40 z-0 h-[520px] w-[520px] rounded-full opacity-40 blur-3xl"
+        style={{
+          background:
+            "radial-gradient(circle, color-mix(in oklab, var(--brand-indigo) 65%, transparent), transparent 70%)",
         }}
       />
       <div className="relative z-20 mx-auto max-w-5xl">
-        <div className="mb-10 text-xs font-bold uppercase tracking-[0.28em] text-[color:var(--brand-indigo)]">
+        <div className="mb-10 text-xs font-bold uppercase tracking-[0.28em] text-[color:var(--brand-cyan)]">
           Services
         </div>
-        <h1 className="text-balance text-5xl font-bold leading-[1.02] tracking-tight text-neutral-900 md:text-7xl lg:text-[5.5rem]">
-          Your <span className="text-gradient">AI transformation</span> tech partner.
+        <h1 className="text-balance text-5xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl lg:text-7xl">
+          We <span className="text-gradient">build and transform</span> businesses — powered by AI.
         </h1>
-        <p className="mt-10 max-w-2xl text-pretty text-lg text-neutral-600 md:text-xl">
-          We embed senior platform, product, and AI operators into your team
-          — and ship the work.
+        <p className="mt-8 max-w-2xl text-pretty text-lg text-neutral-200 md:text-xl">
+          We don't just advise — we build and scale with you.
         </p>
+        <div className="mt-6 flex flex-wrap items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-cyan)] md:text-base">
+          <span>Strategy</span>
+          <ArrowRight className="h-4 w-4 opacity-70" />
+          <span>Build</span>
+          <ArrowRight className="h-4 w-4 opacity-70" />
+          <span>Scale</span>
+          <ArrowRight className="h-4 w-4 opacity-70" />
+          <span>Co-invest</span>
+        </div>
         <div className="mt-12 flex flex-col gap-3 sm:flex-row">
           <Button
             asChild
@@ -113,16 +129,16 @@ function PageHero() {
             className="h-12 rounded-full bg-gradient-primary px-8 text-base font-semibold text-white shadow-glow hover:opacity-95"
           >
             <Link to="/contact">
-              Start a Project <ArrowRight className="ml-2 h-4 w-4" />
+              Start Your Transformation <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
           <Button
             asChild
             size="lg"
             variant="outline"
-            className="h-12 rounded-full border-neutral-300 bg-white/60 px-8 text-base font-semibold text-neutral-900 backdrop-blur hover:bg-white"
+            className="h-12 rounded-full border-white/30 bg-white/10 px-8 text-base font-semibold text-white backdrop-blur hover:bg-white/20"
           >
-            <Link to="/contact">Talk to Us</Link>
+            <Link to="/contact">Book a Strategy Call</Link>
           </Button>
         </div>
       </div>
