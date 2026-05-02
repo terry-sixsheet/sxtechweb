@@ -452,23 +452,23 @@ function Capabilities() {
           {items.map((it, i) => (
             <div
               key={it.title}
-              className="group relative flex flex-col rounded-2xl border border-neutral-200/80 bg-white p-8 shadow-[0_2px_20px_-8px_rgba(15,23,42,0.08)] transition-all hover:-translate-y-1 hover:shadow-[0_12px_40px_-12px_rgba(15,23,42,0.18)]"
+              className="group relative flex flex-col rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md shadow-[0_2px_20px_-8px_rgba(0,0,0,0.4)] transition-all hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.08] hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.6)]"
             >
               <div className="flex items-start justify-between">
                 <div className="grid h-12 w-12 place-items-center rounded-full bg-gradient-primary text-white shadow-glow">
                   <it.icon className="h-5 w-5" />
                 </div>
-                <span className="text-xs font-medium tracking-wider text-neutral-400">
+                <span className="text-xs font-medium tracking-wider text-neutral-500">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
-              <h3 className="mt-8 text-2xl font-bold leading-tight tracking-tight text-neutral-900">
+              <h3 className="mt-8 text-2xl font-bold leading-tight tracking-tight text-white">
                 {it.title}
               </h3>
               <p className="mt-3 text-sm font-semibold text-[color:var(--brand-cyan)]">
                 {it.tagline}
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+              <p className="mt-3 text-sm leading-relaxed text-neutral-300">
                 {it.desc}
               </p>
               <div className="mt-8 h-px w-12 bg-gradient-primary opacity-60" />
