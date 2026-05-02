@@ -8,6 +8,7 @@ import {
   Compass,
   Hammer,
   TrendingUp,
+  Database,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -55,6 +56,7 @@ function BusinessVenturesPage() {
         <PageHero />
         <CompanyOverview />
         <ServiceFramework />
+        <SystemBuild />
         <CTA />
       </main>
       <Footer />
@@ -261,6 +263,85 @@ function CTA() {
             <Link to="/contact">Build a Venture</Link>
           </Button>
         </div>
+      </div>
+    </Section>
+  );
+}
+
+/* =========================================================
+   7. HOW WE BUILD YOUR SYSTEM
+   ========================================================= */
+function SystemBuild() {
+  const blocks = [
+    {
+      icon: Compass,
+      label: "01 — Architecture",
+      title: "Revenue & Business Design",
+      desc: "Design revenue architecture and business systems.",
+      points: ["Business model design", "Monetization strategy", "Transformation roadmap"],
+    },
+    {
+      icon: Cpu,
+      label: "02 — Product",
+      title: "Platform & AI Development",
+      desc: "Build production-ready platforms and AI systems.",
+      points: ["Platform development", "System integration", "AI implementation"],
+    },
+    {
+      icon: Rocket,
+      label: "03 — Ventures",
+      title: "Venture Creation & Scaling",
+      desc: "Co-build and scale ventures and new business units.",
+      points: ["Venture studio", "Go-to-market", "Growth strategy"],
+    },
+    {
+      icon: Database,
+      label: "04 — Foundation",
+      title: "Infrastructure & Data Layer",
+      desc: "Build scalable infrastructure and data systems.",
+      points: ["Data architecture", "Cloud systems", "Backend infrastructure"],
+    },
+  ];
+  return (
+    <Section
+      eyebrow="The Build"
+      title={<>How we <span className="text-gradient">build your system.</span></>}
+    >
+      <div className="grid gap-6 md:grid-cols-2">
+        {blocks.map((b) => (
+          <div
+            key={b.title}
+            className="group relative isolate overflow-hidden rounded-3xl p-px transition-all hover:-translate-y-1"
+            style={{
+              backgroundImage:
+                "linear-gradient(140deg, color-mix(in oklab, var(--brand-indigo) 45%, transparent), color-mix(in oklab, var(--brand-cyan) 25%, transparent) 55%, transparent 85%)",
+            }}
+          >
+            <div className="relative h-full rounded-[calc(1.5rem-1px)] bg-card/80 p-10 backdrop-blur md:p-12">
+              <div className="flex items-start justify-between gap-6">
+                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-primary text-white shadow-glow">
+                  <b.icon className="h-6 w-6" />
+                </div>
+                <span className="text-xs font-semibold tracking-[0.24em] text-[color:var(--brand-cyan)]">
+                  {b.label}
+                </span>
+              </div>
+              <h3 className="mt-8 text-3xl font-bold leading-tight tracking-tight md:text-4xl">
+                {b.title}
+              </h3>
+              <p className="mt-4 text-base text-muted-foreground">{b.desc}</p>
+              <div className="mt-8 h-px w-full bg-border/60" />
+              <ul className="mt-6 space-y-3">
+                {b.points.map((p) => (
+                  <li key={p} className="flex items-center gap-3 text-sm text-foreground/80">
+                    <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
       </div>
     </Section>
   );
