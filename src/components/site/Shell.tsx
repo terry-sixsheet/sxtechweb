@@ -27,10 +27,10 @@ export function BackgroundFX() {
 
 export function Nav() {
   const links: Array<{ to: string; label: string; hash?: string }> = [
-    { to: "/", hash: "approach", label: "Start Transformation" },
-    { to: "/business-ventures", label: "TECH™" },
-    { to: "/human-transform", label: "HUMAN™" },
-    { to: "/ventures", label: "Our Ventures Cases" },
+    { to: "/", label: "Home" },
+    { to: "/business-ventures", label: "TECH™ Services" },
+    { to: "/ventures", label: "Ventures Studio" },
+    { to: "/human-transform", label: "HUMAN™ Services" },
     { to: "/contact", label: "Contact Us" },
   ];
   return (
