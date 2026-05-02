@@ -168,7 +168,7 @@ function Founders() {
       role: "Co-Founder · Engineering & Platforms",
       bio: "Senior Full-stack Software Developer at Robowealth Mutual Fund Brokerage Securities. Experienced in building investment platforms and SAP systems, with a strong track record across the information technology and services industry.",
       initials: "KC",
-      photo: founderKritchopon_PLACEHOLDER,
+      photo: founderKritchapon,
       linkedin: "https://www.linkedin.com/in/kritchapon-choktananan-176595b2/",
     },
   ];
