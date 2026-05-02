@@ -17,6 +17,8 @@ import {
   Nav,
   Section,
 } from "@/components/site/Shell";
+import founderThanawin from "@/assets/founder-thanawin.jpg";
+import founderKritchapon from "@/assets/founder-kritchapon.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -158,6 +160,7 @@ function Founders() {
       role: "Co-Founder · Digital Transformation & Ventures",
       bio: "Deputy Chief Executive Officer at J Ventures (Jaymart Group). Dynamic executive with 15+ years in Digital Transformation, specializing in Commerce Tech, Finance Tech, and Blockchain — blending business and technical expertise to drive innovation.",
       initials: "TR",
+      photo: founderThanawin,
       linkedin: "https://www.linkedin.com/in/thanawin-ratametha-25385763/",
     },
     {
@@ -165,6 +168,7 @@ function Founders() {
       role: "Co-Founder · Engineering & Platforms",
       bio: "Senior Full-stack Software Developer at Robowealth Mutual Fund Brokerage Securities. Experienced in building investment platforms and SAP systems, with a strong track record across the information technology and services industry.",
       initials: "KC",
+      photo: founderKritchapon,
       linkedin: "https://www.linkedin.com/in/kritchapon-choktananan-176595b2/",
     },
   ];
@@ -177,8 +181,15 @@ function Founders() {
         {people.map((p) => (
           <GradientCard key={p.name}>
             <div className="flex items-center gap-4">
-              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-primary text-base font-bold text-white shadow-glow">
-                {p.initials}
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-gradient-primary p-[2px] shadow-glow">
+                <img
+                  src={p.photo}
+                  alt={`Portrait of ${p.name}`}
+                  width={768}
+                  height={768}
+                  loading="lazy"
+                  className="h-full w-full rounded-[14px] object-cover"
+                />
               </div>
               <div>
                 <h3 className="text-lg font-bold leading-tight">{p.name}</h3>
