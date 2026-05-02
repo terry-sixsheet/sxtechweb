@@ -462,29 +462,34 @@ function FocusDomains() {
   const domains = [
     {
       icon: Bitcoin,
-      title: "Fintech & BlockchainTech",
-      desc: "Payments, wallets, RWA, on-chain infra, and compliance-grade data pipelines.",
+      title: "Fintech & Blockchain Tech",
+      desc: "Unlock new revenue rails — faster settlement, lower fees, and trust built into every transaction.",
     },
     {
       icon: CalendarDays,
-      title: "Event Tech",
-      desc: "On-ground experience systems, registration, gamification, sponsor activation.",
+      title: "Event Tech & Customer Data Tech",
+      desc: "Turn every touchpoint into measurable revenue — higher engagement, richer first-party data, stronger LTV.",
     },
     {
       icon: Target,
-      title: "Martech · AI Transformation",
-      desc: "AI-native CRM, lead intelligence, creative automation, and growth loops.",
+      title: "Marketing Tech",
+      desc: "Compound growth loops that cut CAC, lift conversion, and scale pipeline without scaling headcount.",
+    },
+    {
+      icon: Sparkles,
+      title: "AI Transformation Tech",
+      desc: "Embed AI into the workflows that move the P&L — faster decisions, leaner ops, double-digit productivity gains.",
     },
   ];
   return (
     <Section
       eyebrow="Focus Domains"
-      title={<>Deep expertise in <span className="text-gradient">three domains.</span></>}
+      title={<>Deep expertise in <span className="text-gradient">four domains.</span></>}
       subtitle={
         <>Years of operator reps — <span className="text-gradient">not pitch-deck fluency.</span></>
       }
     >
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {domains.map((d) => (
           <div
             key={d.title}
