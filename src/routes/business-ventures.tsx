@@ -371,34 +371,40 @@ function SystemBuild() {
 function Capabilities() {
   const items = [
     {
+      icon: Rocket,
+      title: "Startup & Venture Launch",
+      tagline: "Launch your business from zero",
+      desc: "Validate ideas, build MVP, and launch your venture end-to-end.",
+    },
+    {
       icon: Layers,
       title: "Digital Platform Development",
-      desc: "Architect and ship production-grade, multi-tenant platforms on modern cloud stacks.",
+      tagline: "Build your core technology platform",
+      desc: "Design and develop scalable web, mobile, and backend systems.",
+    },
+    {
+      icon: Sparkles,
+      title: "AI Solutions & Automation",
+      tagline: "Use AI to scale faster",
+      desc: "Implement AI for content, operations, customer engagement, and decision-making.",
     },
     {
       icon: GitBranch,
-      title: "PMO / System Integration & Modernization",
-      desc: "Unblock legacy estates with disciplined delivery management and pragmatic integration patterns.",
-    },
-    {
-      icon: Compass,
-      title: "Business Transformation Consulting",
-      desc: "Bridge strategy and execution — from OKR to release pipeline — with senior operators in the room.",
+      title: "System Integration & Modernization",
+      tagline: "Connect and upgrade your systems",
+      desc: "Integrate tools, modernize legacy systems, and streamline your tech stack.",
     },
     {
       icon: LayoutDashboard,
-      title: "Business Transformation Design",
-      desc: "Design operating models, process rituals, and product org structures that actually scale.",
+      title: "PMO & Delivery Management",
+      tagline: "Ensure projects get delivered — on time, on target",
+      desc: "We manage execution, align teams, track progress, and drive outcomes.",
     },
     {
       icon: Briefcase,
       title: "C-Level as a Service",
-      desc: "Fractional CTO, CPO, and CIO coverage to de-risk critical bets without a long executive search.",
-    },
-    {
-      icon: Sparkles,
-      title: "Startup Jumpstart",
-      desc: "Spin up from zero — branding, product, cloud, data, and compliance — with a venture-builder playbook.",
+      tagline: "Get experienced leadership without full-time cost",
+      desc: "Fractional CTO, CPO, CIO to drive strategy, tech, and product execution.",
     },
   ];
   return (
@@ -420,7 +426,7 @@ function Capabilities() {
         />
         <div className="relative z-10 mx-auto max-w-5xl">
           <h2 className="text-balance text-4xl font-bold leading-tight tracking-tight text-neutral-900 md:text-6xl">
-            Six capabilities. <span className="text-gradient">One integrated team.</span>
+            Our services. <span className="text-gradient">One integrated team.</span>
           </h2>
           <p className="mt-6 max-w-2xl text-pretty text-base text-neutral-600 md:text-lg">
             Hire us for any of these — or fold the whole set into a single transformation program.
@@ -443,7 +449,10 @@ function Capabilities() {
               <h3 className="mt-8 text-2xl font-bold leading-tight tracking-tight text-neutral-900">
                 {it.title}
               </h3>
-              <p className="mt-4 text-sm leading-relaxed text-neutral-600">
+              <p className="mt-3 text-sm font-semibold text-[color:var(--brand-cyan)]">
+                {it.tagline}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
                 {it.desc}
               </p>
               <div className="mt-8 h-px w-12 bg-gradient-primary opacity-60" />
