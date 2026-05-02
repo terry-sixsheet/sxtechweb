@@ -429,22 +429,22 @@ function Capabilities() {
         className="relative isolate overflow-hidden rounded-[2rem] px-8 py-20 md:px-16 md:py-28"
         style={{
           background:
-            "linear-gradient(135deg, oklch(0.97 0.01 250) 0%, oklch(0.96 0.02 240) 50%, oklch(0.94 0.04 230) 100%)",
+            "linear-gradient(135deg, oklch(0.30 0.04 265) 0%, oklch(0.26 0.05 260) 50%, oklch(0.22 0.06 255) 100%)",
         }}
       >
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-32 top-20 z-0 h-[500px] w-[500px] rounded-full opacity-30 blur-3xl"
+          className="pointer-events-none absolute -right-32 top-20 z-0 h-[500px] w-[500px] rounded-full opacity-40 blur-3xl"
           style={{
             background:
-              "radial-gradient(circle, color-mix(in oklab, var(--brand-cyan) 50%, transparent), transparent 70%)",
+              "radial-gradient(circle, color-mix(in oklab, var(--brand-cyan) 60%, transparent), transparent 70%)",
           }}
         />
         <div className="relative z-10 mx-auto max-w-5xl">
-          <h2 className="text-balance text-4xl font-bold leading-tight tracking-tight text-neutral-900 md:text-6xl">
+          <h2 className="text-balance text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl lg:text-5xl">
             Our services. <span className="text-gradient">One integrated team.</span>
           </h2>
-          <p className="mt-6 max-w-2xl text-pretty text-base text-neutral-600 md:text-lg">
+          <p className="mt-4 max-w-2xl text-pretty text-sm text-neutral-300 md:text-base">
             Hire us for any of these — or fold the whole set into a single transformation program.
           </p>
         </div>
