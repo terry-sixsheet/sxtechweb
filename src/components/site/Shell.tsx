@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Facebook, Instagram, Mail, Phone } from "lucide-react";
+import { ArrowRight, Facebook, Instagram, Mail, Menu, Phone, X } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import sxLogo from "@/assets/sx-logo.png";
@@ -33,6 +34,7 @@ export function Nav() {
     { to: "/human-transform", label: "HUMAN™ Services" },
     { to: "/contact", label: "Contact Us" },
   ];
+  const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
@@ -57,16 +59,55 @@ export function Nav() {
             </Link>
           ))}
         </nav>
-        <Button
-          asChild
-          size="sm"
-          className="rounded-full bg-gradient-primary text-white shadow-glow hover:opacity-90"
-        >
-          <Link to="/contact">
-            Contact Us <ArrowRight className="ml-1 h-4 w-4" />
-          </Link>
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button
+            asChild
+            size="sm"
+            className="hidden rounded-full bg-gradient-primary text-white shadow-glow hover:opacity-90 md:inline-flex"
+          >
+            <Link to="/contact">
+              Contact Us <ArrowRight className="ml-1 h-4 w-4" />
+            </Link>
+          </Button>
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="grid h-10 w-10 place-items-center rounded-full border border-border bg-card/60 text-foreground md:hidden"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
+      {open && (
+        <div className="border-t border-border/60 bg-background/95 backdrop-blur-xl md:hidden">
+          <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
+            {links.map((l) => (
+              <Link
+                key={`m-${l.to}-${l.label}`}
+                to={l.to}
+                hash={l.hash}
+                onClick={() => setOpen(false)}
+                className="rounded-lg px-3 py-3 text-base text-muted-foreground transition-colors hover:bg-card/60 hover:text-foreground"
+                activeOptions={{ exact: true }}
+                activeProps={{ className: "text-foreground bg-card/60" }}
+              >
+                {l.label}
+              </Link>
+            ))}
+            <Button
+              asChild
+              size="sm"
+              className="mt-2 w-full rounded-full bg-gradient-primary text-white shadow-glow hover:opacity-90"
+            >
+              <Link to="/contact" onClick={() => setOpen(false)}>
+                Contact Us <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
+            </Button>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
