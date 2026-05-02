@@ -69,26 +69,36 @@ function BusinessVenturesPage() {
    ========================================================= */
 function PageHero() {
   return (
-    <section className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-6 py-32 md:mt-8 md:py-44">
-      <img
-        src={heroTech}
-        alt=""
+    <section className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-8 py-24 md:mt-8 md:px-16 md:py-36">
+      {/* Light background wash */}
+      <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-60"
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{
+          background:
+            "linear-gradient(135deg, oklch(0.97 0.01 250) 0%, oklch(0.96 0.02 240) 40%, oklch(0.94 0.04 230) 100%)",
+        }}
       />
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-background via-background/80 to-background/40" />
-      <div className="relative z-20 mx-auto max-w-4xl text-center">
-        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground backdrop-blur">
-          <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
-          TECH™
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-32 -top-32 z-0 h-[500px] w-[500px] rounded-full opacity-40 blur-3xl"
+        style={{
+          background:
+            "radial-gradient(circle, color-mix(in oklab, var(--brand-cyan) 50%, transparent), transparent 70%)",
+        }}
+      />
+      <div className="relative z-20 mx-auto max-w-5xl">
+        <div className="mb-10 text-xs font-bold uppercase tracking-[0.28em] text-[color:var(--brand-indigo)]">
+          Services
         </div>
-        <h1 className="text-balance text-5xl font-bold leading-[1.02] tracking-tight md:text-7xl lg:text-8xl">
-          A system to <span className="text-gradient">create and scale revenue.</span>
+        <h1 className="text-balance text-5xl font-bold leading-[1.02] tracking-tight text-neutral-900 md:text-7xl lg:text-[5.5rem]">
+          Your <span className="text-gradient">AI transformation</span> tech partner.
         </h1>
-        <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg text-muted-foreground md:text-xl">
-          Design. Build. Activate. Scale.
+        <p className="mt-10 max-w-2xl text-pretty text-lg text-neutral-600 md:text-xl">
+          We embed senior platform, product, and AI operators into your team
+          — and ship the work.
         </p>
-        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-12 flex flex-col gap-3 sm:flex-row">
           <Button
             asChild
             size="lg"
@@ -102,7 +112,7 @@ function PageHero() {
             asChild
             size="lg"
             variant="outline"
-            className="h-12 rounded-full border-border bg-card/40 px-8 text-base font-semibold backdrop-blur"
+            className="h-12 rounded-full border-neutral-300 bg-white/60 px-8 text-base font-semibold text-neutral-900 backdrop-blur hover:bg-white"
           >
             <Link to="/contact">Talk to Us</Link>
           </Button>
