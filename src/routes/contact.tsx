@@ -5,6 +5,7 @@ import {
   Phone,
   Facebook,
   Instagram,
+  Linkedin,
   MapPin,
   Building2,
 } from "lucide-react";
@@ -153,22 +154,18 @@ function ContactGrid() {
 function Founders() {
   const people = [
     {
-      name: "Alex Suriyawong",
-      role: "Co-Founder · Systems & Ventures",
-      bio: "Builds platforms and revenue systems. Previously led product at high-growth ventures across Southeast Asia.",
-      initials: "AS",
+      name: "Thanawin Ratametha",
+      role: "Co-Founder · Digital Transformation & Ventures",
+      bio: "Deputy Chief Executive Officer at J Ventures (Jaymart Group). Dynamic executive with 15+ years in Digital Transformation, specializing in Commerce Tech, Finance Tech, and Blockchain — blending business and technical expertise to drive innovation.",
+      initials: "TR",
+      linkedin: "https://www.linkedin.com/in/thanawin-ratametha-25385763/",
     },
     {
-      name: "Dr. Mira Chen",
-      role: "Co-Founder · Human Performance",
-      bio: "Designs operating systems for leaders. Background in cognitive science and executive coaching.",
-      initials: "MC",
-    },
-    {
-      name: "Ken Phongsak",
-      role: "Co-Founder · Strategy & Growth",
-      bio: "Architects business growth and go-to-market. Operator across fintech, martech, and AI.",
-      initials: "KP",
+      name: "Kritchapon Choktananan",
+      role: "Co-Founder · Engineering & Platforms",
+      bio: "Senior Full-stack Software Developer at Robowealth Mutual Fund Brokerage Securities. Experienced in building investment platforms and SAP systems, with a strong track record across the information technology and services industry.",
+      initials: "KC",
+      linkedin: "https://www.linkedin.com/in/kritchapon-choktananan-176595b2/",
     },
   ];
   return (
@@ -176,7 +173,7 @@ function Founders() {
       eyebrow="Founders"
       title={<>The people behind <span className="text-gradient">the system.</span></>}
     >
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2">
         {people.map((p) => (
           <GradientCard key={p.name}>
             <div className="flex items-center gap-4">
@@ -193,6 +190,15 @@ function Founders() {
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
               {p.bio}
             </p>
+            <a
+              href={p.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand-cyan)] underline-offset-4 hover:underline"
+            >
+              <Linkedin className="h-4 w-4" />
+              View LinkedIn profile
+            </a>
           </GradientCard>
         ))}
       </div>
