@@ -17,6 +17,12 @@ import {
   Bitcoin,
   CalendarDays,
   Target,
+  Lightbulb,
+  Users,
+  Network,
+  Zap,
+  ShoppingBag,
+  CheckCircle2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -64,7 +70,10 @@ function BusinessVenturesPage() {
         <PageHero />
         <CompanyOverview />
         <Capabilities />
+        <InvestmentThesis />
         <FocusDomains />
+        <PartnersWith />
+        <OurEdge />
         <CTA />
       </main>
       <Footer />
@@ -111,7 +120,7 @@ function PageHero() {
           We <span className="text-gradient">build and transform</span> businesses — powered by AI.
         </h1>
         <p className="mt-8 max-w-2xl text-pretty text-lg text-neutral-200 md:text-xl">
-          We don't just advise — we build and scale with you.
+          From idea to growth — we partner, build, and invest.
         </p>
         <div className="mt-6 flex flex-wrap items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-cyan)] md:text-base">
           <span>Strategy</span>
@@ -152,19 +161,19 @@ function PageHero() {
 function CompanyOverview() {
   const pillars = [
     {
-      icon: Building2,
-      title: "From Zero to Scalable Business",
-      desc: "We guide your business from idea to execution — structured, validated, and built to grow.",
+      icon: Lightbulb,
+      title: "Our Vision",
+      desc: "Empowering ventures to scale — through technology, AI, and a strong network ecosystem.",
     },
     {
-      icon: Cpu,
-      title: "Build & Co-Create with AI",
-      desc: "Work alongside our AI-powered team to design, build, and launch faster with intelligence at the core.",
+      icon: Rocket,
+      title: "Our Mission",
+      desc: "We build, grow, and co-invest in ventures that combine strong execution with strategic partnerships.",
     },
     {
       icon: HandCoins,
-      title: "Co-Invest for Shared Success",
-      desc: "We invest alongside you — aligned incentives, shared risks, and mutual upside.",
+      title: "Our Promise",
+      desc: "Aligned incentives, shared risk, mutual upside — we win when you win.",
     },
   ];
   return (
@@ -184,7 +193,7 @@ function CompanyOverview() {
           <div className="mx-auto mb-16 max-w-3xl text-center">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
-              Mission & Vision
+              Why We Exist
             </div>
             <h2 className="text-balance text-4xl font-bold leading-tight tracking-tight md:text-6xl">
               We build the <span className="text-gradient">growth engine.</span>
@@ -486,32 +495,32 @@ function Capabilities() {
 function FocusDomains() {
   const domains = [
     {
-      icon: Bitcoin,
-      title: "Fintech & Blockchain Tech",
-      desc: "Unlock new revenue rails — faster settlement, lower fees, and trust built into every transaction.",
+      icon: Rocket,
+      title: "Tech & Startup",
+      desc: "Early-stage ventures with scalable models — from MVP to product-market fit.",
     },
     {
-      icon: CalendarDays,
-      title: "Event Tech & Customer Data Tech",
-      desc: "Turn every touchpoint into measurable revenue — higher engagement, richer first-party data, stronger LTV.",
-    },
-    {
-      icon: Target,
       title: "Marketing Tech",
-      desc: "Compound growth loops that cut CAC, lift conversion, and scale pipeline without scaling headcount.",
+      icon: Target,
+      desc: "Tools and growth loops that drive measurable conversion and lower CAC.",
     },
     {
       icon: Sparkles,
-      title: "AI Transformation Tech",
-      desc: "Embed AI into the workflows that move the P&L — faster decisions, leaner ops, double-digit productivity gains.",
+      title: "AI & Automation",
+      desc: "Intelligent systems that replace manual work and embed AI into the workflows that move the P&L.",
+    },
+    {
+      icon: ShoppingBag,
+      title: "Digital Commerce",
+      desc: "D2C, platforms, and marketplaces — built to scale revenue across channels.",
     },
   ];
   return (
     <Section
-      eyebrow="Focus Domains"
-      title={<>Deep expertise in <span className="text-gradient">four domains.</span></>}
+      eyebrow="Focus Areas"
+      title={<>Where <span className="text-gradient">growth is happening.</span></>}
       subtitle={
-        <>Years of operator reps — <span className="text-gradient">not pitch-deck fluency.</span></>
+        <>We build where the <span className="text-gradient">market is moving.</span></>
       }
     >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -529,6 +538,160 @@ function FocusDomains() {
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               {d.desc}
             </p>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* =========================================================
+   10. INVESTMENT THESIS
+   ========================================================= */
+function InvestmentThesis() {
+  const principles = [
+    {
+      icon: Users,
+      label: "01",
+      title: "Right People",
+      desc: "Back teams with real execution capability — operators, not just ideas.",
+    },
+    {
+      icon: Target,
+      label: "02",
+      title: "Right Opportunities",
+      desc: "Focus on high-potential, scalable ventures — not everything that moves.",
+    },
+    {
+      icon: TrendingUp,
+      label: "03",
+      title: "Right Channels",
+      desc: "Grow through digital, content, and AI-driven marketing engines.",
+    },
+    {
+      icon: Zap,
+      label: "04",
+      title: "Right Timing",
+      desc: "Move fast where momentum is building — speed compounds advantage.",
+    },
+  ];
+  return (
+    <Section
+      eyebrow="How We Invest"
+      title={<>Our <span className="text-gradient">investment thesis.</span></>}
+      subtitle={<>Four principles that shape every bet we make.</>}
+    >
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {principles.map((p) => (
+          <div
+            key={p.title}
+            className="group relative isolate overflow-hidden rounded-3xl border border-border bg-card/60 p-8 backdrop-blur transition-all hover:-translate-y-1 hover:shadow-elevated"
+          >
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -right-4 -top-4 select-none text-[5rem] font-black leading-none tracking-tighter text-foreground/[0.05]"
+            >
+              {p.label}
+            </div>
+            <div className="relative z-10">
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+                <p.icon className="h-5 w-5" />
+              </div>
+              <h3 className="mt-6 text-xl font-bold tracking-tight">{p.title}</h3>
+              <p className="mt-3 text-sm text-muted-foreground">{p.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* =========================================================
+   11. WHO WE PARTNER WITH
+   ========================================================= */
+function PartnersWith() {
+  const partners = [
+    {
+      icon: Lightbulb,
+      title: "Early-stage Founders",
+      desc: "Have ideas but no product or team yet — we help you go from zero to MVP.",
+    },
+    {
+      icon: Cpu,
+      title: "AI Builders & Developers",
+      desc: "Strong in tech but lack scalability, structure, or go-to-market muscle.",
+    },
+    {
+      icon: Network,
+      title: "Business Owners & Network Players",
+      desc: "Looking to expand, digitize, or build new ventures on top of an existing base.",
+    },
+  ];
+  return (
+    <Section
+      eyebrow="Who We Partner With"
+      title={<>Built for <span className="text-gradient">builders.</span></>}
+      subtitle={<>We work with people who are ready to execute — not just talk.</>}
+    >
+      <div className="grid gap-6 md:grid-cols-3">
+        {partners.map((p) => (
+          <div
+            key={p.title}
+            className="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-10 backdrop-blur transition-all hover:-translate-y-1 hover:border-[color:var(--brand-cyan)]/40 hover:shadow-elevated"
+          >
+            <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+              <p.icon className="h-5 w-5" />
+            </div>
+            <h3 className="mt-8 text-2xl font-bold leading-tight tracking-tight">{p.title}</h3>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* =========================================================
+   12. OUR EDGE
+   ========================================================= */
+function OurEdge() {
+  const edges = [
+    {
+      title: "Strong business + tech execution",
+      desc: "Operators who have built and scaled real ventures — not just consultants.",
+    },
+    {
+      title: "AI-first approach",
+      desc: "AI embedded into every venture, every workflow, every decision loop.",
+    },
+    {
+      title: "Network-driven growth",
+      desc: "Tap into our mentor, partner, and investor pool to accelerate every stage.",
+    },
+    {
+      title: "Co-build & co-invest model",
+      desc: "Skin in the game — we share the risk and the upside alongside you.",
+    },
+  ];
+  return (
+    <Section
+      eyebrow="What Makes Us Different"
+      title={<>Our <span className="text-gradient">unfair advantage.</span></>}
+    >
+      <div className="grid gap-5 md:grid-cols-2">
+        {edges.map((e) => (
+          <div
+            key={e.title}
+            className="flex items-start gap-5 rounded-3xl border border-border bg-card/60 p-8 backdrop-blur transition-all hover:-translate-y-1 hover:shadow-elevated"
+          >
+            <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+              <CheckCircle2 className="h-5 w-5" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold leading-tight tracking-tight">{e.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{e.desc}</p>
+            </div>
           </div>
         ))}
       </div>
