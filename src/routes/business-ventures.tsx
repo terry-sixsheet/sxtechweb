@@ -141,14 +141,6 @@ function PageHero() {
               Start Your Transformation <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="h-12 rounded-full border-white/30 bg-white/10 px-8 text-base font-semibold text-white backdrop-blur hover:bg-white/20"
-          >
-            <Link to="/contact">Book a Strategy Call</Link>
-          </Button>
         </div>
       </div>
     </section>

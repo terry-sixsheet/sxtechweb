@@ -115,14 +115,6 @@ function Hero() {
           >
             <Link to="/business-ventures">Build a Venture</Link>
           </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="ghost"
-            className="h-13 rounded-full px-8 py-6 text-base font-semibold"
-          >
-            <Link to="/contact">Talk to Us</Link>
-          </Button>
         </div>
       </Container>
     </section>
