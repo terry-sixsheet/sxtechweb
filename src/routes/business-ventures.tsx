@@ -544,3 +544,157 @@ function FocusDomains() {
     </Section>
   );
 }
+
+/* =========================================================
+   10. INVESTMENT THESIS
+   ========================================================= */
+function InvestmentThesis() {
+  const principles = [
+    {
+      icon: Users,
+      label: "01",
+      title: "Right People",
+      desc: "Back teams with real execution capability — operators, not just ideas.",
+    },
+    {
+      icon: Target,
+      label: "02",
+      title: "Right Opportunities",
+      desc: "Focus on high-potential, scalable ventures — not everything that moves.",
+    },
+    {
+      icon: TrendingUp,
+      label: "03",
+      title: "Right Channels",
+      desc: "Grow through digital, content, and AI-driven marketing engines.",
+    },
+    {
+      icon: Zap,
+      label: "04",
+      title: "Right Timing",
+      desc: "Move fast where momentum is building — speed compounds advantage.",
+    },
+  ];
+  return (
+    <Section
+      eyebrow="How We Invest"
+      title={<>Our <span className="text-gradient">investment thesis.</span></>}
+      subtitle={<>Four principles that shape every bet we make.</>}
+    >
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {principles.map((p) => (
+          <div
+            key={p.title}
+            className="group relative isolate overflow-hidden rounded-3xl border border-border bg-card/60 p-8 backdrop-blur transition-all hover:-translate-y-1 hover:shadow-elevated"
+          >
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -right-4 -top-4 select-none text-[5rem] font-black leading-none tracking-tighter text-foreground/[0.05]"
+            >
+              {p.label}
+            </div>
+            <div className="relative z-10">
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+                <p.icon className="h-5 w-5" />
+              </div>
+              <h3 className="mt-6 text-xl font-bold tracking-tight">{p.title}</h3>
+              <p className="mt-3 text-sm text-muted-foreground">{p.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* =========================================================
+   11. WHO WE PARTNER WITH
+   ========================================================= */
+function PartnersWith() {
+  const partners = [
+    {
+      icon: Lightbulb,
+      title: "Early-stage Founders",
+      desc: "Have ideas but no product or team yet — we help you go from zero to MVP.",
+    },
+    {
+      icon: Cpu,
+      title: "AI Builders & Developers",
+      desc: "Strong in tech but lack scalability, structure, or go-to-market muscle.",
+    },
+    {
+      icon: Network,
+      title: "Business Owners & Network Players",
+      desc: "Looking to expand, digitize, or build new ventures on top of an existing base.",
+    },
+  ];
+  return (
+    <Section
+      eyebrow="Who We Partner With"
+      title={<>Built for <span className="text-gradient">builders.</span></>}
+      subtitle={<>We work with people who are ready to execute — not just talk.</>}
+    >
+      <div className="grid gap-6 md:grid-cols-3">
+        {partners.map((p) => (
+          <div
+            key={p.title}
+            className="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-10 backdrop-blur transition-all hover:-translate-y-1 hover:border-[color:var(--brand-cyan)]/40 hover:shadow-elevated"
+          >
+            <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+              <p.icon className="h-5 w-5" />
+            </div>
+            <h3 className="mt-8 text-2xl font-bold leading-tight tracking-tight">{p.title}</h3>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* =========================================================
+   12. OUR EDGE
+   ========================================================= */
+function OurEdge() {
+  const edges = [
+    {
+      title: "Strong business + tech execution",
+      desc: "Operators who have built and scaled real ventures — not just consultants.",
+    },
+    {
+      title: "AI-first approach",
+      desc: "AI embedded into every venture, every workflow, every decision loop.",
+    },
+    {
+      title: "Network-driven growth",
+      desc: "Tap into our mentor, partner, and investor pool to accelerate every stage.",
+    },
+    {
+      title: "Co-build & co-invest model",
+      desc: "Skin in the game — we share the risk and the upside alongside you.",
+    },
+  ];
+  return (
+    <Section
+      eyebrow="What Makes Us Different"
+      title={<>Our <span className="text-gradient">unfair advantage.</span></>}
+    >
+      <div className="grid gap-5 md:grid-cols-2">
+        {edges.map((e) => (
+          <div
+            key={e.title}
+            className="flex items-start gap-5 rounded-3xl border border-border bg-card/60 p-8 backdrop-blur transition-all hover:-translate-y-1 hover:shadow-elevated"
+          >
+            <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
+              <CheckCircle2 className="h-5 w-5" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold leading-tight tracking-tight">{e.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{e.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
