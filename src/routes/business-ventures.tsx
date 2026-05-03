@@ -17,6 +17,12 @@ import {
   Bitcoin,
   CalendarDays,
   Target,
+  Lightbulb,
+  Users,
+  Network,
+  Zap,
+  ShoppingBag,
+  CheckCircle2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -64,7 +70,10 @@ function BusinessVenturesPage() {
         <PageHero />
         <CompanyOverview />
         <Capabilities />
+        <InvestmentThesis />
         <FocusDomains />
+        <PartnersWith />
+        <OurEdge />
         <CTA />
       </main>
       <Footer />
@@ -111,7 +120,7 @@ function PageHero() {
           We <span className="text-gradient">build and transform</span> businesses — powered by AI.
         </h1>
         <p className="mt-8 max-w-2xl text-pretty text-lg text-neutral-200 md:text-xl">
-          We don't just advise — we build and scale with you.
+          From idea to growth — we partner, build, and invest.
         </p>
         <div className="mt-6 flex flex-wrap items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--brand-cyan)] md:text-base">
           <span>Strategy</span>
@@ -152,19 +161,19 @@ function PageHero() {
 function CompanyOverview() {
   const pillars = [
     {
-      icon: Building2,
-      title: "From Zero to Scalable Business",
-      desc: "We guide your business from idea to execution — structured, validated, and built to grow.",
+      icon: Lightbulb,
+      title: "Our Vision",
+      desc: "Empowering ventures to scale — through technology, AI, and a strong network ecosystem.",
     },
     {
-      icon: Cpu,
-      title: "Build & Co-Create with AI",
-      desc: "Work alongside our AI-powered team to design, build, and launch faster with intelligence at the core.",
+      icon: Rocket,
+      title: "Our Mission",
+      desc: "We build, grow, and co-invest in ventures that combine strong execution with strategic partnerships.",
     },
     {
       icon: HandCoins,
-      title: "Co-Invest for Shared Success",
-      desc: "We invest alongside you — aligned incentives, shared risks, and mutual upside.",
+      title: "Our Promise",
+      desc: "Aligned incentives, shared risk, mutual upside — we win when you win.",
     },
   ];
   return (
@@ -184,7 +193,7 @@ function CompanyOverview() {
           <div className="mx-auto mb-16 max-w-3xl text-center">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
-              Mission & Vision
+              Why We Exist
             </div>
             <h2 className="text-balance text-4xl font-bold leading-tight tracking-tight md:text-6xl">
               We build the <span className="text-gradient">growth engine.</span>
@@ -486,32 +495,32 @@ function Capabilities() {
 function FocusDomains() {
   const domains = [
     {
-      icon: Bitcoin,
-      title: "Fintech & Blockchain Tech",
-      desc: "Unlock new revenue rails — faster settlement, lower fees, and trust built into every transaction.",
+      icon: Rocket,
+      title: "Tech & Startup",
+      desc: "Early-stage ventures with scalable models — from MVP to product-market fit.",
     },
     {
-      icon: CalendarDays,
-      title: "Event Tech & Customer Data Tech",
-      desc: "Turn every touchpoint into measurable revenue — higher engagement, richer first-party data, stronger LTV.",
-    },
-    {
-      icon: Target,
       title: "Marketing Tech",
-      desc: "Compound growth loops that cut CAC, lift conversion, and scale pipeline without scaling headcount.",
+      icon: Target,
+      desc: "Tools and growth loops that drive measurable conversion and lower CAC.",
     },
     {
       icon: Sparkles,
-      title: "AI Transformation Tech",
-      desc: "Embed AI into the workflows that move the P&L — faster decisions, leaner ops, double-digit productivity gains.",
+      title: "AI & Automation",
+      desc: "Intelligent systems that replace manual work and embed AI into the workflows that move the P&L.",
+    },
+    {
+      icon: ShoppingBag,
+      title: "Digital Commerce",
+      desc: "D2C, platforms, and marketplaces — built to scale revenue across channels.",
     },
   ];
   return (
     <Section
-      eyebrow="Focus Domains"
-      title={<>Deep expertise in <span className="text-gradient">four domains.</span></>}
+      eyebrow="Focus Areas"
+      title={<>Where <span className="text-gradient">growth is happening.</span></>}
       subtitle={
-        <>Years of operator reps — <span className="text-gradient">not pitch-deck fluency.</span></>
+        <>We build where the <span className="text-gradient">market is moving.</span></>
       }
     >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
