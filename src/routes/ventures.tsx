@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Rocket } from "lucide-react";
+import { ArrowRight, ExternalLink, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   BackgroundFX,
@@ -81,6 +81,7 @@ function Ventures() {
     {
       name: "CAP*TURES Booth",
       type: "SaaS Photobooth Platform",
+      url: "https://captures.photo/",
       problem:
         "Event organizers needed scalable, branded photo experiences without heavy production overhead.",
       system:
@@ -91,6 +92,7 @@ function Ventures() {
     {
       name: "KengSob",
       type: "Education Platform",
+      url: "https://kengsob.com/",
       problem:
         "Learners lacked an outcomes-driven, high-trust prep ecosystem with monetizable instructor networks.",
       system:
@@ -134,6 +136,18 @@ function Ventures() {
                 </div>
                 <p className="mt-1 text-foreground/90">{c.result}</p>
               </div>
+            </div>
+            <div className="mt-6">
+              <Button
+                asChild
+                variant="outline"
+                size="sm"
+                className="rounded-full border-[color:var(--brand-cyan)]/40 bg-[color:var(--brand-cyan)]/10 text-[color:var(--brand-cyan)] hover:bg-[color:var(--brand-cyan)]/20"
+              >
+                <a href={c.url} target="_blank" rel="noopener noreferrer">
+                  Visit site <ExternalLink className="ml-2 h-3.5 w-3.5" />
+                </a>
+              </Button>
             </div>
           </GradientCard>
         ))}

@@ -33,10 +33,12 @@ import {
 } from "@/components/site/Shell";
 import heroTechSrc from "@/assets/hero-tech.jpg";
 import bvGrowthSrc from "@/assets/bv-growth.jpg";
+import heroTechImpactSrc from "@/assets/hero-tech-impact.jpg";
 
 const CACHE_BUST = `v=${Date.now()}`;
 const heroTech = `${heroTechSrc}?${CACHE_BUST}`;
 const bvGrowth = `${bvGrowthSrc}?${CACHE_BUST}`;
+const heroTechImpact = `${heroTechImpactSrc}?${CACHE_BUST}`;
 
 export const Route = createFileRoute("/business-ventures")({
   head: () => ({
@@ -87,37 +89,39 @@ function BusinessVenturesPage() {
 function PageHero() {
   return (
     <section className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-8 py-24 md:mt-8 md:px-16 md:py-36">
-      {/* Light background wash */}
+      {/* Dramatic hero background image */}
+      <img
+        src={heroTechImpact}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-80"
+      />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-0"
+        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-br from-background/85 via-background/55 to-background/80"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-32 -top-32 z-[2] h-[500px] w-[500px] rounded-full opacity-40 blur-3xl"
         style={{
           background:
-            "linear-gradient(135deg, oklch(0.28 0.05 265) 0%, oklch(0.24 0.06 260) 45%, oklch(0.20 0.07 255) 100%)",
+            "radial-gradient(circle, color-mix(in oklab, var(--brand-magenta) 70%, transparent), transparent 70%)",
         }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-32 -top-32 z-0 h-[500px] w-[500px] rounded-full opacity-50 blur-3xl"
+        className="pointer-events-none absolute -bottom-40 -left-40 z-[2] h-[520px] w-[520px] rounded-full opacity-45 blur-3xl"
         style={{
           background:
-            "radial-gradient(circle, color-mix(in oklab, var(--brand-cyan) 60%, transparent), transparent 70%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-40 -left-40 z-0 h-[520px] w-[520px] rounded-full opacity-40 blur-3xl"
-        style={{
-          background:
-            "radial-gradient(circle, color-mix(in oklab, var(--brand-indigo) 65%, transparent), transparent 70%)",
+            "radial-gradient(circle, color-mix(in oklab, var(--brand-cyan) 65%, transparent), transparent 70%)",
         }}
       />
       <div className="relative z-20 mx-auto max-w-5xl">
-        <div className="mb-10 text-xs font-bold uppercase tracking-[0.28em] text-[color:var(--brand-cyan)]">
+        <div className="mb-10 text-xs font-bold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
           Services
         </div>
         <h1 className="text-balance text-5xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl lg:text-7xl">
-          We <span className="text-gradient">build and transform</span> businesses — powered by AI.
+          We <span className="text-gradient-accent">build and transform</span> businesses — powered by AI.
         </h1>
         <p className="mt-8 max-w-2xl text-pretty text-lg text-neutral-200 md:text-xl">
           From idea to growth — we partner, build, and invest.
