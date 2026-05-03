@@ -90,8 +90,11 @@
   /* Brand gradients & glows */
   --brand-indigo: oklch(0.62 0.19 277);
   --brand-cyan: oklch(0.7 0.15 232);
+  --brand-magenta: oklch(0.68 0.25 330);
   --gradient-primary: linear-gradient(135deg, var(--brand-indigo), var(--brand-cyan));
+  --gradient-accent: linear-gradient(135deg, var(--brand-magenta), var(--brand-indigo));
   --gradient-text: linear-gradient(120deg, #a5b4fc, #67e8f9);
+  --gradient-text-accent: linear-gradient(120deg, #f0abfc, #a5b4fc, #67e8f9);
   --shadow-glow: 0 0 60px -10px color-mix(in oklab, var(--brand-indigo) 55%, transparent);
   --shadow-elevated: 0 30px 80px -30px color-mix(in oklab, var(--brand-indigo) 40%, transparent);
 
@@ -177,6 +180,15 @@
   }
   .bg-gradient-primary {
     background-image: var(--gradient-primary);
+  }
+  .bg-gradient-accent {
+    background-image: var(--gradient-accent);
+  }
+  .text-gradient-accent {
+    background-image: var(--gradient-text-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
   .shadow-glow {
     box-shadow: var(--shadow-glow);
