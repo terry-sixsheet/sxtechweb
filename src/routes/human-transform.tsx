@@ -87,15 +87,6 @@ function PageHero() {
           <Button
             asChild
             size="lg"
-            className="h-12 rounded-full bg-emerald-500 px-8 text-base font-semibold text-emerald-950 shadow-[0_0_40px_-10px_theme(colors.emerald.400)] hover:bg-emerald-400"
-          >
-            <Link to="/contact">
-              Start a Project <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-          <Button
-            asChild
-            size="lg"
             variant="outline"
             className="h-12 rounded-full border-emerald-500/40 bg-emerald-500/10 px-8 text-base font-semibold text-emerald-200 backdrop-blur hover:bg-emerald-500/20"
           >
