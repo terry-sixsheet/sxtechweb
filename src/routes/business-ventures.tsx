@@ -157,12 +157,12 @@ function CompanyOverview() {
     {
       icon: Lightbulb,
       title: "Our Vision",
-      desc: "Empowering ventures to scale — through technology, AI, and a strong network ecosystem.",
+      desc: "Build the next generation of ventures — powered by AI.",
     },
     {
       icon: Rocket,
       title: "Our Mission",
-      desc: "We build, grow, and co-invest in ventures that combine strong execution with strategic partnerships.",
+      desc: "We partner with early-stage founders, AI builders, and business owners to build, scale, and co-invest in ventures — powered by technology, execution, and strong networks.",
     },
   ];
   return (
