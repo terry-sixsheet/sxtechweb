@@ -18,9 +18,7 @@ import {
   CalendarDays,
   Target,
   Lightbulb,
-  Users,
   Network,
-  Zap,
   ShoppingBag,
   CheckCircle2,
 } from "lucide-react";
@@ -88,7 +86,7 @@ function BusinessVenturesPage() {
    ========================================================= */
 function PageHero() {
   return (
-    <section className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-8 py-24 md:mt-8 md:px-16 md:py-36">
+    <section className="relative isolate w-full overflow-hidden px-6 py-24 md:py-36">
       {/* Dramatic hero background image */}
       <img
         src={heroTechImpact}
@@ -116,7 +114,7 @@ function PageHero() {
             "radial-gradient(circle, color-mix(in oklab, var(--brand-cyan) 65%, transparent), transparent 70%)",
         }}
       />
-      <div className="relative z-20 mx-auto max-w-5xl">
+      <div className="relative z-20 mx-auto max-w-7xl">
         <div className="mb-10 text-xs font-bold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
           Services
         </div>
@@ -166,11 +164,6 @@ function CompanyOverview() {
       title: "Our Mission",
       desc: "We build, grow, and co-invest in ventures that combine strong execution with strategic partnerships.",
     },
-    {
-      icon: HandCoins,
-      title: "Our Promise",
-      desc: "Aligned incentives, shared risk, mutual upside — we win when you win.",
-    },
   ];
   return (
     <section className="relative mx-auto max-w-7xl px-6 py-16 md:py-24">
@@ -198,7 +191,7 @@ function CompanyOverview() {
               Platforms, ventures, and revenue systems — designed to compound.
             </p>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2">
             {pillars.map((p) => (
               <div
                 key={p.title}
@@ -405,9 +398,9 @@ function Capabilities() {
     },
     {
       icon: Sparkles,
-      title: "AI Solutions & Automation",
-      tagline: "Use AI to scale faster",
-      desc: "Implement AI for content, operations, customer engagement, and decision-making.",
+      title: "Powered by AI Implementation",
+      tagline: "Embed AI into the core of your business",
+      desc: "Deploy production-grade AI across content, operations, sales, and decision loops — turning intelligence into measurable revenue and efficiency gains.",
     },
     {
       icon: GitBranch,
@@ -547,35 +540,39 @@ function FocusDomains() {
 function InvestmentThesis() {
   const principles = [
     {
-      icon: Users,
+      icon: HandCoins,
       label: "01",
-      title: "Right People",
-      desc: "Back teams with real execution capability — operators, not just ideas.",
+      title: "Capital + Execution",
+      desc: "Funding combined with real product, tech, and growth support — we operate alongside you.",
     },
     {
-      icon: Target,
+      icon: Sparkles,
       label: "02",
-      title: "Right Opportunities",
-      desc: "Focus on high-potential, scalable ventures — not everything that moves.",
+      title: "AI & Technology Power",
+      desc: "AI-driven development, automation, and scalable platforms built into every venture.",
     },
     {
       icon: TrendingUp,
       label: "03",
-      title: "Right Channels",
-      desc: "Grow through digital, content, and AI-driven marketing engines.",
+      title: "Go-to-Market & Growth",
+      desc: "Marketing, content, and distribution engines to accelerate traction from day one.",
     },
     {
-      icon: Zap,
+      icon: Network,
       label: "04",
-      title: "Right Timing",
-      desc: "Move fast where momentum is building — speed compounds advantage.",
+      title: "Strong Network Access",
+      desc: "Partners, customers, and ecosystems that unlock real opportunities at every stage.",
     },
   ];
   return (
     <Section
-      eyebrow="How We Invest"
-      title={<>Our <span className="text-gradient">investment thesis.</span></>}
-      subtitle={<>Four principles that shape every bet we make.</>}
+      eyebrow="Co-Invest"
+      title={<>We co-build and co-invest in <span className="text-gradient">what we believe.</span></>}
+      subtitle={
+        <>
+          We don’t just invest capital — we invest execution. We partner with founders to build, scale, and grow together.
+        </>
+      }
     >
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
         {principles.map((p) => (
