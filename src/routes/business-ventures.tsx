@@ -88,7 +88,7 @@ function BusinessVenturesPage() {
    ========================================================= */
 function PageHero() {
   return (
-    <section className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-8 py-24 md:mt-8 md:px-16 md:py-36">
+    <section className="relative isolate w-full overflow-hidden px-6 py-24 md:py-36">
       {/* Dramatic hero background image */}
       <img
         src={heroTechImpact}
@@ -116,7 +116,7 @@ function PageHero() {
             "radial-gradient(circle, color-mix(in oklab, var(--brand-cyan) 65%, transparent), transparent 70%)",
         }}
       />
-      <div className="relative z-20 mx-auto max-w-5xl">
+      <div className="relative z-20 mx-auto max-w-7xl">
         <div className="mb-10 text-xs font-bold uppercase tracking-[0.28em] text-[color:var(--brand-magenta)]">
           Services
         </div>
@@ -166,11 +166,6 @@ function CompanyOverview() {
       title: "Our Mission",
       desc: "We build, grow, and co-invest in ventures that combine strong execution with strategic partnerships.",
     },
-    {
-      icon: HandCoins,
-      title: "Our Promise",
-      desc: "Aligned incentives, shared risk, mutual upside — we win when you win.",
-    },
   ];
   return (
     <section className="relative mx-auto max-w-7xl px-6 py-16 md:py-24">
@@ -198,7 +193,7 @@ function CompanyOverview() {
               Platforms, ventures, and revenue systems — designed to compound.
             </p>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2">
             {pillars.map((p) => (
               <div
                 key={p.title}
