@@ -400,9 +400,9 @@ function Capabilities() {
     },
     {
       icon: Sparkles,
-      title: "AI Solutions & Automation",
-      tagline: "Use AI to scale faster",
-      desc: "Implement AI for content, operations, customer engagement, and decision-making.",
+      title: "Powered by AI Implementation",
+      tagline: "Embed AI into the core of your business",
+      desc: "Deploy production-grade AI across content, operations, sales, and decision loops — turning intelligence into measurable revenue and efficiency gains.",
     },
     {
       icon: GitBranch,
