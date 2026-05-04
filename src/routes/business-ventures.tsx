@@ -18,9 +18,7 @@ import {
   CalendarDays,
   Target,
   Lightbulb,
-  Users,
   Network,
-  Zap,
   ShoppingBag,
   CheckCircle2,
 } from "lucide-react";
