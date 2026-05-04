@@ -50,7 +50,7 @@ function VenturesPage() {
 
 function PageHero() {
   return (
-    <section className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-6 py-24 md:mt-8 md:py-32">
+    <section className="relative isolate w-full overflow-hidden px-6 py-24 md:py-32">
       <img
         src={venturesHero}
         alt=""
