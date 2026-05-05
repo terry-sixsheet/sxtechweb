@@ -10,6 +10,9 @@ import {
   Camera,
   GraduationCap,
   Rocket,
+  TrendingUp,
+  Zap,
+  Target,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -370,16 +373,35 @@ function ProblemCards() {
 /* ---------- 4. MAIN SOLUTION ---------- */
 function MainSolution() {
   return (
-    <section className="py-24 md:py-32">
+    <section className="relative isolate overflow-hidden py-24 md:py-32">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(80%_60%_at_50%_0%,color-mix(in_oklab,var(--brand-cyan)_18%,transparent),transparent_70%)]"
+      />
       <Container>
-        <div className="mb-16 text-center">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
-            The Core
+        {/* Impact-first header */}
+        <div className="mb-14 grid items-end gap-10 md:mb-20 md:grid-cols-12">
+          <div className="md:col-span-7">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-[color:var(--brand-cyan)] backdrop-blur">
+              <Target className="h-3.5 w-3.5" />
+              Built for business impact
+            </div>
+            <h2 className="text-balance text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+              Revenue you can <span className="text-gradient">measure.</span>
+              <br />
+              Leaders you can <span className="text-gradient">trust.</span>
+            </h2>
+            <p className="mt-6 max-w-xl text-pretty text-lg text-muted-foreground md:text-xl">
+              We don't sell frameworks. We build the systems and the leaders that turn strategy into compounding business outcomes.
+            </p>
           </div>
-          <h2 className="text-balance text-4xl font-bold tracking-tight md:text-6xl">
-            Two systems. <span className="text-gradient">One transformation.</span>
-          </h2>
+          <div className="md:col-span-5">
+            <div className="grid grid-cols-3 gap-3">
+              <ImpactStat icon={TrendingUp} value="3–10×" label="Revenue lift" />
+              <ImpactStat icon={Zap} value="90 days" label="To activation" />
+              <ImpactStat icon={Rocket} value="0→1" label="Ventures launched" />
+            </div>
+          </div>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
@@ -387,7 +409,7 @@ function MainSolution() {
             tone="tech"
             tag="TECH™"
             title="A system to create and scale revenue."
-            description="Design. Build. Activate. Scale."
+            description="Production-grade platforms, AI, and growth engines — engineered to compound revenue, not just ship features."
             points={["Design", "Build", "Activate", "Scale"]}
             outputs={["Revenue streams", "Scalable platforms", "New ventures"]}
             ctaLabel="Explore TECH™"
@@ -399,7 +421,7 @@ function MainSolution() {
             tone="human"
             tag="HUMAN™"
             title="Your business is not the bottleneck. You are."
-            description="A human operating system for leaders."
+            description="A leader operating system that sharpens decisions, raises performance, and keeps the engine running."
             points={["Think", "Decide", "Perform", "Sustain"]}
             outputs={["Better decisions", "Clear thinking", "Sustained performance"]}
             ctaLabel="Explore HUMAN™"
@@ -410,6 +432,30 @@ function MainSolution() {
         </div>
       </Container>
     </section>
+  );
+}
+
+function ImpactStat({
+  icon: Icon,
+  value,
+  label,
+}: {
+  icon: React.ComponentType<{ className?: string }>;
+  value: string;
+  label: string;
+}) {
+  return (
+    <div className="relative overflow-hidden rounded-2xl border border-border bg-card/50 p-4 backdrop-blur">
+      <div className="mb-3 grid h-8 w-8 place-items-center rounded-lg bg-gradient-primary text-white shadow-glow">
+        <Icon className="h-4 w-4" />
+      </div>
+      <div className="text-2xl font-bold leading-none tracking-tight md:text-3xl">
+        <span className="text-gradient">{value}</span>
+      </div>
+      <div className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+        {label}
+      </div>
+    </div>
   );
 }
 
