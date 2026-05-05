@@ -77,9 +77,92 @@ function Container({ children, className = "" }: { children: React.ReactNode; cl
 }
 
 /* ---------- 1. HERO ---------- */
-function Hero() {
+function HeroCarousel() {
+  const autoplay = useRef(
+    Autoplay({ delay: 6500, stopOnInteraction: false, stopOnMouseEnter: true }),
+  );
+  const [api, setApi] = useState<CarouselApi | undefined>(undefined);
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+    const onSelect = () => setCurrent(api.selectedScrollSnap());
+    api.on("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
+
   return (
     <section className="relative isolate overflow-hidden">
+      <Carousel
+        setApi={setApi}
+        opts={{ loop: true, align: "start" }}
+        plugins={[autoplay.current]}
+        className="w-full"
+      >
+        <CarouselContent>
+          <CarouselItem>
+            <HeroSlide />
+          </CarouselItem>
+          <CarouselItem>
+            <CoreInsightSlide />
+          </CarouselItem>
+          <CarouselItem>
+            <ConceptSlide
+              image={heroTechImpact}
+              tag="TECH™"
+              accent="cyan"
+              headline="A system to create and scale revenue."
+              body="Design. Build. Activate. Scale. — production-grade platforms, AI, and growth engines that turn ideas into compounding revenue."
+              points={["Design", "Build", "Activate", "Scale"]}
+              ctaLabel="Explore TECH™"
+              href="/business-ventures"
+              icon={Cpu}
+            />
+          </CarouselItem>
+          <CarouselItem>
+            <ConceptSlide
+              image={heroHuman}
+              tag="HUMAN™"
+              accent="indigo"
+              headline="Your business is not the bottleneck. You are."
+              body="A human operating system for leaders — think clearer, decide sharper, perform deeper, and sustain it."
+              points={["Think", "Decide", "Perform", "Sustain"]}
+              ctaLabel="Explore HUMAN™"
+              href="/human-transform"
+              icon={Brain}
+            />
+          </CarouselItem>
+        </CarouselContent>
+
+        {/* Dots */}
+        <div className="absolute bottom-6 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2">
+          {Array.from({ length: count }).map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              aria-label={`Go to slide ${i + 1}`}
+              onClick={() => api?.scrollTo(i)}
+              className={`h-1.5 rounded-full transition-all ${
+                i === current
+                  ? "w-8 bg-gradient-primary"
+                  : "w-3 bg-foreground/25 hover:bg-foreground/40"
+              }`}
+            />
+          ))}
+        </div>
+      </Carousel>
+    </section>
+  );
+}
+
+function HeroSlide() {
+  return (
+    <div className="relative isolate overflow-hidden">
       <img
         src={heroEcosystem}
         alt=""
@@ -126,15 +209,15 @@ function Hero() {
           </Button>
         </div>
       </Container>
-    </section>
+    </div>
   );
 }
 
 /* ---------- 2. CORE INSIGHT ---------- */
-function CoreInsight() {
+function CoreInsightSlide() {
   return (
-    <section className="py-20 md:py-28">
-      <Container>
+    <div className="relative isolate flex min-h-[88vh] items-center overflow-hidden py-20 md:py-28">
+      <Container className="relative z-10">
         <p className="mx-auto max-w-4xl text-balance text-center text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
           Most companies upgrade systems.
           <br />
@@ -144,7 +227,90 @@ function CoreInsight() {
 
         <ProblemCards />
       </Container>
-    </section>
+    </div>
+  );
+}
+
+/* ---------- Concept Slide (TECH / HUMAN) ---------- */
+function ConceptSlide({
+  image,
+  tag,
+  accent,
+  headline,
+  body,
+  points,
+  ctaLabel,
+  href,
+  icon: Icon,
+}: {
+  image: string;
+  tag: string;
+  accent: "cyan" | "indigo";
+  headline: string;
+  body: string;
+  points: string[];
+  ctaLabel: string;
+  href: "/business-ventures" | "/human-transform";
+  icon: React.ComponentType<{ className?: string }>;
+}) {
+  const accentText =
+    accent === "cyan"
+      ? "text-[color:var(--brand-cyan)]"
+      : "text-[color:var(--brand-indigo)]";
+  const accentTint =
+    accent === "cyan"
+      ? "from-[color:var(--brand-cyan)]/30 via-transparent to-transparent"
+      : "from-[color:var(--brand-indigo)]/40 via-transparent to-transparent";
+  return (
+    <div className="relative isolate overflow-hidden">
+      <img
+        src={image}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-45"
+      />
+      <div
+        aria-hidden
+        className={`pointer-events-none absolute inset-0 z-10 bg-gradient-to-br ${accentTint}`}
+      />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-background/70 via-background/85 to-background" />
+      <Container className="relative z-20 flex min-h-[88vh] flex-col items-center justify-center py-32 text-center md:py-40">
+        <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-muted-foreground backdrop-blur">
+          <span className="grid h-5 w-5 place-items-center rounded-md bg-gradient-primary text-white">
+            <Icon className="h-3 w-3" />
+          </span>
+          <span className={accentText}>{tag}</span>
+          <span className="text-muted-foreground/60">— Concept</span>
+        </div>
+        <h2 className="text-balance text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+          {headline}
+        </h2>
+        <p className="mx-auto mt-7 max-w-2xl text-pretty text-lg text-muted-foreground md:text-xl">
+          {body}
+        </p>
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-2.5">
+          {points.map((p) => (
+            <span
+              key={p}
+              className="rounded-full border border-border bg-card/50 px-4 py-1.5 text-sm font-medium backdrop-blur"
+            >
+              {p}
+            </span>
+          ))}
+        </div>
+        <div className="mt-12">
+          <Button
+            asChild
+            size="lg"
+            className="h-13 rounded-full bg-gradient-primary px-8 py-6 text-base font-semibold text-white shadow-glow transition-transform hover:scale-[1.02] hover:opacity-95"
+          >
+            <Link to={href}>
+              {ctaLabel} <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </Container>
+    </div>
   );
 }
 
