@@ -12,12 +12,22 @@ import {
   Rocket,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import { useEffect, useRef, useState } from "react";
 import sxLogo from "@/assets/sx-logo.png";
 import heroEcosystem from "@/assets/home-ecosystem.jpg";
 import bvPlatform from "@/assets/bv-platform.jpg";
 import humanCoaching from "@/assets/human-coaching.jpg";
 import humanMind from "@/assets/human-mind.jpg";
 import bvGrowth from "@/assets/bv-growth.jpg";
+import heroTechImpact from "@/assets/hero-tech-impact.jpg";
+import heroHuman from "@/assets/hero-human.jpg";
 import {
   BackgroundFX,
   Footer,
@@ -49,8 +59,7 @@ function Index() {
       <BackgroundFX />
       <Nav />
       <main className="relative">
-        <Hero />
-        <CoreInsight />
+        <HeroCarousel />
         <MainSolution />
         <Proof />
         <FinalCTA />
