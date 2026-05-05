@@ -410,8 +410,12 @@ function MainSolution() {
             tag="TECH™"
             title="A system to create and scale revenue."
             description="Production-grade platforms, AI, and growth engines — engineered to compound revenue, not just ship features."
-            points={["Design", "Build", "Activate", "Scale"]}
-            outputs={["Revenue streams", "Scalable platforms", "New ventures"]}
+            outputs={[
+              "New revenue streams launched",
+              "Scalable platforms in production",
+              "AI & automation that ships",
+              "Co-built ventures, ready to scale",
+            ]}
             ctaLabel="Explore TECH™"
             href="/business-ventures"
             icon={Cpu}
@@ -422,8 +426,12 @@ function MainSolution() {
             tag="HUMAN™"
             title="Your business is not the bottleneck. You are."
             description="A leader operating system that sharpens decisions, raises performance, and keeps the engine running."
-            points={["Think", "Decide", "Perform", "Sustain"]}
-            outputs={["Better decisions", "Clear thinking", "Sustained performance"]}
+            outputs={[
+              "Sharper decisions under pressure",
+              "Clearer thinking, less noise",
+              "Higher performance, sustained",
+              "Leaders your team can trust",
+            ]}
             ctaLabel="Explore HUMAN™"
             href="/human-transform"
             icon={Brain}
@@ -464,7 +472,6 @@ function SolutionBlock({
   tag,
   title,
   description,
-  points,
   outputs,
   ctaLabel,
   href,
@@ -475,7 +482,6 @@ function SolutionBlock({
   tag: string;
   title: string;
   description: string;
-  points: string[];
   outputs: string[];
   ctaLabel: string;
   href: "/business-ventures" | "/human-transform";
@@ -525,29 +531,22 @@ function SolutionBlock({
         </h3>
         <p className="mt-4 text-base text-muted-foreground md:text-lg">{description}</p>
 
-        <div className="mt-8 space-y-2.5">
-          {points.map((p) => (
-            <div key={p} className="flex items-center gap-3 text-base font-medium">
-              <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
-              {p}
-            </div>
-          ))}
-        </div>
-
         <div className="mt-auto pt-10">
-          <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            Outputs
+          <div className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground">
+            <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary" />
+            Pre-sneak — what you get
           </div>
-          <div className="flex flex-wrap gap-2">
+          <ul className="space-y-2.5">
             {outputs.map((o) => (
-              <span
+              <li
                 key={o}
-                className="rounded-full border border-border bg-background/50 px-3 py-1.5 text-sm backdrop-blur"
+                className="flex items-start gap-3 rounded-xl border border-border/70 bg-background/40 px-4 py-3 backdrop-blur"
               >
-                {o}
-              </span>
+                <span className={`mt-1 h-2 w-2 shrink-0 rounded-full bg-gradient-primary`} />
+                <span className="text-sm font-medium leading-snug md:text-base">{o}</span>
+              </li>
             ))}
-          </div>
+          </ul>
           <div className={`mt-8 inline-flex items-center gap-2 text-sm font-semibold ${accent} transition-transform group-hover:translate-x-1`}>
             {ctaLabel} <ArrowRight className="h-4 w-4" />
           </div>
