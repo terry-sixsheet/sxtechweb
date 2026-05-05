@@ -416,9 +416,9 @@ function Capabilities() {
     },
     {
       icon: Briefcase,
-      title: "C-Level as a Service",
-      tagline: "Get experienced leadership without full-time cost",
-      desc: "Fractional CTO, CPO, CIO to drive strategy, tech, and product execution.",
+      title: "Business Consult & C-Level as a Service",
+      tagline: "Senior advisory and fractional leadership on demand",
+      desc: "From business strategy to hands-on execution — get fractional CEO, CTO, CPO, and CIO support to sharpen direction, build the right team, and drive growth.",
     },
   ];
   return (
