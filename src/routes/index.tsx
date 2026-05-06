@@ -192,9 +192,9 @@ function HeroSlide() {
           The Transformation Company
         </div>
         <h1 className="text-balance text-5xl font-bold leading-[1.02] tracking-tight md:text-7xl lg:text-[6rem]">
-          We don't consult.
+          Beyond strategy.
           <br />
-          We <span className="text-gradient">transform businesses</span> — end to end.
+          We <span className="text-gradient">build, scale, and transform</span> — powered by AI.
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg text-muted-foreground md:text-xl">
           Real transformation: we build the ventures, the revenue systems, and the leaders that run them — together, in production, at scale.
