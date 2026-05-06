@@ -306,59 +306,6 @@ function ConceptSlide({
   );
 }
 
-/* ---------- 3. PROBLEM CARDS ---------- */
-function ProblemCards() {
-  const items = [
-    {
-      icon: TrendingDown,
-      label: "Growth is slowing",
-      cutout: "GROWTH",
-      tone: "from-[color:var(--brand-cyan)]/40 to-transparent",
-    },
-    {
-      icon: GitBranch,
-      label: "Execution is fragmented",
-      cutout: "EXECUTION",
-      tone: "from-[color:var(--brand-indigo)]/45 to-transparent",
-    },
-    {
-      icon: AlertTriangle,
-      label: "Leadership is the bottleneck",
-      cutout: "LEADERSHIP",
-      tone: "from-[color:var(--brand-cyan)]/35 to-transparent",
-    },
-  ];
-  return (
-    <div className="mt-16 md:mt-20">
-      <div className="grid gap-5 md:grid-cols-3">
-          {items.map((p) => (
-            <div
-              key={p.label}
-              className="group relative isolate overflow-hidden rounded-[20px] border border-border bg-card/40 p-7 backdrop-blur"
-            >
-              <div
-                aria-hidden
-                className={`pointer-events-none absolute inset-0 z-0 bg-gradient-to-br ${p.tone}`}
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -right-4 -bottom-6 z-0 select-none text-[6.5rem] font-black uppercase leading-none tracking-tighter text-foreground/[0.04]"
-              >
-                {p.cutout}
-              </div>
-              <div className="relative z-10 flex items-center gap-4">
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-border bg-background/60">
-                  <p.icon className="h-5 w-5 text-[color:var(--brand-cyan)]" />
-                </div>
-                <div className="text-lg font-semibold leading-snug">{p.label}</div>
-              </div>
-            </div>
-          ))}
-      </div>
-    </div>
-  );
-}
-
 /* ---------- 4. MAIN SOLUTION ---------- */
 function MainSolution() {
   return (
