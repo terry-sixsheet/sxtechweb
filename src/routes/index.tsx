@@ -4,9 +4,6 @@ import {
   Brain,
   Cpu,
   Sparkles,
-  TrendingDown,
-  GitBranch,
-  AlertTriangle,
   Camera,
   GraduationCap,
   Rocket,
@@ -112,16 +109,13 @@ function HeroCarousel() {
             <HeroSlide />
           </CarouselItem>
           <CarouselItem>
-            <CoreInsightSlide />
-          </CarouselItem>
-          <CarouselItem>
             <ConceptSlide
               image={heroTechImpact}
               tag="TECH™"
               accent="cyan"
-              headline="A system to create and scale revenue."
-              body="Design. Build. Activate. Scale. — production-grade platforms, AI, and growth engines that turn ideas into compounding revenue."
-              points={["Design", "Build", "Activate", "Scale"]}
+              headline="We build and transform businesses — powered by AI."
+              body="From product to platform to growth engine — we design, build, and scale AI-native systems that turn ideas into compounding revenue."
+              points={["AI-native", "Production-grade", "Revenue engine", "Built to scale"]}
               ctaLabel="Explore TECH™"
               href="/business-ventures"
               icon={Cpu}
@@ -138,6 +132,19 @@ function HeroCarousel() {
               ctaLabel="Explore HUMAN™"
               href="/human-transform"
               icon={Brain}
+            />
+          </CarouselItem>
+          <CarouselItem>
+            <ConceptSlide
+              image={bvGrowth}
+              tag="VENTURES STUDIO"
+              accent="cyan"
+              headline="We don't just launch — we co-create and scale."
+              body="A venture studio that co-builds, co-invests, and co-scales with founders — turning bold ideas into real, revenue-generating businesses."
+              points={["Co-build", "Co-invest", "Co-scale", "0 → 1 → N"]}
+              ctaLabel="Explore Ventures"
+              href="/ventures"
+              icon={Rocket}
             />
           </CarouselItem>
         </CarouselContent>
@@ -185,12 +192,12 @@ function HeroSlide() {
           The Transformation Company
         </div>
         <h1 className="text-balance text-5xl font-bold leading-[1.02] tracking-tight md:text-7xl lg:text-[6rem]">
-          We build revenue systems.
+          We don't consult.
           <br />
-          And <span className="text-gradient">upgrade the leaders</span> behind them.
+          We <span className="text-gradient">transform businesses</span> — end to end.
         </h1>
         <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg text-muted-foreground md:text-xl">
-          Building ventures, systems, and leaders for scalable growth.
+          Real transformation: we build the ventures, the revenue systems, and the leaders that run them — together, in production, at scale.
         </p>
         <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button
@@ -216,24 +223,6 @@ function HeroSlide() {
   );
 }
 
-/* ---------- 2. CORE INSIGHT ---------- */
-function CoreInsightSlide() {
-  return (
-    <div className="relative isolate flex min-h-[88vh] items-center overflow-hidden py-20 md:py-28">
-      <Container className="relative z-10">
-        <p className="mx-auto max-w-4xl text-balance text-center text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
-          Most companies upgrade systems.
-          <br />
-          <span className="text-muted-foreground">Few upgrade the </span>
-          <span className="text-gradient">leaders running them.</span>
-        </p>
-
-        <ProblemCards />
-      </Container>
-    </div>
-  );
-}
-
 /* ---------- Concept Slide (TECH / HUMAN) ---------- */
 function ConceptSlide({
   image,
@@ -253,7 +242,7 @@ function ConceptSlide({
   body: string;
   points: string[];
   ctaLabel: string;
-  href: "/business-ventures" | "/human-transform";
+  href: "/business-ventures" | "/human-transform" | "/ventures";
   icon: React.ComponentType<{ className?: string }>;
 }) {
   const accentText =
