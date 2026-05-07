@@ -403,12 +403,6 @@ function Capabilities() {
       desc: "Deploy production-grade AI across content, operations, sales, and decision loops — turning intelligence into measurable revenue and efficiency gains.",
     },
     {
-      icon: GitBranch,
-      title: "System Integration & Modernization",
-      tagline: "Connect and upgrade your systems",
-      desc: "Integrate tools, modernize legacy systems, and streamline your tech stack.",
-    },
-    {
       icon: LayoutDashboard,
       title: "PMO & Delivery Management",
       tagline: "Ensure projects get delivered — on time, on target",
