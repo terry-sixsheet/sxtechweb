@@ -404,9 +404,9 @@ function Capabilities() {
     },
     {
       icon: Briefcase,
-      title: "Business Consult & C-Level as a Service",
-      tagline: "Senior advisory and fractional leadership on demand",
-      desc: "From business strategy to hands-on execution — get fractional CEO, CTO, CPO, and CIO support to sharpen direction, build the right team, and drive growth.",
+      title: "Transformation Advisory & C-Level as a Service",
+      tagline: "Fractional leaders driving business and AI transformation from the inside",
+      desc: "Embedded CEO, CTO, CPO, and CIO support that leads end-to-end business and AI transformation — setting strategy, building the right team, and driving measurable growth.",
     },
   ];
   return (
