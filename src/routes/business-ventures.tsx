@@ -391,16 +391,10 @@ function Capabilities() {
       desc: "Validate ideas, build MVP, and launch your venture end-to-end.",
     },
     {
-      icon: Layers,
-      title: "Digital Platform Development",
-      tagline: "Build your core technology platform",
-      desc: "Design and develop scalable web, mobile, and backend systems.",
-    },
-    {
       icon: Sparkles,
-      title: "Powered by AI Implementation",
-      tagline: "Embed AI into the core of your business",
-      desc: "Deploy production-grade AI across content, operations, sales, and decision loops — turning intelligence into measurable revenue and efficiency gains.",
+      title: "Platform Development — Powered by AI",
+      tagline: "Build AI-native platforms that run your business",
+      desc: "Design and ship scalable web, mobile, and backend systems with AI embedded at the core — across content, operations, sales, and decision loops — turning intelligence into measurable revenue and efficiency gains.",
     },
     {
       icon: LayoutDashboard,
