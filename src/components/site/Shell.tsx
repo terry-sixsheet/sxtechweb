@@ -123,8 +123,8 @@ export function Footer() {
     <footer className="border-t border-border/60">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-10 text-sm text-muted-foreground md:flex-row">
         <div className="flex items-center gap-2.5">
-          <img src={sxLogo} alt="Transformation Company" className="h-7 w-7 object-contain" />
-          <span className="font-medium text-foreground">Transformation Company</span>
+          <img src={sxLogo} alt="SIXSHEET Tech" className="h-7 w-7 object-contain" />
+          <span className="font-medium text-foreground">SIXSHEET Tech by SIXSHEET Company</span>
         </div>
         <div className="flex items-center gap-3">
           {socials.map((s) => (
@@ -141,8 +141,8 @@ export function Footer() {
           ))}
         </div>
         <div className="text-xs">
-          © {new Date().getFullYear()} Transformation Company. Strategic
-          Intelligence + Human Depth.
+          © {new Date().getFullYear()} SIXSHEET Tech by SIXSHEET Company.
+          Strategic Intelligence + Human Depth.
         </div>
       </div>
     </footer>

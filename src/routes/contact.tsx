@@ -93,20 +93,21 @@ function ContactGrid() {
     {
       icon: Facebook,
       label: "Facebook",
-      value: "facebook.com/sxtransformation",
-      href: "https://facebook.com/sxtransformation",
+      value: "sxtech",
+      href: "https://facebook.com/sxtech",
     },
     {
       icon: Instagram,
       label: "Instagram",
-      value: "@sxtransformation",
-      href: "https://instagram.com/sxtransformation",
+      value: "@sxtech",
+      href: "https://instagram.com/sxtech",
     },
     {
       icon: MapPin,
       label: "Office",
-      value: "Bangkok, Thailand",
-      href: "https://maps.google.com/?q=Bangkok+Thailand",
+      value:
+        "เลขที่ 15 ห้อง A124 ซอยประดิพัทธ์ 17 ถนนประดิพัทธ์ แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400",
+      href: null,
     },
     {
       icon: Building2,
@@ -221,8 +222,7 @@ function CompanyMap() {
   return (
     <Section>
       <div className="overflow-hidden rounded-[28px] border border-border bg-card/40 backdrop-blur">
-        <div className="grid gap-0 md:grid-cols-2">
-          <div className="p-8 md:p-12">
+        <div className="p-8 md:p-12">
             <div className="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--brand-cyan)]">
               Company
             </div>
@@ -248,16 +248,6 @@ function CompanyMap() {
                 Start a Project <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
-          </div>
-          <div className="relative min-h-[320px] md:min-h-full">
-            <iframe
-              title="SX Transformation Office"
-              src="https://www.google.com/maps?q=Bangkok+Thailand&output=embed"
-              loading="lazy"
-              className="absolute inset-0 h-full w-full border-0 grayscale-[30%]"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
         </div>
       </div>
       <div className="mt-12 text-center text-sm text-muted-foreground">
