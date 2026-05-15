@@ -72,7 +72,6 @@ function BusinessVenturesPage() {
         <Capabilities />
         <InvestmentThesis />
         <FocusDomains />
-        <PartnersWith />
         <OurEdge />
         <CTA />
       </main>
@@ -467,23 +466,23 @@ function FocusDomains() {
   const domains = [
     {
       icon: Rocket,
-      title: "Tech & Startup",
-      desc: "Early-stage ventures with scalable models — from MVP to product-market fit.",
+      title: "Build Startup & Platform",
+      desc: "From zero to product — we co-build startups and platforms ready to scale, with technology, team, and go-to-market in place from day one.",
     },
     {
-      title: "Marketing Tech",
+      title: "Marketing & Technology",
       icon: Target,
-      desc: "Tools and growth loops that drive measurable conversion and lower CAC.",
+      desc: "Marketing engines fused with the right tech stack — content, growth loops, and automation that drive measurable conversion and lower CAC.",
     },
     {
       icon: Sparkles,
-      title: "AI & Automation",
-      desc: "Intelligent systems that replace manual work and embed AI into the workflows that move the P&L.",
+      title: "AI Transformation",
+      desc: "Embed AI across operations, decisions, and customer experience — rewiring how the business runs to unlock new efficiency and revenue.",
     },
     {
-      icon: ShoppingBag,
-      title: "Digital Commerce",
-      desc: "D2C, platforms, and marketplaces — built to scale revenue across channels.",
+      icon: CalendarDays,
+      title: "Events & Photobooth Business",
+      desc: "Experience-driven ventures — from live events to AI-powered photobooth activations that turn brand moments into recurring revenue streams.",
     },
   ];
   return (
