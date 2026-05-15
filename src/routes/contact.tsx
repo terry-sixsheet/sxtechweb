@@ -93,20 +93,21 @@ function ContactGrid() {
     {
       icon: Facebook,
       label: "Facebook",
-      value: "facebook.com/sxtransformation",
-      href: "https://facebook.com/sxtransformation",
+      value: "sxtech",
+      href: "https://facebook.com/sxtech",
     },
     {
       icon: Instagram,
       label: "Instagram",
-      value: "@sxtransformation",
-      href: "https://instagram.com/sxtransformation",
+      value: "@sxtech",
+      href: "https://instagram.com/sxtech",
     },
     {
       icon: MapPin,
       label: "Office",
-      value: "Bangkok, Thailand",
-      href: "https://maps.google.com/?q=Bangkok+Thailand",
+      value:
+        "เลขที่ 15 ห้อง A124 ซอยประดิพัทธ์ 17 ถนนประดิพัทธ์ แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400",
+      href: null,
     },
     {
       icon: Building2,
