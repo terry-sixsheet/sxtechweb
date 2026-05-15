@@ -111,7 +111,7 @@ function ContactGrid() {
     {
       icon: Building2,
       label: "Company",
-      value: "SX TECH Co., Ltd.",
+      value: "Sixsheet Tech Co., Ltd.",
       href: null,
     },
   ];
@@ -227,7 +227,7 @@ function CompanyMap() {
               Company
             </div>
             <h3 className="mt-3 text-2xl font-bold tracking-tight md:text-3xl">
-              SX TECH Co., Ltd.
+              Sixsheet Tech Co., Ltd.
             </h3>
             <p className="mt-4 text-sm text-muted-foreground">
               A transformation company combining technology and human
@@ -235,9 +235,10 @@ function CompanyMap() {
               behind them.
             </p>
             <div className="mt-6 space-y-2 text-sm text-foreground/90">
-              <div>· Tax ID: 0-0000-00000-00-0</div>
-              <div>· Address: Bangkok, Thailand</div>
-              <div>· Hours: Mon–Fri · 09:00–18:00 ICT</div>
+              <div>
+                · Address: เลขที่ 15 ห้องเลขที่ A124 ซอยประดิพัทธ์ 17 ถนนประดิพัทธ์
+                แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400
+              </div>
             </div>
             <Button
               asChild
