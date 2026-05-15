@@ -72,7 +72,6 @@ function BusinessVenturesPage() {
         <Capabilities />
         <InvestmentThesis />
         <FocusDomains />
-        <PartnersWith />
         <OurEdge />
         <CTA />
       </main>
@@ -385,10 +384,10 @@ function SystemBuild() {
 function Capabilities() {
   const items = [
     {
-      icon: Rocket,
-      title: "Startup & Venture Launch",
-      tagline: "Launch your business from zero",
-      desc: "Validate ideas, build MVP, and launch your venture end-to-end.",
+      icon: Briefcase,
+      title: "Transformation Advisory",
+      tagline: "End-to-end transformation — strategy, framework, and execution",
+      desc: "Consulting and workshops that turn transformation into action — business model redesign, AI adoption roadmap, operating model rewiring, and team enablement. Delivered through executive advisory, hands-on workshops, and our proven SX Transformation Framework: Diagnose → Design → Build → Activate → Scale.",
     },
     {
       icon: Sparkles,
@@ -401,12 +400,6 @@ function Capabilities() {
       title: "PMO & Delivery Management",
       tagline: "Ensure projects get delivered — on time, on target",
       desc: "We manage execution, align teams, track progress, and drive outcomes.",
-    },
-    {
-      icon: Briefcase,
-      title: "Transformation Advisory & C-Level as a Service",
-      tagline: "Fractional leaders driving business and AI transformation from the inside",
-      desc: "Embedded CEO, CTO, CPO, and CIO support that leads end-to-end business and AI transformation — setting strategy, building the right team, and driving measurable growth.",
     },
   ];
   return (
@@ -473,23 +466,23 @@ function FocusDomains() {
   const domains = [
     {
       icon: Rocket,
-      title: "Tech & Startup",
-      desc: "Early-stage ventures with scalable models — from MVP to product-market fit.",
+      title: "Build Startup & Platform",
+      desc: "From zero to product — we co-build startups and platforms ready to scale, with technology, team, and go-to-market in place from day one.",
     },
     {
-      title: "Marketing Tech",
+      title: "Marketing & Technology",
       icon: Target,
-      desc: "Tools and growth loops that drive measurable conversion and lower CAC.",
+      desc: "Marketing engines fused with the right tech stack — content, growth loops, and automation that drive measurable conversion and lower CAC.",
     },
     {
       icon: Sparkles,
-      title: "AI & Automation",
-      desc: "Intelligent systems that replace manual work and embed AI into the workflows that move the P&L.",
+      title: "AI Transformation",
+      desc: "Embed AI across operations, decisions, and customer experience — rewiring how the business runs to unlock new efficiency and revenue.",
     },
     {
-      icon: ShoppingBag,
-      title: "Digital Commerce",
-      desc: "D2C, platforms, and marketplaces — built to scale revenue across channels.",
+      icon: CalendarDays,
+      title: "Events & Photobooth Business",
+      desc: "Experience-driven ventures — from live events to AI-powered photobooth activations that turn brand moments into recurring revenue streams.",
     },
   ];
   return (
@@ -591,48 +584,6 @@ function InvestmentThesis() {
 /* =========================================================
    11. WHO WE PARTNER WITH
    ========================================================= */
-function PartnersWith() {
-  const partners = [
-    {
-      icon: Lightbulb,
-      title: "Early-stage Founders",
-      desc: "Have ideas but no product or team yet — we help you go from zero to MVP.",
-    },
-    {
-      icon: Cpu,
-      title: "AI Builders & Developers",
-      desc: "Strong in tech but lack scalability, structure, or go-to-market muscle.",
-    },
-    {
-      icon: Network,
-      title: "Business Owners & Network Players",
-      desc: "Looking to expand, digitize, or build new ventures on top of an existing base.",
-    },
-  ];
-  return (
-    <Section
-      eyebrow="Who We Partner With"
-      title={<>Built for <span className="text-gradient">builders.</span></>}
-      subtitle={<>We work with people who are ready to execute — not just talk.</>}
-    >
-      <div className="grid gap-6 md:grid-cols-3">
-        {partners.map((p) => (
-          <div
-            key={p.title}
-            className="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-10 backdrop-blur transition-all hover:-translate-y-1 hover:border-[color:var(--brand-cyan)]/40 hover:shadow-elevated"
-          >
-            <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
-              <p.icon className="h-5 w-5" />
-            </div>
-            <h3 className="mt-8 text-2xl font-bold leading-tight tracking-tight">{p.title}</h3>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
-          </div>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
 /* =========================================================
    12. OUR EDGE
    ========================================================= */
