@@ -385,10 +385,10 @@ function SystemBuild() {
 function Capabilities() {
   const items = [
     {
-      icon: Rocket,
-      title: "Startup & Venture Launch",
-      tagline: "Launch your business from zero",
-      desc: "Validate ideas, build MVP, and launch your venture end-to-end.",
+      icon: Briefcase,
+      title: "Transformation Advisory",
+      tagline: "End-to-end transformation — strategy, framework, and execution",
+      desc: "Consulting and workshops that turn transformation into action — business model redesign, AI adoption roadmap, operating model rewiring, and team enablement. Delivered through executive advisory, hands-on workshops, and our proven SX Transformation Framework: Diagnose → Design → Build → Activate → Scale.",
     },
     {
       icon: Sparkles,
@@ -401,12 +401,6 @@ function Capabilities() {
       title: "PMO & Delivery Management",
       tagline: "Ensure projects get delivered — on time, on target",
       desc: "We manage execution, align teams, track progress, and drive outcomes.",
-    },
-    {
-      icon: Briefcase,
-      title: "Transformation Advisory & C-Level as a Service",
-      tagline: "Fractional leaders driving business and AI transformation from the inside",
-      desc: "Embedded CEO, CTO, CPO, and CIO support that leads end-to-end business and AI transformation — setting strategy, building the right team, and driving measurable growth.",
     },
   ];
   return (
