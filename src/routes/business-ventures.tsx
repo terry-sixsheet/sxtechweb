@@ -584,48 +584,6 @@ function InvestmentThesis() {
 /* =========================================================
    11. WHO WE PARTNER WITH
    ========================================================= */
-function PartnersWith() {
-  const partners = [
-    {
-      icon: Lightbulb,
-      title: "Early-stage Founders",
-      desc: "Have ideas but no product or team yet — we help you go from zero to MVP.",
-    },
-    {
-      icon: Cpu,
-      title: "AI Builders & Developers",
-      desc: "Strong in tech but lack scalability, structure, or go-to-market muscle.",
-    },
-    {
-      icon: Network,
-      title: "Business Owners & Network Players",
-      desc: "Looking to expand, digitize, or build new ventures on top of an existing base.",
-    },
-  ];
-  return (
-    <Section
-      eyebrow="Who We Partner With"
-      title={<>Built for <span className="text-gradient">builders.</span></>}
-      subtitle={<>We work with people who are ready to execute — not just talk.</>}
-    >
-      <div className="grid gap-6 md:grid-cols-3">
-        {partners.map((p) => (
-          <div
-            key={p.title}
-            className="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-10 backdrop-blur transition-all hover:-translate-y-1 hover:border-[color:var(--brand-cyan)]/40 hover:shadow-elevated"
-          >
-            <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary text-white shadow-glow">
-              <p.icon className="h-5 w-5" />
-            </div>
-            <h3 className="mt-8 text-2xl font-bold leading-tight tracking-tight">{p.title}</h3>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
-          </div>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
 /* =========================================================
    12. OUR EDGE
    ========================================================= */
